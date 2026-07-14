@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LOVEP 線上查經</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Microsoft JhengHei",sans-serif;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:white;
+}
+
+.container{
+
+    width:min(900px,92%);
+    margin:auto;
+    padding:50px 0 80px;
+
+}
+
+h1{
+
+    text-align:center;
+    font-size:48px;
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+    font-size:22px;
+    opacity:.9;
+    margin-bottom:50px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(8px);
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.header{
+
+    display:grid;
+    grid-template-columns:220px 1fr;
+
+    background:#2d5f9a;
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+.header div{
+
+    padding:18px;
+
+}
+
+.row{
+
+    display:grid;
+    grid-template-columns:220px 1fr;
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+    transition:.3s;
+
+}
+
+.row:hover{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.date{
+
+    padding:20px;
+    font-size:22px;
+
+}
+
+.topic{
+
+    padding:20px;
+
+}
+
+.topic a{
+
+    color:#FFD966;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:bold;
+
+}
+
+.topic a:hover{
+
+    color:white;
+    text-decoration:underline;
+
+}
+
+.footer{
+
+    margin-top:50px;
+    text-align:center;
+    font-size:18px;
+    opacity:.8;
+
+}
+
+@media(max-width:700px){
+
+.header,
+.row{
+
+grid-template-columns:1fr;
+
+}
+
+.header div{
+
+text-align:center;
+
+}
+
+.date{
+
+padding-bottom:0;
+
+text-align:center;
+
+}
+
+.topic{
+
+text-align:center;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📖 LOVEP 線上查經</h1>
+
+<div class="subtitle">
+每週線上查經分享
+</div>
+
+<div class="card">
+
+<div class="header">
+<div>日期</div>
+<div>主題</div>
+</div>
+
+<!-- ====== 開始新增 ====== -->
+
+<div class="row">
+
+<div class="date">
+2026/07/14
+</div>
+
+<div class="topic">
+<a href="20260714/index.html">
+從我的計劃到神的計劃
+</a>
+</div>
+
+</div>
+
+<!-- ====== 結束新增 ====== -->
+
+<!--
+以後新增一週，只要複製下面即可
+
+<div class="row">
+
+<div class="date">
+2026/07/21
+</div>
+
+<div class="topic">
+<a href="20260721/index.html">
+主題名稱
+</a>
+</div>
+
+</div>
+
+-->
+
+</div>
+
+<div class="footer">
+Copyright © LOVEP Bible Study
+</div>
+
+</div>
+
+</body>
+</html>
