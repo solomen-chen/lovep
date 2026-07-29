@@ -1,266 +1,448 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-  <title>路加福音 1:57-66 · 新標點和合本上帝版</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>小組查經分享大綱 · 社區的共同歡樂與見證</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: #f7f3eb;
-      background-image: radial-gradient(circle at 20% 30%, #f9f4e8 0%, #ede3d3 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Gentium Book Basic', 'Noto Serif TC', 'Times New Roman', '宋体', 'Georgia', 'KaiTi', '楷体', serif;
-      padding: 2rem 1.5rem;
-      margin: 0;
-    }
+        body {
+            background-color: #e8dcc8;
+            background-image: url('images/bg-parchment.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Noto Serif TC', 'Times New Roman', 'KaiTi', '楷體', 'Georgia', '宋體', serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1.5rem;
+            color: #3e3226;
+            line-height: 1.7;
+        }
 
-    .scripture-card {
-      max-width: 720px;
-      width: 100%;
-      background: #fefcf5;
-      background: linear-gradient(145deg, #fffbf2 0%, #fdf8ed 100%);
-      border-radius: 2.5rem 2.5rem 2.5rem 1rem;
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(80, 50, 20, 0.12), inset 0 1px 0 #fff9ef;
-      border: 1px solid #e7d7b8;
-      padding: 2.8rem 2.5rem;
-      position: relative;
-      transition: all 0.2s ease;
-    }
+        /* 半透明遮罩層，提升文字可讀性 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(245, 238, 220, 0.55);
+            backdrop-filter: blur(1px);
+            z-index: 0;
+        }
 
-    /* 裝飾性金線 */
-    .scripture-card::before {
-      content: "";
-      position: absolute;
-      top: 1.4rem;
-      left: 2rem;
-      right: 2rem;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 0%, #c9aa6b 20%, #dbb978 50%, #c9aa6b 80%, transparent 100%);
-      border-radius: 1px;
-      opacity: 0.6;
-    }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 251, 242, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 3rem 3rem 3rem 1.5rem;
+            box-shadow: 0 30px 50px rgba(60, 35, 10, 0.18), 0 8px 20px rgba(80, 50, 20, 0.12);
+            border: 1px solid #dac29c;
+            padding: 3rem 2.8rem;
+            transition: all 0.3s ease;
+        }
 
-    .scripture-card::after {
-      content: "";
-      position: absolute;
-      bottom: 1.4rem;
-      left: 2rem;
-      right: 2rem;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 0%, #c9aa6b 20%, #dbb978 50%, #c9aa6b 80%, transparent 100%);
-      border-radius: 1px;
-      opacity: 0.6;
-    }
+        /* 裝飾邊框線條 */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 1.2rem;
+            left: 2.2rem;
+            right: 2.2rem;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9aa6b, #dbb978, #c9aa6b, transparent);
+            opacity: 0.7;
+        }
 
-    .book-title {
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      color: #5b4636;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      font-family: 'Cinzel', 'Times New Roman', 'Noto Serif TC', serif;
-      word-spacing: 6px;
-      line-height: 1.3;
-      text-shadow: 1px 1px 0 rgba(255, 250, 240, 0.8);
-    }
+        .container::after {
+            content: "";
+            position: absolute;
+            bottom: 1.2rem;
+            left: 2.2rem;
+            right: 2.2rem;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9aa6b, #dbb978, #c9aa6b, transparent);
+            opacity: 0.7;
+        }
 
-    .book-sub {
-      text-align: center;
-      font-size: 1rem;
-      color: #8b7355;
-      margin-bottom: 2rem;
-      font-style: italic;
-      letter-spacing: 0.08em;
-      border-bottom: 1px dashed #dac29c;
-      padding-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
+        /* 頁首區域 */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-    .book-sub span {
-      background: #f3ede3;
-      padding: 0.2rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      color: #5e4c38;
-    }
+        .dove-icon {
+            width: 70px;
+            height: auto;
+            margin-bottom: 0.5rem;
+            opacity: 0.85;
+            filter: drop-shadow(0 4px 6px rgba(120, 80, 30, 0.2));
+        }
 
-    .passage-ref {
-      font-weight: 600;
-      color: #6f4e37;
-      background: #f0e5d2;
-      padding: 0.2rem 1.2rem;
-      border-radius: 30px;
-      font-size: 0.95rem;
-    }
+        .main-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #5b3e28;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.25rem;
+            font-family: 'Cinzel', 'Noto Serif TC', 'Times New Roman', serif;
+            text-shadow: 1px 1px 0 rgba(255, 245, 225, 0.8);
+        }
 
-    .scripture-text {
-      font-size: 1.2rem;
-      line-height: 2.1;
-      color: #3d3226;
-      text-align: justify;
-      word-spacing: 0.05em;
-      margin: 1.5rem 0 2rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-    }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7a5f44;
+            font-style: italic;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3rem;
+        }
 
-    .verse {
-      font-weight: 600;
-      color: #8b5a2b;
-      vertical-align: super;
-      font-size: 0.75rem;
-      margin-right: 0.25rem;
-      margin-left: 0.1rem;
-      line-height: 1;
-      font-family: 'Gentium Book Basic', 'Times New Roman', serif;
-    }
+        /* 經文參考連結樣式 */
+        .scripture-ref {
+            display: inline-block;
+            background: #efe2ce;
+            color: #5c4028;
+            padding: 0.3rem 1.4rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
 
-    .verse-num {
-      display: inline-block;
-      font-weight: 700;
-      color: #a5713f;
-      margin-right: 0.15rem;
-      font-size: 0.8rem;
-      vertical-align: super;
-    }
+        .scripture-ref:hover {
+            background: #dbb978;
+            color: #2d1f0f;
+            border-color: #b88645;
+            box-shadow: 0 6px 18px rgba(140, 100, 30, 0.35);
+            transform: translateY(-2px);
+            cursor: pointer;
+            letter-spacing: 0.1em;
+        }
 
-    p {
-      margin-bottom: 1.2rem;
-      text-indent: 0;
-    }
+        .scripture-ref:active {
+            transform: translateY(0px);
+            box-shadow: 0 3px 10px rgba(140, 100, 30, 0.25);
+        }
 
-    .highlight-name {
-      color: #8b4a1b;
-      font-weight: 600;
-      background: linear-gradient(180deg, transparent 60%, #fae3bc 60%);
-      padding: 0 0.1rem;
-    }
+        /* 主題金句區 */
+        .theme-box {
+            background: linear-gradient(135deg, #f9f1e2 0%, #fdf5e8 100%);
+            border-left: 5px solid #b88645;
+            border-radius: 12px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #4f3822;
+            box-shadow: 0 6px 18px rgba(140, 100, 50, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
 
-    .divider {
-      text-align: center;
-      margin: 2rem 0 1.5rem;
-      color: #b39264;
-      font-size: 1.2rem;
-      letter-spacing: 0.3em;
-    }
+        .theme-quote {
+            font-size: 1.15rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
 
-    .footnote {
-      font-size: 0.9rem;
-      color: #7a684f;
-      margin-top: 1.8rem;
-      padding-top: 1.2rem;
-      border-top: 1px dotted #dac29c;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      font-style: italic;
-    }
+        .theme-direction {
+            font-size: 0.95rem;
+            color: #6d5338;
+            margin-top: 0.3rem;
+        }
 
-    .version-badge {
-      background: #e5d5bb;
-      color: #4b3a28;
-      padding: 0.25rem 1.1rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
+        /* 各區塊樣式 */
+        .section {
+            margin: 2.2rem 0 2rem;
+            padding: 1.2rem 1.6rem;
+            background: rgba(255, 250, 240, 0.6);
+            border-radius: 1.5rem;
+            border: 1px solid #e7d5b5;
+            transition: all 0.2s;
+        }
 
-    .reference-bottom {
-      font-weight: 600;
-      color: #5f4a32;
-      font-style: normal;
-    }
+        .section:hover {
+            background: rgba(255, 252, 244, 0.8);
+            border-color: #cfb280;
+            box-shadow: 0 8px 22px rgba(100, 70, 30, 0.08);
+        }
 
-    @media (max-width: 550px) {
-      body {
-        padding: 1.2rem 0.8rem;
-      }
-      .scripture-card {
-        padding: 2rem 1.5rem;
-        border-radius: 2rem 2rem 2rem 0.8rem;
-      }
-      .scripture-text {
-        font-size: 1.05rem;
-        line-height: 2;
-      }
-      .book-title {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            filter: drop-shadow(0 3px 5px rgba(100, 70, 20, 0.2));
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 650;
+            color: #5a3f28;
+            letter-spacing: 0.08em;
+            border-bottom: 2px dotted #cdb282;
+            padding-bottom: 0.2rem;
+        }
+
+        .section-content {
+            padding-left: 0.5rem;
+        }
+
+        h4 {
+            font-size: 1.05rem;
+            color: #6b472b;
+            margin: 1rem 0 0.3rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .question {
+            font-weight: 600;
+            color: #724e2c;
+        }
+
+        .reflection {
+            color: #5e4a32;
+            font-style: italic;
+            margin-top: 0.3rem;
+            padding-left: 1rem;
+            border-left: 3px solid #d8b27b;
+        }
+
+        .bold-text {
+            font-weight: 700;
+            color: #4a311b;
+        }
+
+        .divider-dots {
+            text-align: center;
+            margin: 2rem 0 1rem;
+            color: #b39264;
+            font-size: 1.2rem;
+            letter-spacing: 0.4em;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2.2rem;
+            font-size: 0.85rem;
+            color: #8b7658;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #e5d5bb;
+            padding: 0.2rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem 1.4rem;
+                border-radius: 2rem 2rem 2rem 1rem;
+            }
+            .main-title {
+                font-size: 1.6rem;
+            }
+            .section {
+                padding: 1rem 0.8rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="scripture-card">
-    <div class="book-title">路加福音</div>
-    <div class="book-sub">
-      <span>新標點和合本上帝版</span>
-      <span class="passage-ref">第1章 57－66節</span>
+<div class="overlay"></div>
+
+<div class="container">
+    <!-- 頁首 -->
+    <div class="header">
+        <img src="images/decor-dove.png" alt="鴿子裝飾" class="dove-icon">
+        <div class="main-title">社區的共同歡樂與見證</div>
+        <div class="subtitle">小組查經分享大綱</div>
+        <!-- 修改處：加上超連結與 hover 效果 -->
+        <a href="text.html" class="scripture-ref" title="點擊查看路加福音 1:57-66 經文">路加福音 1:57-66</a>
     </div>
 
-    <div class="scripture-text">
-      <!-- 經文按照章節排版，保留原始標點 -->
-      <p>
-        <span class="verse-num">57</span>伊利莎白的產期到了，就生了一個兒子。
-      </p>
-      <p>
-        <span class="verse-num">58</span>鄰里親族聽見主向她大施憐憫，就和她一同歡樂。
-      </p>
-      <p>
-        <span class="verse-num">59</span>到了第八日，他們來要給孩子行割禮，並要照他父親的名字叫他<span class="highlight-name">撒迦利亞</span>。
-      </p>
-      <p>
-        <span class="verse-num">60</span>他母親說：「不可！要叫他<span class="highlight-name">約翰</span>。」
-      </p>
-      <p>
-        <span class="verse-num">61</span>他們說：「你親族中沒有叫這名字的。」
-      </p>
-      <p>
-        <span class="verse-num">62</span>他們就向他父親打手勢，問他要叫這孩子甚麼名字。
-      </p>
-      <p>
-        <span class="verse-num">63</span>他要了一塊寫字的板，就寫上，說：「他的名字是<span class="highlight-name">約翰</span>。」他們便都希奇。
-      </p>
-      <p>
-        <span class="verse-num">64</span><span class="highlight-name">撒迦利亞</span>的口立時開了，舌頭也舒展了，就說出話來，稱頌上帝。
-      </p>
-      <p>
-        <span class="verse-num">65</span>周圍居住的人都懼怕；這一切的事就傳遍了猶太的山地。
-      </p>
-      <p>
-        <span class="verse-num">66</span>凡聽見的人都將這事放在心裏，說：「這個孩子將來怎麼樣呢？」因為有主與他同在。
-      </p>
+    <!-- 主題金句 -->
+    <div class="theme-box">
+        <div class="theme-quote">「鄰里親族聽見主向她大施憐憫，就和她一同歡樂；後來這一切的事就傳遍了猶太的山地。」</div>
+        <div class="theme-direction">📖 分享方向：上帝在我們個人身上的作為，如何成為群體的祝福和見證？我們是否樂於分享上帝在我們生命中的工作？</div>
     </div>
 
-    <div class="divider">
-      ✦ ✦ ✦
+    <!-- 一、破冰引言 -->
+    <div class="section">
+        <div class="section-header">
+            <img src="images/icebreaker-community.png" alt="社群破冰" class="section-icon">
+            <span class="section-title">一、破冰引言 <span style="font-size:0.9rem; font-weight:400;">（10分鐘）</span></span>
+        </div>
+        <div class="section-content">
+            <p><span class="question">引導問題：</span></p>
+            <ul>
+                <li>你曾經因為聽到一個好消息，而真心為別人感到高興嗎？請簡單分享那個時刻。</li>
+                <li>當你經歷了一件美好的事，你的第一個反應是藏起來，還是想告訴別人？為什麼？</li>
+            </ul>
+            <p class="reflection">💡 引言重點：伊利莎白年老生子，這不單是她個人的神蹟，更成為了整個社區的喜樂與話題。上帝的作為從個人延伸到群體，從家庭傳遍山地。</p>
+        </div>
     </div>
 
-    <div class="footnote">
-      <div class="version-badge">
-        新標點和合本 · 上帝版
-      </div>
-      <div class="reference-bottom">
-        路加福音 1:57-66
-      </div>
+    <!-- 二、經文觀察與背景 -->
+    <div class="section">
+        <div class="section-header">
+            <img src="images/bible-open.png" alt="翻開的聖經" class="section-icon">
+            <span class="section-title">二、經文觀察與背景 <span style="font-size:0.9rem; font-weight:400;">（15分鐘）</span></span>
+        </div>
+        <div class="section-content">
+            <p><span class="bold-text">請組員輪流讀經文：路加福音 1:57-66</span></p>
+            <h4>觀察問題：</h4>
+            <ol>
+                <li><span class="question">第58節</span> 提到哪些人參與了伊利莎白的喜樂？他們為什麼會知道這件事？<br>
+                    <span class="reflection">→ 鄰里親族；他們聽見「主向她大施憐憫」。</span></li>
+                <li>鄰里親族的反應是什麼？他們只是旁觀者嗎？<br>
+                    <span class="reflection">→ 他們「一同歡樂」，顯示出真實的情感連結與參與。</span></li>
+                <li><span class="question">第65-66節</span>，這件「私人的家庭事務」最終傳到了哪裡？影響範圍有多大？<br>
+                    <span class="reflection">→ 傳遍了猶太山地；周圍的人懼怕、放在心上、反覆思想。</span></li>
+                <li>從這段經文中，你看到上帝的心意是要這件神蹟「公開」還是「隱藏」？<br>
+                    <span class="reflection">→ 引導思考：上帝主動讓此事被聽見、被傳開，成為見證。</span></li>
+            </ol>
+        </div>
     </div>
-  </div>
+
+    <!-- 三、深入默想與討論 -->
+    <div class="section">
+        <div class="section-header">
+            <img src="images/contemplation-candle.png" alt="默想蠟燭" class="section-icon">
+            <span class="section-title">三、深入默想與討論 <span style="font-size:0.9rem; font-weight:400;">（30分鐘）</span></span>
+        </div>
+        <div class="section-content">
+            <h4>層次一：上帝作為的「可見性」</h4>
+            <p><span class="question">問題1：</span>為什麼上帝選擇讓伊利莎白懷孕這件事被鄰里親族「聽見」並「看見」？如果上帝只是暗中賜福給她，不也一樣是恩典嗎？</p>
+            <p class="reflection">反思：上帝的恩典本身俱有見證的本質；我們的信心經歷，是否停留在「只有自己知道」的階段？</p>
+
+            <h4>層次二：從個人恩典到群體祝福</h4>
+            <p><span class="question">問題2：</span>經文中鄰里親族「一同歡樂」，這份歡樂對伊利莎白和整個社區分別有什麼意義？</p>
+            <p class="reflection">→ 對伊利莎白：喜樂被加倍；對社區：親眼看見上帝的大憐憫，信心被堅固。<br>應用提問：你曾否因聽見別人的見證，而自己的信心也被激勵？</p>
+
+            <h4>層次三：見證的擴散力</h4>
+            <p><span class="question">問題3：</span>第65節說「這一切的事就傳遍了猶太的山地」。這些事是透過什麼方式傳開的？在今天，這對我們有什麼啟發？</p>
+            <p class="reflection">挑戰：我們的教會或小組的「好消息」，是否傳遍了我們的「猶太山地」——生活圈、職場、鄰舍？</p>
+
+            <h4>層次四：分享見證的動機與障礙</h4>
+            <p><span class="question">問題4：</span>為什麼有時我們不願意分享上帝在我們身上的工作？以下哪些是你的掙扎？</p>
+            <ul>
+                <li>怕被認為是炫耀或迷信</li>
+                <li>覺得自己的經歷不夠「神蹟性」</li>
+                <li>害怕分享後別人對我有更高的期待</li>
+                <li>不習慣在眾人面前說話</li>
+                <li>其他：___________</li>
+            </ul>
+            <p><span class="question">問題5：</span>伊利莎白和撒迦利亞並沒有「到處宣講」，但事情仍然傳開了。這給我們什麼提醒？</p>
+            <p class="reflection">→ 見證不一定是大聲宣講，而是生命真實的改變，自然會引起人的注意和談論。</p>
+        </div>
+    </div>
+
+    <!-- 四、個人回應與應用 -->
+    <div class="section">
+        <div class="section-header">
+            <img src="images/heart-writing.png" alt="書寫回應" class="section-icon">
+            <span class="section-title">四、個人回應與應用 <span style="font-size:0.9rem; font-weight:400;">（15分鐘）</span></span>
+        </div>
+        <div class="section-content">
+            <p><span class="bold-text">🖊️ 默想與書寫（3-5分鐘）：</span></p>
+            <ol>
+                <li>過去一年中，上帝在你身上做了一件什麼值得分享的事？</li>
+                <li>這件事你曾經和誰分享過？如果沒有，是什麼攔阻了你？</li>
+                <li>你生活中有哪個「鄰里親族」或「猶太山地」，是需要聽見你的見證的？</li>
+            </ol>
+            <p><span class="bold-text">🗣️ 小組分享（10分鐘）：</span></p>
+            <ul>
+                <li>兩兩一組或三人一組，彼此分享剛才默想的內容。</li>
+                <li>為對方禱告：求上帝賜下勇氣和機會，讓我們的生命能成為群體的祝福。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 五、總結與禱告 -->
+    <div class="section">
+        <div class="section-header">
+            <img src="images/prayer-hands.png" alt="禱告的手" class="section-icon">
+            <span class="section-title">五、總結與禱告 <span style="font-size:0.9rem; font-weight:400;">（10分鐘）</span></span>
+        </div>
+        <div class="section-content">
+            <h4>帶領者總結重點：</h4>
+            <ol>
+                <li><span class="bold-text">上帝的心意是透過個人祝福群體</span>——祂賜福伊利莎白，也藉此讓整個社區經歷喜樂與敬畏。</li>
+                <li><span class="bold-text">真實的見證自然會擴散</span>——生命被上帝觸摸的痕跡，不需要誇大，真誠的分享本身就帶著力量。</li>
+                <li><span class="bold-text">群體的歡樂是對上帝作為的回應</span>——當我們彼此分享見證，就是在共同榮耀上帝，彼此激勵信心。</li>
+            </ol>
+            <h4>🙏 結束禱告方向：</h4>
+            <ul>
+                <li>感謝上帝在我們各人生命中施行的憐憫與作為</li>
+                <li>求主幫助我們勝過分享見證的懼怕和障礙</li>
+                <li>求主使我們的小組和教會成為樂於分享、一同歡樂的群體</li>
+                <li>求主讓我們的見證能傳遍我們的「猶太山地」，吸引更多人認識祂</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="divider-dots">✦ ✦ ✦</div>
+
+    <!-- 延伸活動提示 -->
+    <div class="section" style="background: rgba(245, 235, 215, 0.5);">
+        <div class="section-header">
+            <span style="font-size:1.8rem; margin-right:0.4rem;">⛓️</span>
+            <span class="section-title" style="font-size:1.3rem;">延伸活動 · 見證鏈</span>
+        </div>
+        <div class="section-content">
+            <p>每人用一句話分享「最近一次看見上帝在工作」，由帶領者開始，依次傳遞，形成一條「恩典之鏈」。結束時一起說：<span class="bold-text">「主向我們大施憐憫，我們一同歡樂！」</span></p>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <span class="badge">新標點和合本 · 上帝版</span>
+        <span>路加福音 1:57-66</span>
+        <span>📖 小組查經大綱</span>
+    </div>
+</div>
+
 </body>
 </html>
