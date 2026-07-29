@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>仇敵與恨我們之人 | 路加福音 1:71 釋義</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Serif TC', 'Times New Roman', '微軟正黑體', serif;
+            background: #1a1814;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background-image: url('images/enemy_background_battle_dawn.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 8, 5, 0.65);
+            backdrop-filter: blur(1.5px);
+            z-index: 0;
+        }
+
+        .article-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            width: 100%;
+            background: rgba(248, 244, 232, 0.92);
+            backdrop-filter: blur(10px);
+            background: linear-gradient(160deg, rgba(252, 248, 235, 0.95) 0%, rgba(225, 215, 185, 0.9) 100%);
+            border-radius: 2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), 0 5px 15px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255, 255, 220, 0.6);
+            padding: 2.5rem 2.8rem;
+            border: 1px solid rgba(160, 130, 70, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .header-illustration {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.3rem;
+        }
+
+        .header-illustration img {
+            max-width: 100%;
+            height: auto;
+            max-height: 220px;
+            border-radius: 2rem 1rem 2rem 1rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(200, 170, 90, 0.5);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .header-illustration img:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3d2e14;
+            letter-spacing: 0.2rem;
+            text-shadow: 1px 1px 0 rgba(210, 180, 110, 0.4);
+            font-family: 'Noto Serif TC', 'Times New Roman', serif;
+            border-bottom: 2px dashed #b49450;
+            padding-bottom: 0.7rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6b5a38;
+            font-style: italic;
+            margin-top: -0.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .content-block {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #2d2412;
+            background: rgba(255, 251, 240, 0.65);
+            padding: 1.5rem 1.8rem;
+            border-radius: 2rem 1rem 2rem 1rem;
+            box-shadow: inset 0 0 20px rgba(180, 140, 60, 0.25);
+            backdrop-filter: blur(2px);
+        }
+
+        .content-block h2 {
+            font-size: 1.5rem;
+            color: #5a3f1a;
+            margin: 1.8rem 0 0.8rem 0;
+            border-left: 5px solid #b49450;
+            padding-left: 1rem;
+            font-weight: 500;
+        }
+
+        .content-block h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-block p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            text-indent: 1.6em;
+        }
+
+        .content-block ul {
+            margin: 0.8rem 0 1.2rem 1.8rem;
+            list-style-type: square;
+            color: #4a3517;
+        }
+
+        .content-block ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-block ul li strong {
+            color: #7a4f1c;
+        }
+
+        .highlight-quote {
+            background: rgba(205, 175, 110, 0.2);
+            border-left: 5px solid #b48b3a;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 1rem 1rem 0;
+            font-style: italic;
+            font-weight: 450;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .back-link a {
+            color: #5a3f1a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b49450;
+            padding: 0.3rem 0.8rem;
+            transition: all 0.2s;
+            border-radius: 10px;
+        }
+
+        .back-link a:hover {
+            background: rgba(180, 140, 60, 0.25);
+            color: #2d1f07;
+        }
+
+        @media (max-width: 600px) {
+            .article-container {
+                padding: 1.8rem 1.4rem;
+            }
+            .content-block {
+                font-size: 1.05rem;
+                padding: 1.2rem 1rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <div class="header-illustration">
+            <img src="images/enemy_illustration_light_vs_darkness.jpg" alt="光明與黑暗的屬靈爭戰">
+        </div>
+
+        <h1>仇敵與恨我們之人</h1>
+        <div class="subtitle">路加福音 1:71 深度釋義</div>
+
+        <div class="content-block">
+            <p>「拯救我們脫離仇敵和一切恨我們之人的手。」這句來自撒迦利亞被聖靈充滿後的預言，充滿了猶太背景與彌賽亞盼望。要理解「仇敵」和「恨我們之人」指的是誰，需要從歷史、屬靈與終末三個層面來看。</p>
+
+            <h2>一、歷史與政治層面</h2>
+            <p>在舊約與兩約之間，以色列人不斷被外邦列強欺壓——埃及、非利士、亞述、巴比倫、希臘、敘利亞，直到當時的羅馬帝國。</p>
+            <ul>
+                <li><strong>仇敵：</strong>指那些軍事上入侵、政治上奴役以色列的外邦國家。</li>
+                <li><strong>恨我們之人：</strong>指那些因信仰（敬拜獨一真神）而仇視猶太民族的人。</li>
+            </ul>
+            <p>這應驗了上帝要將他們從被擄、被壓迫的苦境中釋放出來。</p>
+
+            <h2>二、屬靈層面（真正的元兇）</h2>
+            <p>這是新約啟示出來最核心的意義。耶穌來到世上，主要目的不是推翻羅馬政府，而是擊敗那真正捆鎖人類的權勢：</p>
+            <ul>
+                <li><strong>仇敵——撒但：</strong>上帝所應許的「女人的後裔」要傷蛇的頭（創3:15）。耶穌道成肉身，正是要藉著死敗壞那掌死權的魔鬼（來2:14）。</li>
+                <li><strong>恨我們之人——罪與死的權勢：</strong>那些與神為敵的黑暗勢力。使徒保羅說：「因我們並不是與屬血氣的爭戰，乃是與那些執政的、掌權的、管轄這幽暗世界的，以及天空屬靈氣的惡魔爭戰。」（弗6:12）</li>
+            </ul>
+
+            <h2>三、個人內心與終末層面</h2>
+            <ul>
+                <li><strong>內心的仇敵：</strong>指向人心中因罪而與神為敵的狀態（西1:21）。嫉妒、仇恨、邪蕩等，都是使我們不能「坦然無懼事奉祂」的仇敵。</li>
+                <li><strong>終末的審判：</strong>最終，基督再來時要徹底審判一切拒不悔改、逼迫教會的勢力，到那時，無論是死亡還是任何抵擋神的權勢，都將被扔在火湖裡（啟20:14）。</li>
+            </ul>
+
+            <div class="highlight-quote">
+                <strong>核心目的：</strong>「叫我們既從仇敵手中被救出來，就可以終身在他面前，坦然無懼地用聖潔、公義事奉他。」（路1:74-75）<br>
+                這不是為了讓我們在地上稱霸，或報復仇敵，而是為了讓我們<strong>得自由去敬拜</strong>。
+            </div>
+
+            <h2>總結</h2>
+            <p>對於當時的聽眾，他們想到的是羅馬或外邦人；但對於聖靈啟示的新約讀者而言，最大的仇敵是<strong>罪、死亡與魔鬼</strong>。這節經文宣告：上帝因記念與亞伯拉罕所立的約，要興起大衛家的拯救之角（耶穌基督），把祂的百姓從這一切的捆綁中釋放出來，使我們得享平安。</p>
+        </div>
+
+        <div class="back-link">
+            <a href="text.html">← 返回經文閱讀</a>
+        </div>
+    </div>
+</body>
+</html>

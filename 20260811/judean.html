@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>曠野與顯明 | 路加福音 1:80 釋義</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Serif TC', 'Times New Roman', '微軟正黑體', serif;
+            background: #1c1812;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background-image: url('images/judean_background_wilderness.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 12, 7, 0.6);
+            backdrop-filter: blur(1.2px);
+            z-index: 0;
+        }
+
+        .article-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            width: 100%;
+            background: rgba(250, 245, 228, 0.93);
+            backdrop-filter: blur(10px);
+            background: linear-gradient(155deg, rgba(252, 248, 232, 0.95) 0%, rgba(222, 210, 175, 0.9) 100%);
+            border-radius: 2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), 0 5px 15px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255, 255, 210, 0.6);
+            padding: 2.5rem 2.8rem;
+            border: 1px solid rgba(155, 125, 65, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .header-illustration {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.3rem;
+        }
+
+        .header-illustration img {
+            max-width: 100%;
+            height: auto;
+            max-height: 230px;
+            border-radius: 2rem 1rem 2rem 1rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 0 4px rgba(190, 160, 80, 0.5);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .header-illustration img:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #3d2e14;
+            letter-spacing: 0.2rem;
+            text-shadow: 1px 1px 0 rgba(210, 180, 110, 0.4);
+            font-family: 'Noto Serif TC', 'Times New Roman', serif;
+            border-bottom: 2px dashed #b49450;
+            padding-bottom: 0.7rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6b5a38;
+            font-style: italic;
+            margin-top: -0.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .content-block {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #2d2412;
+            background: rgba(255, 251, 240, 0.65);
+            padding: 1.5rem 1.8rem;
+            border-radius: 2rem 1rem 2rem 1rem;
+            box-shadow: inset 0 0 20px rgba(180, 140, 60, 0.25);
+            backdrop-filter: blur(2px);
+        }
+
+        .wilderness-img {
+            /* max-width: 100%;    不超過容器寬度 */
+            height: auto;      /* 保持比例 */
+            max-height: 320px; /* 限制最大高度 */
+            display: block;
+            margin: 1rem auto; /* 置中 */
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            object-fit: cover;
+            transform: scaleX(3); /* 水平方向放大一倍 */
+        }
+
+        .content-block h2 {
+            font-size: 1.5rem;
+            color: #5a3f1a;
+            margin: 2rem 0 0.8rem 0;
+            border-left: 5px solid #b49450;
+            padding-left: 1rem;
+            font-weight: 500;
+        }
+
+        .content-block h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-block h3 {
+            font-size: 1.25rem;
+            color: #6b4c1f;
+            margin: 1.3rem 0 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .content-block p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            text-indent: 1.6em;
+        }
+
+        .content-block ul {
+            margin: 0.8rem 0 1.2rem 1.8rem;
+            list-style-type: square;
+            color: #4a3517;
+        }
+
+        .content-block ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-block ul li strong {
+            color: #7a4f1c;
+        }
+
+        .highlight-quote {
+            background: rgba(205, 175, 110, 0.2);
+            border-left: 5px solid #b48b3a;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 1rem 1rem 0;
+            font-style: italic;
+            font-weight: 450;
+        }
+
+        .verse-callout {
+            background: rgba(180, 140, 70, 0.15);
+            border: 1px solid rgba(180, 140, 60, 0.4);
+            padding: 0.8rem 1.3rem;
+            margin: 1.2rem 0;
+            border-radius: 1rem;
+            text-align: center;
+            font-weight: 500;
+            color: #4a3412;
+            letter-spacing: 0.05rem;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .back-link a {
+            color: #5a3f1a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b49450;
+            padding: 0.3rem 0.8rem;
+            transition: all 0.2s;
+            border-radius: 10px;
+        }
+
+        .back-link a:hover {
+            background: rgba(180, 140, 60, 0.25);
+            color: #2d1f07;
+        }
+
+        @media (max-width: 600px) {
+            .article-container {
+                padding: 1.8rem 1.4rem;
+            }
+            .content-block {
+                font-size: 1.05rem;
+                padding: 1.2rem 1rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <div class="header-illustration">
+            <img src="images/judean_illustration_john_wilderness.jpg" alt="施洗約翰在猶太曠野">
+        </div>
+
+        <h1>曠野與顯明</h1>
+        <div class="subtitle">路加福音 1:80 深度釋義</div>
+
+        <div class="content-block">
+            <div class="verse-callout">
+                「那孩子漸漸長大，心靈強健，住在曠野，直到他顯明在以色列人面前的日子。」—— 路加福音 1:80
+            </div>
+
+            <h2>一、為何約翰要住在曠野？什麼是「曠野」？</h2>
+
+            <h3>「曠野」的雙重含義</h3>
+
+            <p><strong>1. 地理上的曠野</strong><br>
+            指的是猶太曠野（Judean Desert），從耶路撒冷以東延伸至約旦河谷、死海沿岸的荒涼地帶。那裡氣候乾旱、岩石裸露、人煙稀少，是牧羊人和被社會邊緣化的人才會停留的地方。</p>
+
+            <img src="images/曠野.png" alt="猶太曠野" class="wilderness-img">
+
+            <p><strong>2. 神學上的曠野——這才是關鍵</strong><br>
+            在聖經中，「曠野」從來不只是地理名詞，而是一個<strong>充滿神學記憶的場所</strong>：</p>
+            <ul>
+                <li><strong>曠野是煉淨與預備之地：</strong>以色列人出埃及後，在曠野漂流四十年。曠野是上帝熬煉百姓、除去埃及奴隸心態、單單倚靠祂的地方（申8:2-3）。</li>
+                <li><strong>曠野是愛情與立約之地：</strong>耶和華藉先知耶利米說：「你幼年的恩愛，婚姻的愛情，你怎樣在曠野……跟隨我，我都記得。」（耶2:2）曠野象徵著以色列對神最單純、最親密的起初之愛。</li>
+                <li><strong>曠野是新的開始：</strong>先知以賽亞預言：「有人聲喊著說：在曠野預備耶和華的路，在沙漠地修平我們神的道。」（賽40:3）曠野是上帝要行新事、開道路的地方。</li>
+                <li><strong>曠野是遠離虛假的空間：</strong>遠離聖殿體制的腐敗（當時祭司體制已沾染政治與利益）、遠離法利賽人的假冒為善、遠離人群掌聲的誘惑。在曠野，只有神的聲音。</li>
+            </ul>
+
+            <h3>為何約翰必須住在曠野？</h3>
+            <ol>
+                <li><strong>應驗先知預言：</strong>以賽亞書40:3的「曠野人聲」正是指著他。他住在曠野這個行動本身就是一個<strong>活著的預言</strong>，宣告上帝要在看似荒蕪之處展開拯救。</li>
+                <li><strong>分別為聖的預備：</strong>在曠野的孤獨與簡樸中，他的心靈日益強健（路1:80），不被世界塑造，只被神的話語塑造，直到「心靈強健」到足以擔當先鋒的使命。</li>
+                <li><strong>象徵屬靈的出路：</strong>正如當年上帝在曠野為被擄的以色列人開道路，施洗約翰在曠野呼召人悔改，正是為彌賽亞預備一條進入人心的大道。曠野，是出埃及的路，也是進天國的路。</li>
+            </ol>
+
+            <h2>二、「顯明在以色列人面前」是什麼意思？</h2>
+            <p>「顯明」的希臘文是 <strong>ἀναδείξεως（anadeixeōs）</strong>，含有<strong>公開指定、正式展示、舉薦</strong>的意思。這不是一個偶然的亮相，而是一個帶著神聖權柄的<strong>公開就職典禮</strong>。</p>
+
+            <h3>這句話可以從三個層次理解：</h3>
+
+            <p><strong>1. 從隱藏到公開的時刻</strong><br>
+            約翰在曠野生活了近三十年，無人知曉。直到「該撒提庇留在位第十五年……撒迦利亞的兒子約翰在曠野裡，神的話臨到他」（路3:1-2）。那是上帝親自啟動的時刻——神的話臨到，他才從隱藏中出來。</p>
+
+            <p><strong>2. 被上帝親自「舉薦」給以色列人</strong><br>
+            約翰沒有自我推薦，也不是被宗教領袖按立。他的顯明，是上帝親自在歷史舞台上把他推出來。當他開始在約旦河一帶宣講悔改的洗禮時，耶路撒冷、猶太全地、約旦河一帶的人都出去到他那裡（太3:5），這是上帝吸引眾人來見證這位先知的登場。</p>
+
+            <p><strong>3. 作為「新郎的朋友」站出來</strong><br>
+            施洗約翰的顯明，不是為了彰顯自己，而是為了<strong>指出另一位</strong>。他說：「祂必興旺，我必衰微。」（約3:30）他顯明的最高峰，是當他看見耶穌走來，便大聲宣告：「看哪，神的羔羊，除去世人罪孽的！」（約1:29）那一刻，他的使命達到了頂點——他顯明了，不是為了自己，而是為了顯明基督。</p>
+
+            <div class="highlight-quote">
+                <strong>總結：</strong>約翰住在曠野，因為曠野是<strong>上帝煉淨、預備、重新開始</strong>的場所。他必須在那裡脫去一切人的榮耀，單單被神的話充滿。<br><br>
+                而「顯明在以色列人面前」，不是一次簡單的露面，而是<strong>上帝親自在歷史中為祂兒子所預備的先鋒，正式登上舞台</strong>。他的顯明只有一個目的：讓眾人預備好，迎接那將要來的彌賽亞。
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="text.html">← 返回經文閱讀</a>
+        </div>
+    </div>
+</body>
+</html>

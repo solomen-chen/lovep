@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>路加福音 1:67-80 | 新標點和合本上帝版</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Noto Serif TC', 'Times New Roman', '微軟正黑體', serif;
+      background: #2b2b1a; /* 深沉底色作為備用 */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      /* 背景圖：古老的羊皮卷與微光 */
+      background-image: url('images/background_parchment_light.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    /* 半透明疊加層，增加文字可讀性並保留背景紋理 */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 15, 10, 0.55);
+      backdrop-filter: blur(1px);
+      z-index: 0;
+    }
+
+    .scripture-card {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      width: 100%;
+      background: rgba(252, 248, 235, 0.9);
+      backdrop-filter: blur(12px);
+      background: linear-gradient(145deg, rgba(250, 245, 225, 0.95) 0%, rgba(235, 225, 190, 0.9) 100%);
+      border-radius: 3rem 2rem 3rem 2rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0,0,0,0.5), inset 0 2px 8px rgba(255, 255, 200, 0.7);
+      padding: 2.8rem 2.5rem;
+      border: 1px solid rgba(180, 150, 80, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    /* 插圖區域：施洗約翰的象徵或曠野呼聲 */
+    .illustration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .illustration img {
+      max-width: 100%;
+      height: auto;
+      max-height: 200px;
+      border-radius: 2rem 1rem 2rem 1rem;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(210, 180, 110, 0.5);
+      object-fit: cover;
+      background: #d9c8a4;
+      transition: transform 0.3s ease;
+    }
+
+    .illustration img:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #4a3b1f;
+      letter-spacing: 0.3rem;
+      text-shadow: 2px 2px 0 rgba(220, 200, 140, 0.5);
+      margin-bottom: 0.2rem;
+      font-family: 'Noto Serif TC', 'Times New Roman', serif;
+      border-bottom: 2px dashed #b49450;
+      padding-bottom: 0.7rem;
+    }
+
+    .passage-reference {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #6b5a38;
+      font-style: italic;
+      margin-top: -0.8rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .scripture-text {
+      font-size: 1.25rem;
+      line-height: 2.1;
+      color: #2d2412;
+      text-align: justify;
+      font-weight: 450;
+      background: rgba(255, 251, 240, 0.6);
+      padding: 1.2rem 1.8rem;
+      border-radius: 2.5rem 1.5rem 2.5rem 1.5rem;
+      box-shadow: inset 0 0 20px rgba(180, 140, 60, 0.3);
+      backdrop-filter: blur(2px);
+      font-family: 'Noto Serif TC', 'Times New Roman', '微軟正黑體', serif;
+    }
+
+    .scripture-text p {
+      margin-bottom: 1.2rem;
+      text-indent: 1.8em;
+    }
+
+    .scripture-text p:first-of-type {
+      margin-top: 0;
+    }
+
+    .scripture-text .verse-number {
+      font-weight: 600;
+      color: #8b6f3c;
+      font-size: 0.9rem;
+      vertical-align: super;
+      margin-right: 0.1rem;
+      margin-left: 0.1rem;
+    }
+
+    .signature {
+      margin-top: 0.8rem;
+      text-align: right;
+      font-size: 1rem;
+      color: #5f4c2b;
+      font-style: italic;
+      border-top: 1px solid #c9af7c;
+      padding-top: 1rem;
+      letter-spacing: 0.1rem;
+      opacity: 0.9;
+    }
+
+    .verse-link {
+        color: #7a4f1c; /* 與上下文不同的深沉金色 */
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px dotted #b49450;
+        padding: 0 0.1rem;
+        transition: all 0.25s ease;
+        cursor: pointer;
+        background: linear-gradient(to right, transparent 0%, rgba(220, 180, 100, 0.15) 100%);
+        border-radius: 4px;
+    }
+
+    .verse-link:hover {
+        color: #c47f2a;
+        background: rgba(200, 150, 50, 0.25);
+        border-bottom: 2px solid #c47f2a;
+        text-shadow: 0 0 8px rgba(220, 170, 60, 0.4);
+        transform: scale(1.02);
+        display: inline-block;
+    }
+
+    @media (max-width: 550px) {
+      body {
+        padding: 0.8rem;
+      }
+      .scripture-card {
+        padding: 1.8rem 1.4rem;
+        border-radius: 2rem 1.2rem 2rem 1.2rem;
+      }
+      .scripture-text {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        padding: 1rem 1.2rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scripture-card">
+    <!-- 插圖：曠野中的施洗約翰或清晨日光 -->
+    <div class="illustration">
+      <!-- 圖片檔名：john_the_baptist_dawn_light.jpg 
+           請將圖片放入 images 資料夾中 -->
+      <img src="images/john_the_baptist_dawn_light.jpg" alt="施洗約翰與清晨的日光">
+    </div>
+
+    <h2>撒迦利亞的預言</h2>
+    <div class="passage-reference">路加福音 1 : 67 - 80</div>
+
+    <div class="scripture-text">
+      <p><span class="verse-number">67</span>他父親撒迦利亞被聖靈充滿了，就預言說：</p>
+      <p><span class="verse-number">68</span>「主——以色列的上帝是應當稱頌的！因他眷顧他的百姓，為他們施行救贖，</p>
+      <p><span class="verse-number">69</span>在他僕人大衛家中，為我們興起了拯救的角，</p>
+      <p><span class="verse-number">70</span>正如主藉著從創世以來聖先知的口所說的話，</p>
+      <p><span class="verse-number">71</span>拯救我們脫離<a href="enemy.html" target="_blank" class="verse-link" title="點擊查看「仇敵與恨我們之人」釋義">仇敵和一切恨我們之人的手</a>，</p>
+      <p><span class="verse-number">72</span>向我們列祖施憐憫，記念他的聖約——</p>
+      <p><span class="verse-number">73</span>就是他對我們祖宗亞伯拉罕所起的誓——</p>
+      <p><span class="verse-number">74</span>叫我們既從仇敵手中被救出來，</p>
+      <p><span class="verse-number">75</span>就可以終身在他面前，坦然無懼地用聖潔、公義事奉他。</p>
+      <p><span class="verse-number">76</span>孩子啊！你要稱為至高者的先知；因為你要行在主的前面，預備他的道路，</p>
+      <p><span class="verse-number">77</span>叫他的百姓因罪得赦，就知道救恩。</p>
+      <p><span class="verse-number">78</span>因我們上帝憐憫的心腸，叫清晨的日光從高天臨到我們，</p>
+      <p><span class="verse-number">79</span>要照亮坐在黑暗中死蔭裏的人，把我們的腳引到平安的路上。</p>
+      <p><span class="verse-number">80</span>那孩子漸漸長大，心靈強健，<a href="judean.html" target="_blank" class="verse-link" title="點擊查看「曠野」釋義">住在曠野，直到他顯明在以色列人面前的日子。</a></p>
+    </div>
+    <div class="signature">—— 新標點和合本上帝版 ——</div>
+  </div>
+</body>
+</html>
