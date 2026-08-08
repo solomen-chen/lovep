@@ -421,6 +421,17 @@
             font-style: italic;
             letter-spacing: 0.05rem;
         }
+        .verse-link {
+            color: #590bb8; /* 金褐色,可依整體配色調整 */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .verse-link:hover {
+            color: #d4af37; /* hover 時稍微亮一點的金色 */
+            text-decoration: underline;
+        }
 
         /* === 響應式設計 === */
         @media (max-width: 700px) {
@@ -487,7 +498,10 @@
             </div>
             <h1>曠野的操練</h1>
             <div class="subtitle">—— 隱藏與顯明 ——</div>
-            <div class="info-line">線上查經小組分享 | 長老教會</div>
+             <div class="info-line">
+                <a href="text.html" class="verse-link" target="_blank">路加福音 一 67:80</a>
+            </div>
+           
             <div class="info-line" style="margin-top:0.3rem;">從古老的聖經尋求現代生活的智慧</div>
         </div>
 
