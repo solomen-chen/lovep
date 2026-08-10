@@ -252,6 +252,65 @@ a {
    經文總覽
 ========================================================= */
 
+/* 「角」字樣式 */
+.horn-link {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.horn-link:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+/* 浮動視窗背景 */
+.horn-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 浮動視窗內容 */
+.horn-popup-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.horn-popup-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 關閉按鈕 */
+.horn-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.horn-close:hover {
+    color: #000;
+}
+
 .scripture-box {
     background: linear-gradient(135deg, #203d4d, #142b38);
     color: white;
@@ -326,6 +385,19 @@ a {
     font-size: 21px;
 }
 
+.wilderness-link {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.wilderness-link:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
 
 /* =========================================================
    ★ 經文放置區
@@ -339,12 +411,10 @@ a {
     border-left: 5px solid #c69b42;
     border-radius: 0 12px 12px 0;
     color: #4d4435;
-    /* 移除舊版 PMingLiU / MingLiU 字型名稱，
-       這兩款 Windows 舊字型在部分瀏覽器／系統中
-       會與其直式排版的「@」前綴變體混淆，
-       改用現代字型可避免誤觸直式書寫。 */
+    
     font-family: "Noto Serif TC", serif;
-    font-size: 17px;
+    font-size: 34px;
+    font-weight: 1400;
     line-height: 2;
     box-shadow: inset 0 0 20px rgba(160,130,70,.05);
     min-height: 75px;
@@ -356,7 +426,7 @@ a {
     margin-bottom: 8px;
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 1400;
     letter-spacing: .18em;
     color: #9a7224;
 }
@@ -366,6 +436,18 @@ a {
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     font-size: 14px;
     font-style: italic;
+}
+.oath-link {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.oath-link:hover {
+    color: darkred;
+    text-decoration: underline;
 }
 
 
@@ -590,13 +672,13 @@ a {
 .reflection {
     background: #f4ecda;
     border-radius: 22px;
-    padding: 45px;
+    padding: 25px;
     border: 1px solid #e4d4af;
 }
 
 .reflection h2 {
     color: #76561b;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .reflection-question {
@@ -653,6 +735,27 @@ footer strong {
 
 </style>
 </head>
+
+<script>
+function showHornPopup(event) {
+    event.preventDefault(); // 防止頁面跳轉
+    document.getElementById('horn-popup').style.display = 'block';
+}
+
+function closeHornPopup() {
+    document.getElementById('horn-popup').style.display = 'none';
+}
+
+// 點擊背景也可以關閉
+window.onclick = function(event) {
+    const popup = document.getElementById('horn-popup');
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+}
+</script>
+
+
 
 <body>
 
@@ -714,7 +817,7 @@ footer strong {
 <section id="overview" class="container section">
 
     <div class="section-title">
-        <span class="small">LUKE 1:67–80</span>
+        <span class="small">路加福音 1:67–80</span>
         <h2>這段經文在說什麼？</h2>
         <p>撒迦利亞看見約翰的出生，卻沒有把焦點停留在自己的家庭，而是看見上帝正在實現祂長久以來的救贖計畫。</p>
     </div>
@@ -749,20 +852,6 @@ footer strong {
 
 </section>
 
-<!-- =====================================================
-     經文核心
-====================================================== -->
-
-<section class="container section">
-
-    <div class="scripture-box">
-        <div class="label">經文核心</div>
-        <h3>「主以色列的上帝是應當稱頌的」</h3>
-        <p>撒迦利亞首先不是歌頌自己的兒子，而是稱頌<span class="highlight">「主以色列的上帝」</span>。</p>
-        <p>因為真正的主角不是約翰，也不是撒迦利亞，而是那位守約、憐憫、施行救贖的上帝。</p>
-    </div>
-
-</section>
 
 <!-- =====================================================
      二、逐節解經
@@ -771,9 +860,9 @@ footer strong {
 <section id="verses" class="container section">
 
     <div class="section-title">
-        <span class="small">VERSE BY VERSE</span>
-        <h2>路加福音 1:67–80 逐節解經</h2>
-        <p>以下依照經文順序，每一段均預留經文欄位，請自行貼入《新標點和合本上帝版》經文。</p>
+       
+        <h2>路加福音 1:67–80 </h2>
+       
     </div>
 
     <div class="verse-list">
@@ -790,7 +879,7 @@ footer strong {
                 <h4>經文解釋</h4>
                 <p>撒迦利亞在經歷上帝的管教與應許成就之後，被聖靈充滿，開始宣告上帝的作為。這不是撒迦利亞單純表達個人的宗教感想，而是在聖靈引導下宣告上帝正在成就的救恩。</p>
             </div>
-            <div class="insight"><strong>長老教會觀點：</strong>真正的信仰不是人自己發明出來的，而是聖靈使人看見上帝已經成就的救恩。</div>
+            <div class="insight"><strong>亮點：</strong>真正的信仰不是人自己發明出來的，而是聖靈使人看見上帝已經成就的救恩。</div>
         </div>
     </article>
 
@@ -817,7 +906,15 @@ footer strong {
         <div class="verse-content">
             <h3>大衛家的「拯救的角」</h3>
             <div class="scripture-text">
-                在他僕人大衛家中，為我們興起了拯救的角，
+                在他僕人大衛家中，為我們興起了拯救的
+                <a href="#" class="horn-link" onclick="showHornPopup(event)">角</a>，
+            </div>
+            <!-- 浮動視窗 -->
+            <div id="horn-popup" class="horn-popup">
+                <div class="horn-popup-content">
+                    <span class="horn-close" onclick="closeHornPopup()">&times;</span>
+                    <img src="images/horn.png" alt="角">
+                </div>
             </div>
             <div class="explanation">
                 <h4>經文解釋</h4>
@@ -884,13 +981,14 @@ footer strong {
         <div class="verse-content">
             <h3>上帝向亞伯拉罕所起的誓</h3>
             <div class="scripture-text">
-                就是他對我們祖宗亞伯拉罕所起的誓－
+                就是他對我們祖宗亞伯拉罕所起的
+                <a href="oath.html" target="_blank" class="oath-link">誓</a>－
             </div>
             <div class="explanation">
                 <h4>經文解釋</h4>
                 <p>救恩計畫可以一路追溯到亞伯拉罕。從亞伯拉罕、大衛，一直到基督，上帝的應許逐步實現。</p>
             </div>
-            <div class="insight"><strong>救贖歷史：</strong>亞伯拉罕 → 以色列 → 大衛 → 彌賽亞 → 基督。</div>
+            <div class="insight"><strong>救贖歷史：</strong>亞伯拉罕 → 以色列 → 大衛 → 彌賽亞。</div>
         </div>
     </article>
 
@@ -908,7 +1006,7 @@ footer strong {
                 <h4>經文解釋</h4>
                 <p>上帝救人不是單純讓人得到更舒服的人生。救贖的目的，是讓我們能夠在祂面前，以聖潔、公義事奉祂。</p>
             </div>
-            <div class="insight"><strong>改革宗觀點：</strong>不是「事奉上帝 → 換取救恩」，而是「領受救恩 → 甘心事奉上帝」。</div>
+            <div class="insight"><strong>新觀點：</strong>不是「事奉上帝 → 換取救恩」，而是「領受救恩 → 甘心事奉上帝」。</div>
         </div>
     </article>
 
@@ -987,7 +1085,9 @@ footer strong {
         <div class="verse-content">
             <h3>約翰在曠野被預備</h3>
             <div class="scripture-text">
-                那孩子漸漸長大，心靈強健，住在曠野，直到他顯明在以色列人面前的日子。
+                那孩子漸漸長大，心靈強健，住在
+                <a href="wilderness.html" target="_blank" class="wilderness-link">曠野</a>，
+                直到他顯明在以色列人面前的日子。
             </div>
             <div class="explanation">
                 <h4>經文解釋</h4>
@@ -1091,7 +1191,7 @@ footer strong {
             <p>約翰是非常重要的人物，但他從來不是救恩的中心。</p>
             <p>他的使命只有一個方向：<strong>預備主的道路。</strong></p>
             <div class="key-point">
-                <strong>給今日教會的提醒：</strong><br>
+                <strong>提醒：</strong><br>
                 真正的事奉不是讓人記住「我」，而是讓人透過我的服事，更認識耶穌基督。
             </div>
         </div>
@@ -1160,8 +1260,8 @@ footer strong {
 
     <div class="section-title">
         <span class="small">PRESBYTERIAN / REFORMED PERSPECTIVE</span>
-        <h2>長老教會觀點的五個核心</h2>
-        <p>從改革宗神學來看，這段經文特別突顯上帝的主權、恩典、立約與救贖。</p>
+        <h2>五個核心</h2>
+        <p>這段經文特別突顯上帝的主權、恩典、立約與救贖。</p>
     </div>
 
     <div class="theology-grid">
@@ -1213,42 +1313,14 @@ footer strong {
 <section class="container section">
 
     <div class="summary">
-        <h2>一句話總結</h2>
+        <h2>總結</h2>
         <div class="quote">
-            撒迦利亞看見：約翰的出生不是故事的終點，而是上帝救贖計畫即將進入高潮的記號；約翰要預備道路，而真正帶來赦罪、光明、平安與救恩的，是耶穌基督。
+            約翰的出生不是故事的終點，而是上帝救贖計畫即將進入高潮的記號；約翰要預備道路，而真正帶來赦罪、光明、平安與救恩的，是耶穌基督。
         </div>
-        <p class="small-text">
-            路加福音 1:67–80 將我們的眼目，從人的計畫帶回上帝的計畫，從人的需要帶回上帝的救恩，最終從約翰帶到基督。
-        </p>
+       
     </div>
 
 </section>
-
-<!-- =====================================================
-     八、小組反思
-====================================================== -->
-
-<section id="reflection" class="container section">
-
-    <div class="section-title">
-        <span class="small">GROUP DISCUSSION</span>
-        <h2>小組反思</h2>
-    </div>
-
-    <div class="reflection">
-        <h2>今日，我如何回應上帝的救恩？</h2>
-        <div class="reflection-question">
-            <strong>上帝救我們，不只是要我們「得救」，更是要我們「在祂面前，以聖潔、公義事奉祂」。</strong>
-            <br><br>
-            那麼，我目前的生活中，有哪些地方真正反映出我是屬於上帝的人？
-        </div>
-    </div>
-
-</section>
-
-<!-- =====================================================
-     結語圖片
-====================================================== -->
 
 <section class="container section">
 
@@ -1271,6 +1343,39 @@ footer strong {
 
 </section>
 
+<!-- =====================================================
+     八、小組反思
+====================================================== -->
+
+<section id="reflection" class="container section">
+
+    <div class="section-title">        
+        <h2>分享與討論</h2>
+    </div>
+
+    <div class="reflection">
+        <h2>今日，我如何回應上帝的救恩？</h2>
+        <div class="reflection-question">
+            <strong>我們既從仇敵手中被救出來，就可以終身「在祂面前，以聖潔、公義事奉祂」。</strong>
+            <br>
+            那麼，我目前的生活中，有哪些地方真正反映出我是屬於上帝的人？
+        </div>
+        <br>
+        <div class="reflection-question">
+            <strong>約翰逐漸長大、心靈強健，在曠野中等待上帝所定的時候。</strong>
+            <br>
+            你是否曾經(或 正在 )經歷某種「曠野季節」？（工作、家庭、服事、健康……）這個季節帶給你什麼感受？
+        </div>
+    </div>
+
+</section>
+
+<!-- =====================================================
+     結語圖片
+====================================================== -->
+
+
+
 </main>
 
 <!-- =====================================================
@@ -1280,7 +1385,7 @@ footer strong {
 <footer>
     <p><strong>路加福音 1:67–80</strong></p>
     <p>上帝守約的救恩｜從約翰預備道路，到基督帶來光明</p>
-    <p style="margin-top:12px;">基督教長老教會查經教材</p>
+    <p style="margin-top:12px;">愛牧小組線上查經</p>
 </footer>
 
 </body>
