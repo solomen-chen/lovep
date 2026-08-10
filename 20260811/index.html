@@ -1,652 +1,1392 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>曠野的操練——隱藏與顯明 | 線上查經分享</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路加福音 1:67–80｜上帝守約的救恩</title>
+<style>
 
-        body {
-            font-family: 'Segoe UI', 'Noto Serif TC', 'Times New Roman', '微軟正黑體', serif;
-            background: #1c1812;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 1.2rem;
-            background-image: url('images/background1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            position: relative;
-        }
+/* =========================================================
+   基本設定
+========================================================= */
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(12, 10, 6, 0.55);
-            backdrop-filter: blur(1px);
-            z-index: 0;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 強制水平書寫模式，避免中文字型或瀏覽器誤判為直式排版 */
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed;
+}
 
-        .main-container {
-            position: relative;
-            z-index: 2;
-            max-width: 850px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            padding: 1rem 0 2rem 0;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* === 區塊一：標題區 === */
-        .hero-section {
-            background: rgba(248, 242, 225, 0.93);
-            backdrop-filter: blur(12px);
-            background: linear-gradient(150deg, rgba(250, 245, 228, 0.95) 0%, rgba(225, 210, 170, 0.9) 100%);
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 5px 12px rgba(0,0,0,0.4), inset 0 2px 8px rgba(255, 255, 200, 0.5);
-            padding: 2.5rem 2.5rem 2rem 2.5rem;
-            border: 1px solid rgba(170, 140, 70, 0.5);
-            text-align: center;
-            background-image: url('images/background2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            position: relative;
-        }
+body {
+    font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "PingFang TC",
+        sans-serif;
+    color: #263238;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    background:
+        linear-gradient(
+            rgba(248, 246, 239, 0.93),
+            rgba(248, 246, 239, 0.96)
+        ),
+        url("images/bg-main.png")
+        center top / cover fixed;
+}
 
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(248, 242, 225, 0.85);
-            border-radius: 2rem;
-            z-index: 0;
-        }
+img {
+    max-width: 100%;
+    display: block;
+}
 
-        .hero-section > * {
-            position: relative;
-            z-index: 1;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        .illustration-top {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-        }
 
-        .illustration-top img {
-            max-width: 100%;
-            height: auto;
-            max-height: 180px;
-            border-radius: 1.5rem 0.8rem 1.5rem 0.8rem;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 3px rgba(200, 165, 80, 0.5);
-            object-fit: cover;
-        }
+/* =========================================================
+   Hero
+========================================================= */
 
-        .hero-section h1 {
-            font-size: 2.8rem;
-            font-weight: 500;
-            color: #3a2a0f;
-            letter-spacing: 0.25rem;
-            text-shadow: 1px 1px 0 rgba(210, 180, 110, 0.4);
-            font-family: 'Noto Serif TC', 'Times New Roman', serif;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    background:
+        linear-gradient(
+            rgba(10, 25, 38, 0.48),
+            rgba(10, 25, 38, 0.72)
+        ),
+        url("images/hero-zacharias.png")
+        center / cover no-repeat;
+}
 
-        .hero-section .subtitle {
-            font-size: 1.4rem;
-            color: #6b5a38;
-            font-style: italic;
-            letter-spacing: 0.1rem;
-            margin-bottom: 0.8rem;
-        }
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 213, 120, 0.18),
+            transparent 55%
+        );
+}
 
-        .hero-section .info-line {
-            font-size: 1.15rem;
-            color: #5a4525;
-            letter-spacing: 0.08rem;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 50px 25px;
+}
 
-        /* === 區塊二：核心經文 === */
-        .scripture-section {
-            background: rgba(245, 238, 215, 0.93);
-            backdrop-filter: blur(10px);
-            border-radius: 2rem;
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 3px 10px rgba(0,0,0,0.3), inset 0 1px 6px rgba(255, 255, 190, 0.5);
-            padding: 2.2rem 2.5rem;
-            border: 1px solid rgba(160, 130, 60, 0.45);
-            text-align: center;
-            background-image: url('images/background3.jpg');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: soft-light;
-            position: relative;
-        }
+.eyebrow {
+    display: inline-block;
+    padding: 6px 18px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    background: rgba(0,0,0,.18);
+}
 
-        .scripture-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(245, 238, 215, 0.82);
-            border-radius: 2rem;
-            z-index: 0;
-        }
+.hero h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.25;
+    text-shadow: 0 3px 15px rgba(0,0,0,.45);
+    margin-bottom: 20px;
+}
 
-        .scripture-section > * {
-            position: relative;
-            z-index: 1;
-        }
+.hero-subtitle {
+    font-size: clamp(18px, 2.4vw, 28px);
+    font-weight: 400;
+    margin-bottom: 28px;
+    color: #ffe7a5;
+}
 
-        .scripture-section h2 {
-            font-size: 1.6rem;
-            color: #5a3f1a;
-            letter-spacing: 0.15rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px dashed #b49450;
-            display: inline-block;
-            padding-bottom: 0.4rem;
-        }
+.hero-desc {
+    max-width: 760px;
+    margin: auto;
+    font-size: 17px;
+    color: rgba(255,255,255,.9);
+}
 
-        .scripture-text {
-            font-size: 1.6rem;
-            line-height: 2.2;
-            color: #2d1f0a;
-            font-weight: 500;
-            font-style: italic;
-            background: rgba(255, 250, 230, 0.6);
-            padding: 1.5rem 2rem;
-            border-radius: 2rem 1rem 2rem 1rem;
-            margin: 1rem 0;
-        }
 
-        .scripture-reference {
-            font-size: 1.2rem;
-            color: #6b5a38;
-            letter-spacing: 0.1rem;
-        }
+/* =========================================================
+   導覽列
+========================================================= */
 
-        /* === 區塊三：大綱內容 === */
-        .outline-section {
-            background: rgba(250, 246, 233, 0.94);
-            backdrop-filter: blur(10px);
-            border-radius: 2rem;
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 3px 10px rgba(0,0,0,0.3), inset 0 1px 6px rgba(255, 255, 190, 0.5);
-            padding: 2.5rem 2.8rem;
-            border: 1px solid rgba(160, 130, 60, 0.45);
-            background-image: url('images/background4.jpg');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            position: relative;
-        }
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(25, 42, 54, .96);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,.12);
+}
 
-        .outline-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(250, 246, 233, 0.88);
-            border-radius: 2rem;
-            z-index: 0;
-        }
+.nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
 
-        .outline-section > * {
-            position: relative;
-            z-index: 1;
-        }
+.nav a {
+    color: #fff;
+    padding: 14px 18px;
+    white-space: nowrap;
+    font-size: 14px;
+    transition: .25s;
+}
 
-        .outline-section h2 {
-            font-size: 2rem;
-            color: #3d2a10;
-            text-align: center;
-            letter-spacing: 0.2rem;
-            margin-bottom: 1.8rem;
-            border-bottom: 2px dashed #b49450;
-            padding-bottom: 0.6rem;
-            font-family: 'Noto Serif TC', serif;
-        }
+.nav a:hover {
+    background: rgba(255,255,255,.12);
+    color: #ffd978;
+}
 
-        .outline-section h3 {
-            font-size: 1.7rem;
-            color: #5a3f1a;
-            margin: 2.2rem 0 1rem 0;
-            border-left: 6px solid #b49450;
-            padding-left: 1.2rem;
-            font-weight: 500;
-            line-height: 1.5;
-        }
 
-        .outline-section h3:first-of-type {
-            margin-top: 0;
-        }
+/* =========================================================
+   容器
+========================================================= */
 
-        .outline-section h4 {
-            font-size: 1.35rem;
-            color: #6b4c1f;
-            margin: 1.4rem 0 0.6rem 0;
-            font-weight: 500;
-        }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 24px;
+}
 
-        .outline-section p {
-            font-size: 1.25rem;
-            line-height: 2;
-            color: #2d1f0a;
-            margin-bottom: 1rem;
-            text-align: justify;
-            text-indent: 1.8em;
-        }
+.section {
+    margin-bottom: 80px;
+}
 
-        .outline-section ul,
-        .outline-section ol {
-            margin: 0.8rem 0 1.2rem 2.5rem;
-            font-size: 1.25rem;
-            line-height: 2;
-            color: #2d1f0a;
-        }
 
-        .outline-section ul li,
-        .outline-section ol li {
-            margin-bottom: 0.6rem;
-        }
+/* =========================================================
+   Section Title
+========================================================= */
 
-        .outline-section ul li strong,
-        .outline-section ol li strong {
-            color: #7a4f1c;
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: 42px;
+}
 
-        .highlight-box {
-            background: rgba(200, 165, 100, 0.2);
-            border-left: 6px solid #b48b3a;
-            padding: 1.3rem 1.8rem;
-            margin: 1.8rem 0;
-            border-radius: 0 1.2rem 1.2rem 0;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 1.25rem;
-            line-height: 2;
-            color: #3d2a10;
-        }
+.section-title .small {
+    display: block;
+    font-size: 13px;
+    letter-spacing: .2em;
+    color: #a27a28;
+    margin-bottom: 8px;
+}
 
-        .illustration-mid {
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-        }
+.section-title h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    color: #193342;
+    line-height: 1.4;
+}
 
-        .illustration-mid img {
-            max-width: 100%;
-            height: auto;
-            max-height: 200px;
-            border-radius: 1.5rem 0.8rem 1.5rem 0.8rem;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(200, 165, 80, 0.5);
-            object-fit: cover;
-        }
+.section-title p {
+    max-width: 720px;
+    margin: 12px auto 0;
+    color: #65747d;
+}
 
-        .time-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 1.2rem;
-            line-height: 2;
-            background: rgba(255, 250, 230, 0.6);
-            border-radius: 1rem;
-            overflow: hidden;
-        }
 
-        .time-table th {
-            background: rgba(180, 140, 60, 0.35);
-            padding: 0.8rem 1.2rem;
-            text-align: left;
-            font-weight: 600;
-            color: #3d2a10;
-        }
+/* =========================================================
+   核心信息卡
+========================================================= */
 
-        .time-table td {
-            padding: 0.8rem 1.2rem;
-            border-bottom: 1px solid rgba(180, 140, 60, 0.3);
-            color: #2d1f0a;
-        }
+.core-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
 
-        /* === 區塊四：小組討論題 === */
-        .discussion-section {
-            background: rgba(248, 240, 220, 0.94);
-            backdrop-filter: blur(10px);
-            border-radius: 2rem;
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 3px 10px rgba(0,0,0,0.3), inset 0 1px 6px rgba(255, 255, 190, 0.5);
-            padding: 2.5rem 2.8rem;
-            border: 1px solid rgba(160, 130, 60, 0.45);
-            background-image: url('images/background5.jpg');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            position: relative;
-        }
+.core-card {
+    background: rgba(255,255,255,.92);
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(36,52,61,.08);
+    border-top: 4px solid #c69b42;
+    transition: transform .25s;
+}
 
-        .discussion-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(248, 240, 220, 0.86);
-            border-radius: 2rem;
-            z-index: 0;
-        }
+.core-card:hover {
+    transform: translateY(-5px);
+}
 
-        .discussion-section > * {
-            position: relative;
-            z-index: 1;
-        }
+.core-number {
+    font-size: 30px;
+    font-weight: 800;
+    color: #b08129;
+    margin-bottom: 5px;
+}
 
-        .discussion-section h2 {
-            font-size: 2rem;
-            color: #3d2a10;
-            text-align: center;
-            letter-spacing: 0.2rem;
-            margin-bottom: 1.8rem;
-            border-bottom: 2px dashed #b49450;
-            padding-bottom: 0.6rem;
-            font-family: 'Noto Serif TC', serif;
-        }
+.core-card h3 {
+    color: #1e3a4a;
+    margin-bottom: 8px;
+}
 
-        .discussion-item {
-            background: rgba(255, 250, 230, 0.65);
-            border-radius: 1.2rem;
-            padding: 1.5rem 1.8rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(180, 140, 60, 0.35);
-            transition: all 0.3s ease;
-        }
+.core-card p {
+    font-size: 14px;
+    color: #66737a;
+}
 
-        .discussion-item:hover {
-            background: rgba(255, 250, 230, 0.9);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
 
-        .discussion-item h3 {
-            font-size: 1.5rem;
-            color: #5a3f1a;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
+/* =========================================================
+   經文總覽
+========================================================= */
 
-        .discussion-item p {
-            font-size: 1.2rem;
-            line-height: 2;
-            color: #2d1f0a;
-        }
+/* 「角」字樣式 */
+.horn-link {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s, text-decoration 0.2s;
+}
 
-        .discussion-item .question-number {
-            display: inline-block;
-            background: #b49450;
-            color: #fff;
-            width: 2.2rem;
-            height: 2.2rem;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 2.2rem;
-            font-weight: 600;
-            margin-right: 0.6rem;
-            font-size: 1.2rem;
-        }
+.horn-link:hover {
+    color: darkred;
+    text-decoration: underline;
+}
 
-        .footer-note {
-            text-align: center;
-            font-size: 1.15rem;
-            color: #6b5a38;
-            margin-top: 1rem;
-            font-style: italic;
-            letter-spacing: 0.05rem;
-        }
-        .verse-link {
-            color: #590bb8; /* 金褐色,可依整體配色調整 */
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease, text-decoration 0.3s ease;
-        }
+/* 浮動視窗背景 */
+.horn-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
 
-        .verse-link:hover {
-            color: #d4af37; /* hover 時稍微亮一點的金色 */
-            text-decoration: underline;
-        }
+/* 浮動視窗內容 */
+.horn-popup-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
 
-        /* === 響應式設計 === */
-        @media (max-width: 700px) {
-            body {
-                padding: 0.6rem;
-            }
-            .hero-section {
-                padding: 1.8rem 1.4rem;
-            }
-            .hero-section h1 {
-                font-size: 2rem;
-                letter-spacing: 0.15rem;
-            }
-            .hero-section .subtitle {
-                font-size: 1.2rem;
-            }
-            .scripture-section {
-                padding: 1.8rem 1.4rem;
-            }
-            .scripture-text {
-                font-size: 1.3rem;
-                padding: 1rem 1.2rem;
-            }
-            .outline-section {
-                padding: 1.8rem 1.4rem;
-            }
-            .outline-section h2 {
-                font-size: 1.6rem;
-            }
-            .outline-section h3 {
-                font-size: 1.4rem;
-            }
-            .outline-section p,
-            .outline-section ul,
-            .outline-section ol {
-                font-size: 1.15rem;
-            }
-            .discussion-section {
-                padding: 1.8rem 1.4rem;
-            }
-            .discussion-section h2 {
-                font-size: 1.6rem;
-            }
-            .discussion-item h3 {
-                font-size: 1.3rem;
-            }
-            .discussion-item p {
-                font-size: 1.1rem;
-            }
-            .highlight-box {
-                font-size: 1.15rem;
-                padding: 1rem 1.2rem;
-            }
-        }
-    </style>
+.horn-popup-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 關閉按鈕 */
+.horn-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.horn-close:hover {
+    color: #000;
+}
+
+.scripture-box {
+    background: linear-gradient(135deg, #203d4d, #142b38);
+    color: white;
+    border-radius: 22px;
+    padding: 45px;
+    margin-bottom: 45px;
+    box-shadow: 0 18px 45px rgba(24,45,58,.2);
+}
+
+.scripture-box .label {
+    color: #f1c96d;
+    font-size: 13px;
+    letter-spacing: .15em;
+    margin-bottom: 15px;
+}
+
+.scripture-box h3 {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.scripture-box p {
+    color: rgba(255,255,255,.88);
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #ffd978;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   逐節解經
+========================================================= */
+
+.verse-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.verse-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    background: rgba(255,255,255,.95);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(30,50,60,.07);
+    border: 1px solid rgba(170,150,100,.15);
+}
+
+.verse-number {
+    background: #244656;
+    color: #f7d67f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.verse-content {
+    padding: 30px 32px;
+}
+
+.verse-content h3 {
+    color: #1f4658;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.wilderness-link {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.wilderness-link:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   ★ 經文放置區
+========================================================= */
+
+.scripture-text {
+    position: relative;
+    margin: 18px 0 25px;
+    padding: 24px 25px 22px 30px;
+    background: linear-gradient(135deg, #f7f1df, #fffdf7);
+    border-left: 5px solid #c69b42;
+    border-radius: 0 12px 12px 0;
+    color: #4d4435;
+    
+    font-family: "Noto Serif TC", serif;
+    font-size: 34px;
+    font-weight: 1400;
+    line-height: 2;
+    box-shadow: inset 0 0 20px rgba(160,130,70,.05);
+    min-height: 75px;
+}
+
+.scripture-text::before {
+    content: "經文";
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-size: 12px;
+    font-weight: 1400;
+    letter-spacing: .18em;
+    color: #9a7224;
+}
+
+.scripture-placeholder {
+    color: #a69b87;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-size: 14px;
+    font-style: italic;
+}
+.oath-link {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.oath-link:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   解經
+========================================================= */
+
+.explanation {
+    margin-top: 10px;
+}
+
+.explanation h4 {
+    color: #234554;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.explanation p {
+    color: #596970;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   長老教會觀點
+========================================================= */
+
+.insight {
+    margin-top: 18px;
+    padding: 17px 19px;
+    border-left: 4px solid #c69b42;
+    background: #faf6e9;
+    color: #5c5034;
+    font-size: 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.insight strong {
+    color: #8a641d;
+}
+
+
+/* =========================================================
+   圖文區
+========================================================= */
+
+.visual-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 70px 0;
+}
+
+.visual-section.reverse .visual-image {
+    order: 2;
+}
+
+.visual-image {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0,0,0,.14);
+}
+
+.visual-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.visual-image:hover img {
+    transform: scale(1.035);
+}
+
+.visual-text h2 {
+    color: #1e4050;
+    font-size: 31px;
+    margin-bottom: 18px;
+}
+
+.visual-text p {
+    margin-bottom: 15px;
+}
+
+.key-point {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-top: 20px;
+    box-shadow: 0 7px 22px rgba(0,0,0,.06);
+    border-left: 4px solid #c69b42;
+}
+
+
+/* =========================================================
+   神學核心
+========================================================= */
+
+.theology-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.theology-card {
+    background: rgba(255,255,255,.94);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(30,50,60,.07);
+}
+
+.theology-card .icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f2e4bc;
+    color: #775617;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.theology-card h3 {
+    color: #234554;
+    margin-bottom: 10px;
+}
+
+.theology-card p {
+    color: #596970;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   救贖歷史 Timeline
+========================================================= */
+
+.timeline {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #d3b36a;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 35px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #244656;
+    border: 5px solid #f5edd9;
+}
+
+.timeline-item h3 {
+    color: #234554;
+    margin-bottom: 5px;
+}
+
+.timeline-item p {
+    color: #5d6b71;
+}
+
+
+/* =========================================================
+   Summary
+========================================================= */
+
+.summary {
+    background: linear-gradient(135deg, rgba(30,58,72,.96), rgba(18,35,45,.97));
+    color: white;
+    border-radius: 25px;
+    padding: 60px 45px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(20,40,50,.2);
+}
+
+.summary h2 {
+    font-size: 34px;
+    color: #f5d37b;
+    margin-bottom: 25px;
+}
+
+.summary .quote {
+    font-size: 23px;
+    line-height: 1.8;
+    max-width: 820px;
+    margin: auto;
+    color: #fff;
+}
+
+.summary .small-text {
+    max-width: 760px;
+    margin: 25px auto 0;
+    color: rgba(255,255,255,.78);
+}
+
+
+/* =========================================================
+   小組反思
+========================================================= */
+
+.reflection {
+    background: #f4ecda;
+    border-radius: 22px;
+    padding: 25px;
+    border: 1px solid #e4d4af;
+}
+
+.reflection h2 {
+    color: #76561b;
+    margin-bottom: 15px;
+}
+
+.reflection-question {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    font-size: 19px;
+    color: #334c57;
+    box-shadow: 0 6px 20px rgba(0,0,0,.05);
+}
+
+
+/* =========================================================
+   Footer
+========================================================= */
+
+footer {
+    background: #142b38;
+    color: rgba(255,255,255,.72);
+    text-align: center;
+    padding: 45px 20px;
+    font-size: 14px;
+}
+
+footer strong {
+    color: #f0ca6d;
+}
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 850px) {
+    .core-grid { grid-template-columns: repeat(2, 1fr); }
+    .visual-section { grid-template-columns: 1fr; }
+    .visual-section.reverse .visual-image { order: 0; }
+    .theology-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .hero { min-height: 560px; }
+    .container { padding: 55px 18px; }
+    .core-grid { grid-template-columns: 1fr; }
+    .scripture-box { padding: 30px 22px; }
+    .verse-card { grid-template-columns: 65px 1fr; }
+    .verse-number { font-size: 18px; }
+    .verse-content { padding: 22px 18px; }
+    .scripture-text { padding: 20px 18px 18px 20px; font-size: 16px; }
+    .summary { padding: 40px 24px; }
+    .summary .quote { font-size: 19px; }
+    .reflection { padding: 30px 22px; }
+}
+
+</style>
 </head>
+
+<script>
+function showHornPopup(event) {
+    event.preventDefault(); // 防止頁面跳轉
+    document.getElementById('horn-popup').style.display = 'block';
+}
+
+function closeHornPopup() {
+    document.getElementById('horn-popup').style.display = 'none';
+}
+
+// 點擊背景也可以關閉
+window.onclick = function(event) {
+    const popup = document.getElementById('horn-popup');
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+}
+</script>
+
+
+
 <body>
-    <div class="main-container">
 
-        <!-- ===== 區塊一：標題區 ===== -->
-        <div class="hero-section">
-            <div class="illustration-top">
-                <img src="images/illustration1.jpg" alt="曠野中的施洗約翰">
-            </div>
-            <h1>曠野的操練</h1>
-            <div class="subtitle">—— 隱藏與顯明 ——</div>
-             <div class="info-line">
-                <a href="text.html" class="verse-link" target="_blank">路加福音 一 67:80</a>
-            </div>
-           
-            <div class="info-line" style="margin-top:0.3rem;">從古老的聖經尋求現代生活的智慧</div>
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            路加福音 1:67–80
+        </span>
+
+        <h1>
+            上帝守約的救恩
+        </h1>
+
+        <div class="hero-subtitle">
+            從約翰預備道路，到基督帶來光明
         </div>
 
-        <!-- ===== 區塊二：核心經文 ===== -->
-        <div class="scripture-section">
-            <h2>📖 核心經文</h2>
+        <p class="hero-desc">
+            撒迦利亞被聖靈充滿所發出的預言，
+            不只是為兒子約翰出生而歡喜，
+            更是在宣告上帝信實守約，
+            並且正在歷史中成就祂所應許的救恩。
+        </p>
+
+    </div>
+
+</header>
+
+<!-- =====================================================
+     導覽列
+====================================================== -->
+
+<nav class="nav">
+
+    <div class="nav-inner">
+        <a href="#overview">整段概覽</a>
+        <a href="#verses">逐節解經</a>
+        <a href="#covenant">上帝守約</a>
+        <a href="#john">約翰使命</a>
+        <a href="#salvation">救恩與光</a>
+        <a href="#theology">長老教會觀點</a>
+        <a href="#reflection">小組反思</a>
+    </div>
+
+</nav>
+
+<main>
+
+<!-- =====================================================
+     一、整段概覽
+====================================================== -->
+
+<section id="overview" class="container section">
+
+    <div class="section-title">
+        <span class="small">路加福音 1:67–80</span>
+        <h2>這段經文在說什麼？</h2>
+        <p>撒迦利亞看見約翰的出生，卻沒有把焦點停留在自己的家庭，而是看見上帝正在實現祂長久以來的救贖計畫。</p>
+    </div>
+
+    <div class="core-grid">
+
+        <div class="core-card">
+            <div class="core-number">01</div>
+            <h3>上帝守約</h3>
+            <p>上帝記念與亞伯拉罕、大衛所立的約。</p>
+        </div>
+
+        <div class="core-card">
+            <div class="core-number">02</div>
+            <h3>基督救贖</h3>
+            <p>上帝興起救主，為祂的百姓施行救贖。</p>
+        </div>
+
+        <div class="core-card">
+            <div class="core-number">03</div>
+            <h3>約翰預備</h3>
+            <p>約翰不是基督，而是預備主道路的先知。</p>
+        </div>
+
+        <div class="core-card">
+            <div class="core-number">04</div>
+            <h3>黑暗變光</h3>
+            <p>上帝的憐憫使人從罪與死蔭中，走向光明與平安。</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     二、逐節解經
+====================================================== -->
+
+<section id="verses" class="container section">
+
+    <div class="section-title">
+       
+        <h2>路加福音 1:67–80 </h2>
+       
+    </div>
+
+    <div class="verse-list">
+
+    <!-- ===== 1:67 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:67</div>
+        <div class="verse-content">
+            <h3>聖靈充滿，撒迦利亞說預言</h3>
             <div class="scripture-text">
-                「那孩子漸漸長大，心靈強健，<br>住在曠野，<br>直到他顯明在以色列人面前的日子。」
+                他父親撒迦利亞被聖靈充滿了，就預言說：
             </div>
-            <div class="scripture-reference">—— 路加福音 1:80（新標點和合本上帝版）</div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>撒迦利亞在經歷上帝的管教與應許成就之後，被聖靈充滿，開始宣告上帝的作為。這不是撒迦利亞單純表達個人的宗教感想，而是在聖靈引導下宣告上帝正在成就的救恩。</p>
+            </div>
+            <div class="insight"><strong>亮點：</strong>真正的信仰不是人自己發明出來的，而是聖靈使人看見上帝已經成就的救恩。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:68 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:68</div>
+        <div class="verse-content">
+            <h3>上帝眷顧百姓，施行救贖</h3>
+            <div class="scripture-text">
+                主－以色列的上帝是應當稱頌的！<br>
+                因他眷顧他的百姓，為他們施行救贖，
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>撒迦利亞首先稱頌「主以色列的上帝」。救恩的主體是上帝，而不是人的能力。「眷顧」表示上帝親自介入、看顧並施行拯救。</p>
+            </div>
+            <div class="insight"><strong>核心：</strong>上帝主動眷顧、主動介入、主動施行救贖。這與改革宗「唯獨恩典」的福音核心相呼應。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:69 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:69</div>
+        <div class="verse-content">
+            <h3>大衛家的「拯救的角」</h3>
+            <div class="scripture-text">
+                在他僕人大衛家中，為我們興起了拯救的
+                <a href="#" class="horn-link" onclick="showHornPopup(event)">角</a>，
+            </div>
+            <!-- 浮動視窗 -->
+            <div id="horn-popup" class="horn-popup">
+                <div class="horn-popup-content">
+                    <span class="horn-close" onclick="closeHornPopup()">&times;</span>
+                    <img src="images/horn.png" alt="角">
+                </div>
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>「角」在聖經中常象徵力量、權柄、得勝與庇護。「拯救的角」指向上帝所興起、有能力完成救恩的君王。<br>
+" 神在大衛的家族中，為我們興起了一位大有能力、滿有權柄、能讓我們藏身得救的君王救主。"</p>
+            </div>
+            <div class="insight"><strong>指向基督：</strong>耶穌是上帝應許的大衛後裔，是真正的彌賽亞君王。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:70 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:70</div>
+        <div class="verse-content">
+            <h3>上帝早已藉先知應許</h3>
+            <div class="scripture-text">
+                正如主藉着從創世以來聖先知的口所說的話，
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>基督的降臨不是突然出現的事件。上帝早已藉著先知，在舊約歷史中逐步啟示祂的救贖計畫。</p>
+            </div>
+            <div class="insight"><strong>救贖歷史：</strong>舊約的應許，在基督裡逐漸達到成全。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:71 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:71</div>
+        <div class="verse-content">
+            <h3>從仇敵手中拯救</h3>
+            <div class="scripture-text">
+                拯救我們脫離仇敵<br>
+                和一切恨我們之人的手，
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>當時以色列人可能期待政治上的解放，但耶穌所帶來的救恩遠遠超過政治自由。基督真正要處理的是罪、死亡、撒但以及人與上帝隔絕的問題。</p>
+            </div>
+            <div class="insight"><strong>更深的仇敵：</strong>基督真正要處理的是罪與死亡對人的轄制，並恢復人與上帝的關係。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:72 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:72</div>
+        <div class="verse-content">
+            <h3>上帝記念祂的聖約</h3>
+            <div class="scripture-text">
+                向我們列祖施憐憫，<br>
+                記念他的聖約－
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>撒迦利亞將眼前發生的事情，放在上帝長久的立約關係中來理解。上帝不是隨意行事，而是忠實履行祂的應許。</p>
+            </div>
+            <div class="insight"><strong>重要真理：</strong>人會失信，但上帝是守約的上帝。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:73 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:73</div>
+        <div class="verse-content">
+            <h3>上帝向亞伯拉罕所起的誓</h3>
+            <div class="scripture-text">
+                就是他對我們祖宗亞伯拉罕所起的
+                <a href="oath.html" target="_blank" class="oath-link">誓</a>－
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>救恩計畫可以一路追溯到亞伯拉罕。從亞伯拉罕、大衛，一直到基督，上帝的應許逐步實現。</p>
+            </div>
+            <div class="insight"><strong>救贖歷史：</strong>亞伯拉罕 → 以色列 → 大衛 → 彌賽亞。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:74–75 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:74<br>–75</div>
+        <div class="verse-content">
+            <h3>被救出來，是為了事奉上帝</h3>
+            <div class="scripture-text">
+                叫我們既從仇敵手中被救出來，<br>
+                就可以終身在他面前，<br>
+                坦然無懼地用聖潔、公義事奉他。
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>上帝救人不是單純讓人得到更舒服的人生。救贖的目的，是讓我們能夠在祂面前，以聖潔、公義事奉祂。</p>
+            </div>
+            <div class="insight"><strong>新觀點：</strong>不是「事奉上帝 → 換取救恩」，而是「領受救恩 → 甘心事奉上帝」。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:76 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:76</div>
+        <div class="verse-content">
+            <h3>約翰：至高者的先知</h3>
+            <div class="scripture-text">
+                孩子啊！你要稱為至高者的先知；<br>
+                因為你要行在主的前面，<br>
+                預備他的道路，
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>約翰的使命非常清楚：「行在主的前面，預備他的道路。」他不是救主，而是為救主預備道路的先知。</p>
+            </div>
+            <div class="insight"><strong>約翰不是主角：</strong>真正的事奉不是把人帶到自己面前，而是把人帶到基督面前。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:77 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:77</div>
+        <div class="verse-content">
+            <h3>因罪得赦，就知道救恩</h3>
+            <div class="scripture-text">
+                叫他的百姓因罪得赦，<br>
+                就知道救恩。
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>這裡直接指出救恩的核心：「罪得赦免」。福音最深的問題不是如何讓人生更成功，而是罪人如何與聖潔的上帝和好。</p>
+            </div>
+            <div class="insight"><strong>福音核心：</strong>基督教的救恩不只是改善生活，而是罪人藉著基督與上帝重新和好。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:78 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:78</div>
+        <div class="verse-content">
+            <h3>上帝憐憫的心腸</h3>
+            <div class="scripture-text">
+                因我們上帝憐憫的心腸，<br>
+                叫清晨的日光從高天臨到我們，
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>救恩的根源不是人的功德，而是上帝憐憫的心。「清晨的日光」預示上帝的救恩即將臨到祂的百姓。</p>
+            </div>
+            <div class="insight"><strong>唯獨恩典：</strong>我們不是因為夠好而被拯救，而是因為上帝憐憫我們。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:79 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:79</div>
+        <div class="verse-content">
+            <h3>黑暗、死蔭、光明與平安</h3>
+            <div class="scripture-text">
+                要照亮坐在黑暗中死蔭裏的人，<br>
+                把我們的腳引到平安的路上。
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>黑暗象徵罪、無知、死亡與沒有盼望。光則象徵上帝的真理與救恩。撒迦利亞所宣告的「清晨的日光」，最終在耶穌基督裡得到完全實現。</p>
+            </div>
+            <div class="insight"><strong>基督就是光：</strong>基督把人從黑暗與死蔭中，帶到上帝的光明與平安中。</div>
+        </div>
+    </article>
+
+    <!-- ===== 1:80 ===== -->
+    <article class="verse-card">
+        <div class="verse-number">1:80</div>
+        <div class="verse-content">
+            <h3>約翰在曠野被預備</h3>
+            <div class="scripture-text">
+                那孩子漸漸長大，心靈強健，住在
+                <a href="wilderness.html" target="_blank" class="wilderness-link">曠野</a>，
+                直到他顯明在以色列人面前的日子。
+            </div>
+            <div class="explanation">
+                <h4>經文解釋</h4>
+                <p>約翰逐漸長大、心靈強健，在曠野中等待上帝所定的時候。曠野也成為約翰預備自己、等候上帝差遣的重要地方。</p>
+            </div>
+            <div class="insight"><strong>屬靈提醒：</strong>上帝的工作有祂自己的時間。預備本身也是上帝工作的一部分。</div>
+        </div>
+    </article>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     三、上帝守約
+====================================================== -->
+
+<section id="covenant" class="container section">
+
+    <div class="visual-section">
+
+        <div class="visual-image">
+            <img src="images/covenant-light.png" alt="上帝守約與救贖歷史">
         </div>
 
-        <!-- ===== 區塊三：分享大綱 ===== -->
-        <div class="outline-section">
-            <h2>📝 分享短講大綱</h2>
-
-            <!-- 一、開場 -->
-            <h3>一、開場：我們都經歷過「曠野」</h3>
-            <p><strong>現代人的曠野是什麼？</strong></p>
-            <ul>
-                <li>職場被邊緣化的時期</li>
-                <li>生病休養的季節</li>
-                <li>失業待業的空窗</li>
-                <li>事奉倦怠後的沉寂</li>
-                <li>社群媒體上的「被遺忘感」</li>
-            </ul>
-            <p><strong>共同的感受：</strong>被隱藏、沒有舞台、好像沒有人看見我的價值。</p>
-            <div class="highlight-box">
-                💭 <strong>提問思考：</strong>「你有沒有經歷過一段時間，覺得自己被上帝『放在一邊』？那段日子，你在做什麼？」
-            </div>
-
-            <!-- 二、曠野的聖經脈絡 -->
-            <h3>二、曠野的聖經脈絡：不只是地理，更是神學</h3>
-            <ul>
-                <li><strong>曠野是煉淨與預備之地：</strong>以色列人出埃及後曠野四十年（申8:2-3），上帝熬煉他們，叫他們知道「人活著不是單靠食物」。</li>
-                <li><strong>曠野是愛情與立約之地：</strong>耶利米書2:2「你幼年的恩愛，婚姻的愛情，你怎樣在曠野……跟隨我」。</li>
-                <li><strong>曠野是先知塑造之地：</strong>摩西在米甸曠野四十年、以利亞在曠野逃命、施洗約翰住在曠野直到顯明。</li>
-            </ul>
-            <div class="highlight-box">
-                🌟 <strong>核心信息：</strong>曠野不是上帝的遺忘，而是上帝的溫室。上帝用曠野栽培那些祂將要大用的人。
-            </div>
-
-            <!-- 中間插圖 -->
-            <div class="illustration-mid">
-                <img src="images/illustration2.jpg" alt="猶太曠野的日出景象">
-            </div>
-
-            <!-- 三、約翰的曠野操練 -->
-            <h3>三、約翰的曠野操練：三個關鍵元素</h3>
-
-            <h4>1. 「漸漸長大」——沒有捷徑的成長</h4>
-            <p>約翰的父母年老才得子，他本可以在祭司家族中享受特權，卻選擇（或被聖靈引導）進入曠野。「漸漸」提醒我們：屬靈的成熟無法速成，曠野的功課需要時間熬煉。</p>
-            <p><strong>🔹 現代應用：</strong>我們是否總是追求快速的成果？是否願意讓神用「漸漸」的方式塑造我們？</p>
-
-            <h4>2. 「心靈強健」——曠野的核心產物</h4>
-            <p>曠野剝奪了外在的依賴：沒有聖殿的體面、沒有祭司的頭銜、沒有群眾的掌聲。在什麼都沒有的時候，只剩下神的話——路加記載「神的話臨到曠野裡的約翰」（路3:2）。</p>
-            <p><strong>🔹 現代應用：</strong>我們的心靈強健嗎？當手機沒訊號、沒人按讚、事工沒有果效時，我們還能站立嗎？</p>
-
-            <h4>3. 「住在曠野」——不是路過，是定居</h4>
-            <p>原文「住在」表示持續的停留，不是短暫退修會，而是長期的生活方式。約翰選擇曠野為家，這意味著他接受曠野的簡樸、孤獨與艱苦。</p>
-            <p><strong>🔹 現代應用：</strong>我們願意「住在」神所安置的處境中，還是總想著逃離？是否把當下的環境當作神的訓練場？</p>
-
-            <!-- 四、直到顯明 -->
-            <h3>四、「直到顯明」——上帝有祂的時間表</h3>
-
-            <h4>1. 「直到」——曠野有期限</h4>
-            <p>曠野不是終點，而是通往命定的必經之路。約翰在曠野待了近三十年，但上帝沒有忘記他。</p>
-
-            <h4>2. 「顯明」的希臘文原意：公開指定、正式舉薦</h4>
-            <p>不是約翰自我推薦，是上帝親自在歷史舞台上把他推出來。路加福音3:1-2記載得非常精確：「凱撒提庇留在位第十五年……神的話臨到撒迦利亞的兒子約翰」。那個時刻，是上帝親自選定的。</p>
-
-            <h4>3. 顯明的目的不是為了自己，而是為了指出基督</h4>
-            <p>約翰說：「祂必興旺，我必衰微」（約3:30）；「看哪，神的羔羊！」（約1:29）——他顯明的最高峰，是把聚光燈轉向耶穌。</p>
-
-            <div class="highlight-box">
-                🌟 <strong>核心信息：</strong>上帝隱藏我們，是為了在對的時機顯明我們；而顯明我們的目的，從來不是為了我們自己，而是為了讓基督被看見。
-            </div>
-
-            <!-- 五、現代生活的應用 -->
-            <h3>五、現代生活的應用：我們的曠野操練</h3>
-            <ol>
-                <li><strong>停止與他人比較，接受你的季節</strong>——別人正在舞台上，你可能正在曠野中，這不是落後，這是預備。種子在土裡發芽的季節，沒有人看得見，但沒有這個階段，就不會有後來的收成。</li>
-                <li><strong>用曠野建立「心靈強健」的習慣</strong>——在沒有人看見的時候，建立讀經、禱告、默想的紀律；在沒有掌聲的時候，繼續忠心於神所託付的小事。</li>
-                <li><strong>將目光從「何時顯明」轉向「如何預備」</strong>——不要一直問「神啊，還要多久？」而是問「神啊，你要我在這段時間學什麼？」</li>
-                <li><strong>認清顯明的真正目的</strong>——如果我們渴望被看見是為了自己的榮耀，曠野就只是一種折磨；如果我們渴望被神使用是為了讓基督被看見，曠野就成為最寶貴的預備期。</li>
-            </ol>
-
-            <!-- 六、結語 -->
-            <h3>六、結語</h3>
-            <div class="highlight-box">
-                🌄 施洗約翰的曠野，不是上帝的遺忘，而是上帝親手打造的預備室。<br><br>
-                你今天所處的曠野，可能是上帝正在強健你的心靈，<br>
-                預備你在祂所定的日子，為祂發光——<br>
-                不是為自己的名，乃是為祂的名。
-            </div>
-
-            <!-- 建議時間分配 -->
-            <h4 style="font-size:1.35rem; margin-top:1.5rem;">⏱️ 建議時間分配</h4>
-            <table class="time-table">
-                <tr><th>環節</th><th>時間</th></tr>
-                <tr><td>開場：生活切入</td><td>2 分鐘</td></tr>
-                <tr><td>聖經背景</td><td>3 分鐘</td></tr>
-                <tr><td>約翰的曠野操練</td><td>4 分鐘</td></tr>
-                <tr><td>直到顯明</td><td>3 分鐘</td></tr>
-                <tr><td>現代生活應用</td><td>5 分鐘</td></tr>
-                <tr><td>結語</td><td>1 分鐘</td></tr>
-                <tr><td><strong>小組分享與禱告</strong></td><td><strong>12-15 分鐘</strong></td></tr>
-                <tr><td><strong>總計</strong></td><td><strong>30-33 分鐘</strong></td></tr>
-            </table>
-        </div>
-
-        <!-- ===== 區塊四：小組討論題 ===== -->
-        <div class="discussion-section">
-            <h2>💬 小組討論題</h2>
-
-            <div class="discussion-item">
-                <h3><span class="question-number">1</span> 回顧與坦誠</h3>
-                <p>你目前是否正在經歷某種「曠野季節」？（工作、家庭、服事、健康……）這個季節帶給你什麼感受？</p>
-            </div>
-
-            <div class="discussion-item">
-                <h3><span class="question-number">2</span> 心靈強健的檢視</h3>
-                <p>你覺得自己的「心靈」現在是強健、平穩、還是疲憊？哪些屬靈操練幫助你保持心靈強健？哪些部分需要重新開始？</p>
-            </div>
-
-            <div class="discussion-item">
-                <h3><span class="question-number">3</span> 隱藏與等待</h3>
-                <p>你曾經有過「被神隱藏」的經歷嗎？那段時間學到了什麼？現在回頭看，有沒有看見神的手？</p>
-            </div>
-
-            <div class="discussion-item">
-                <h3><span class="question-number">4</span> 顯明的目的</h3>
-                <p>當我們渴望在家庭、職場或教會中被看見、被肯定時，我們的動機是什麼？如何將這些渴望轉向「讓基督被看見」？</p>
-            </div>
-
-            <div class="discussion-item">
-                <h3><span class="question-number">5</span> 彼此代禱</h3>
-                <p>為正在曠野中的肢體禱告，求神賜下堅持的力量，也求神讓我們在曠野中聽見祂的聲音。</p>
-            </div>
-
-            <div class="footer-note">
-                🙏 願我們在曠野中遇見神，在隱藏中得著力量，在祂的時間裡被顯明，為祂發光。
+        <div class="visual-text">
+            <h2>上帝是守約的上帝</h2>
+            <p>撒迦利亞不是只從「孩子出生」來看這件事，而是把它放進幾百年的救贖歷史中。</p>
+            <p>上帝曾與亞伯拉罕立約，又向大衛應許永遠的國度。如今這些應許正在基督裡逐步實現。</p>
+            <div class="key-point">
+                <strong>核心思想：</strong><br>
+                人的計畫會改變，人的信心會軟弱，但上帝的應許永不失效。
             </div>
         </div>
 
     </div>
+
+</section>
+
+<!-- =====================================================
+     救贖歷史
+====================================================== -->
+
+<section class="container section">
+
+    <div class="section-title">
+        <span class="small">SALVATION HISTORY</span>
+        <h2>上帝救贖計畫的脈絡</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3>亞伯拉罕</h3>
+            <p>上帝應許藉著他的後裔，使萬國得福。</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3>以色列</h3>
+            <p>上帝建立祂的百姓，在歷史中持續啟示祂自己。</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3>大衛</h3>
+            <p>上帝應許大衛，他的國位與彌賽亞應許相連。</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3>約翰</h3>
+            <p>約翰成為至高者的先知，預備主的道路。</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3>耶穌基督</h3>
+            <p>上帝所應許的救主來到，在祂裡面完成救贖。</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     四、約翰
+====================================================== -->
+
+<section id="john" class="container section">
+
+    <div class="visual-section reverse">
+
+        <div class="visual-image">
+            <img src="images/john-wilderness.png" alt="約翰在曠野預備主的道路">
+        </div>
+
+        <div class="visual-text">
+            <h2>約翰的偉大：把人指向基督</h2>
+            <p>約翰是非常重要的人物，但他從來不是救恩的中心。</p>
+            <p>他的使命只有一個方向：<strong>預備主的道路。</strong></p>
+            <div class="key-point">
+                <strong>提醒：</strong><br>
+                真正的事奉不是讓人記住「我」，而是讓人透過我的服事，更認識耶穌基督。
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     五、救恩與光
+====================================================== -->
+
+<section id="salvation" class="container section">
+
+    <div class="visual-section">
+
+        <div class="visual-image">
+            <img src="images/salvation-light.png" alt="黑暗中的救恩之光">
+        </div>
+
+        <div class="visual-text">
+            <h2>從黑暗走向光明</h2>
+            <p>路加福音 1:79 將人的處境描繪成「黑暗」與「死蔭」。</p>
+            <p>這不是單純的人生低潮，而是罪、死亡與與上帝隔絕的狀態。</p>
+            <p>但上帝的憐憫使「清晨的日光」臨到我們。</p>
+            <div class="key-point">
+                <strong>福音：</strong><br>
+                基督不是只讓我們感覺好一點，而是把我們從罪與死亡的黑暗中，帶到上帝的光明與平安中。
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     基督救恩
+====================================================== -->
+
+<section class="container section">
+
+    <div class="visual-section reverse">
+
+        <div class="visual-image">
+            <img src="images/cross-silhouette.png" alt="基督十字架與救恩">
+        </div>
+
+        <div class="visual-text">
+            <h2>救恩的中心：耶穌基督</h2>
+            <p>約翰是預備道路的人，撒迦利亞是宣告的人，但真正完成救恩的是耶穌基督。</p>
+            <p>因此整段經文最後的焦點，不應停留在約翰，而要繼續向前看見基督。</p>
+            <div class="key-point">
+                <strong>約翰預備道路，基督完成救恩。</strong>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     六、長老教會觀點
+====================================================== -->
+
+<section id="theology" class="container section">
+
+    <div class="section-title">
+        <span class="small">PRESBYTERIAN / REFORMED PERSPECTIVE</span>
+        <h2>五個核心</h2>
+        <p>這段經文特別突顯上帝的主權、恩典、立約與救贖。</p>
+    </div>
+
+    <div class="theology-grid">
+
+        <div class="theology-card">
+            <div class="icon">1</div>
+            <h3>救恩是上帝主動的</h3>
+            <p>整段經文的主角是上帝。上帝眷顧、上帝救贖、上帝守約、上帝施憐憫。救恩不是人的計畫，而是上帝的恩典。</p>
+        </div>
+
+        <div class="theology-card">
+            <div class="icon">2</div>
+            <h3>上帝是守約的上帝</h3>
+            <p>從亞伯拉罕、大衛一直到基督，上帝沒有忘記祂的應許。人會失信，但上帝永遠信實。</p>
+        </div>
+
+        <div class="theology-card">
+            <div class="icon">3</div>
+            <h3>約翰不是基督</h3>
+            <p>約翰的偉大在於他忠心完成自己的使命：預備主的道路，把人的目光從自己轉向基督。</p>
+        </div>
+
+        <div class="theology-card">
+            <div class="icon">4</div>
+            <h3>救恩的核心是罪得赦免</h3>
+            <p>福音不是單純讓人生變得順利，而是罪人藉著基督與上帝和好，得著真正的救恩。</p>
+        </div>
+
+        <div class="theology-card">
+            <div class="icon">5</div>
+            <h3>得救的人要事奉上帝</h3>
+            <p>我們不是靠服事換取救恩，而是因為已經領受恩典，所以甘心以聖潔、公義的生命事奉上帝。</p>
+        </div>
+
+        <div class="theology-card">
+            <div class="icon">+</div>
+            <h3>從黑暗進入光明</h3>
+            <p>基督帶來的不只是外在環境的改變，而是生命從罪、死亡與黑暗，進入上帝的光明與平安。</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     七、核心總結
+====================================================== -->
+
+<section class="container section">
+
+    <div class="summary">
+        <h2>總結</h2>
+        <div class="quote">
+            約翰的出生不是故事的終點，而是上帝救贖計畫即將進入高潮的記號；約翰要預備道路，而真正帶來赦罪、光明、平安與救恩的，是耶穌基督。
+        </div>
+       
+    </div>
+
+</section>
+
+<section class="container section">
+
+    <div class="visual-section">
+
+        <div class="visual-image">
+            <img src="images/bible-open.png" alt="聖經查考">
+        </div>
+
+        <div class="visual-text">
+            <h2>從經文走進生活</h2>
+            <p>撒迦利亞所看見的，是一位守約、憐憫、主動施行救恩的上帝。</p>
+            <p>今天我們也可以相信：上帝仍然掌管歷史，仍然信實，仍然帶領祂的兒女。</p>
+            <div class="key-point">
+                <strong>上帝守約 → 基督救贖 → 聖靈更新 → 我們事奉</strong>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     八、小組反思
+====================================================== -->
+
+<section id="reflection" class="container section">
+
+    <div class="section-title">        
+        <h2>分享與討論</h2>
+    </div>
+
+    <div class="reflection">
+        <h2>今日，我如何回應上帝的救恩？</h2>
+        <div class="reflection-question">
+            <strong>我們既從仇敵手中被救出來，就可以終身「在祂面前，以聖潔、公義事奉祂」。</strong>
+            <br>
+            那麼，我目前的生活中，有哪些地方真正反映出我是屬於上帝的人？
+        </div>
+        <br>
+        <div class="reflection-question">
+            <strong>約翰逐漸長大、心靈強健，在曠野中等待上帝所定的時候。</strong>
+            <br>
+            你是否曾經(或 正在 )經歷某種「曠野季節」？（工作、家庭、服事、健康……）這個季節帶給你什麼感受？
+        </div>
+    </div>
+
+</section>
+
+<!-- =====================================================
+     結語圖片
+====================================================== -->
+
+
+
+</main>
+
+<!-- =====================================================
+     Footer
+====================================================== -->
+
+<footer>
+    <p><strong>路加福音 1:67–80</strong></p>
+    <p>上帝守約的救恩｜從約翰預備道路，到基督帶來光明</p>
+    <p style="margin-top:12px;">愛牧小組線上查經</p>
+</footer>
+
 </body>
 </html>

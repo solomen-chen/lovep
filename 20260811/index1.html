@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>曠野的操練——隱藏與顯明 | 線上查經分享</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Serif TC', 'Times New Roman', '微軟正黑體', serif;
+            background: #1c1812;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 1.2rem;
+            background-image: url('images/background1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(12, 10, 6, 0.55);
+            backdrop-filter: blur(1px);
+            z-index: 0;
+        }
+
+        .main-container {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1rem 0 2rem 0;
+        }
+
+        /* === 區塊一：標題區 === */
+        .hero-section {
+            background: rgba(248, 242, 225, 0.93);
+            backdrop-filter: blur(12px);
+            background: linear-gradient(150deg, rgba(250, 245, 228, 0.95) 0%, rgba(225, 210, 170, 0.9) 100%);
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 5px 12px rgba(0,0,0,0.4), inset 0 2px 8px rgba(255, 255, 200, 0.5);
+            padding: 2.5rem 2.5rem 2rem 2.5rem;
+            border: 1px solid rgba(170, 140, 70, 0.5);
+            text-align: center;
+            background-image: url('images/background2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(248, 242, 225, 0.85);
+            border-radius: 2rem;
+            z-index: 0;
+        }
+
+        .hero-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .illustration-top {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .illustration-top img {
+            max-width: 100%;
+            height: auto;
+            max-height: 180px;
+            border-radius: 1.5rem 0.8rem 1.5rem 0.8rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 3px rgba(200, 165, 80, 0.5);
+            object-fit: cover;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: #3a2a0f;
+            letter-spacing: 0.25rem;
+            text-shadow: 1px 1px 0 rgba(210, 180, 110, 0.4);
+            font-family: 'Noto Serif TC', 'Times New Roman', serif;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.4rem;
+            color: #6b5a38;
+            font-style: italic;
+            letter-spacing: 0.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-section .info-line {
+            font-size: 1.15rem;
+            color: #5a4525;
+            letter-spacing: 0.08rem;
+        }
+
+        /* === 區塊二：核心經文 === */
+        .scripture-section {
+            background: rgba(245, 238, 215, 0.93);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 3px 10px rgba(0,0,0,0.3), inset 0 1px 6px rgba(255, 255, 190, 0.5);
+            padding: 2.2rem 2.5rem;
+            border: 1px solid rgba(160, 130, 60, 0.45);
+            text-align: center;
+            background-image: url('images/background3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: soft-light;
+            position: relative;
+        }
+
+        .scripture-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(245, 238, 215, 0.82);
+            border-radius: 2rem;
+            z-index: 0;
+        }
+
+        .scripture-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .scripture-section h2 {
+            font-size: 1.6rem;
+            color: #5a3f1a;
+            letter-spacing: 0.15rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px dashed #b49450;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+        }
+
+        .scripture-text {
+            font-size: 1.6rem;
+            line-height: 2.2;
+            color: #2d1f0a;
+            font-weight: 500;
+            font-style: italic;
+            background: rgba(255, 250, 230, 0.6);
+            padding: 1.5rem 2rem;
+            border-radius: 2rem 1rem 2rem 1rem;
+            margin: 1rem 0;
+        }
+
+        .scripture-reference {
+            font-size: 1.2rem;
+            color: #6b5a38;
+            letter-spacing: 0.1rem;
+        }
+
+        /* === 區塊三：大綱內容 === */
+        .outline-section {
+            background: rgba(250, 246, 233, 0.94);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 3px 10px rgba(0,0,0,0.3), inset 0 1px 6px rgba(255, 255, 190, 0.5);
+            padding: 2.5rem 2.8rem;
+            border: 1px solid rgba(160, 130, 60, 0.45);
+            background-image: url('images/background4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        .outline-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(250, 246, 233, 0.88);
+            border-radius: 2rem;
+            z-index: 0;
+        }
+
+        .outline-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .outline-section h2 {
+            font-size: 2rem;
+            color: #3d2a10;
+            text-align: center;
+            letter-spacing: 0.2rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #b49450;
+            padding-bottom: 0.6rem;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .outline-section h3 {
+            font-size: 1.7rem;
+            color: #5a3f1a;
+            margin: 2.2rem 0 1rem 0;
+            border-left: 6px solid #b49450;
+            padding-left: 1.2rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .outline-section h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .outline-section h4 {
+            font-size: 1.35rem;
+            color: #6b4c1f;
+            margin: 1.4rem 0 0.6rem 0;
+            font-weight: 500;
+        }
+
+        .outline-section p {
+            font-size: 1.25rem;
+            line-height: 2;
+            color: #2d1f0a;
+            margin-bottom: 1rem;
+            text-align: justify;
+            text-indent: 1.8em;
+        }
+
+        .outline-section ul,
+        .outline-section ol {
+            margin: 0.8rem 0 1.2rem 2.5rem;
+            font-size: 1.25rem;
+            line-height: 2;
+            color: #2d1f0a;
+        }
+
+        .outline-section ul li,
+        .outline-section ol li {
+            margin-bottom: 0.6rem;
+        }
+
+        .outline-section ul li strong,
+        .outline-section ol li strong {
+            color: #7a4f1c;
+        }
+
+        .highlight-box {
+            background: rgba(200, 165, 100, 0.2);
+            border-left: 6px solid #b48b3a;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 1.2rem 1.2rem 0;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1.25rem;
+            line-height: 2;
+            color: #3d2a10;
+        }
+
+        .illustration-mid {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .illustration-mid img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            border-radius: 1.5rem 0.8rem 1.5rem 0.8rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(200, 165, 80, 0.5);
+            object-fit: cover;
+        }
+
+        .time-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            line-height: 2;
+            background: rgba(255, 250, 230, 0.6);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .time-table th {
+            background: rgba(180, 140, 60, 0.35);
+            padding: 0.8rem 1.2rem;
+            text-align: left;
+            font-weight: 600;
+            color: #3d2a10;
+        }
+
+        .time-table td {
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid rgba(180, 140, 60, 0.3);
+            color: #2d1f0a;
+        }
+
+        /* === 區塊四：小組討論題 === */
+        .discussion-section {
+            background: rgba(248, 240, 220, 0.94);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 3px 10px rgba(0,0,0,0.3), inset 0 1px 6px rgba(255, 255, 190, 0.5);
+            padding: 2.5rem 2.8rem;
+            border: 1px solid rgba(160, 130, 60, 0.45);
+            background-image: url('images/background5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        .discussion-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(248, 240, 220, 0.86);
+            border-radius: 2rem;
+            z-index: 0;
+        }
+
+        .discussion-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .discussion-section h2 {
+            font-size: 2rem;
+            color: #3d2a10;
+            text-align: center;
+            letter-spacing: 0.2rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px dashed #b49450;
+            padding-bottom: 0.6rem;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .discussion-item {
+            background: rgba(255, 250, 230, 0.65);
+            border-radius: 1.2rem;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(180, 140, 60, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .discussion-item:hover {
+            background: rgba(255, 250, 230, 0.9);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .discussion-item h3 {
+            font-size: 1.5rem;
+            color: #5a3f1a;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .discussion-item p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #2d1f0a;
+        }
+
+        .discussion-item .question-number {
+            display: inline-block;
+            background: #b49450;
+            color: #fff;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2.2rem;
+            font-weight: 600;
+            margin-right: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #6b5a38;
+            margin-top: 1rem;
+            font-style: italic;
+            letter-spacing: 0.05rem;
+        }
+        .verse-link {
+            color: #590bb8; /* 金褐色,可依整體配色調整 */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .verse-link:hover {
+            color: #d4af37; /* hover 時稍微亮一點的金色 */
+            text-decoration: underline;
+        }
+
+        /* === 響應式設計 === */
+        @media (max-width: 700px) {
+            body {
+                padding: 0.6rem;
+            }
+            .hero-section {
+                padding: 1.8rem 1.4rem;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+                letter-spacing: 0.15rem;
+            }
+            .hero-section .subtitle {
+                font-size: 1.2rem;
+            }
+            .scripture-section {
+                padding: 1.8rem 1.4rem;
+            }
+            .scripture-text {
+                font-size: 1.3rem;
+                padding: 1rem 1.2rem;
+            }
+            .outline-section {
+                padding: 1.8rem 1.4rem;
+            }
+            .outline-section h2 {
+                font-size: 1.6rem;
+            }
+            .outline-section h3 {
+                font-size: 1.4rem;
+            }
+            .outline-section p,
+            .outline-section ul,
+            .outline-section ol {
+                font-size: 1.15rem;
+            }
+            .discussion-section {
+                padding: 1.8rem 1.4rem;
+            }
+            .discussion-section h2 {
+                font-size: 1.6rem;
+            }
+            .discussion-item h3 {
+                font-size: 1.3rem;
+            }
+            .discussion-item p {
+                font-size: 1.1rem;
+            }
+            .highlight-box {
+                font-size: 1.15rem;
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+
+        <!-- ===== 區塊一：標題區 ===== -->
+        <div class="hero-section">
+            <div class="illustration-top">
+                <img src="images/illustration1.jpg" alt="曠野中的施洗約翰">
+            </div>
+            <h1>曠野的操練</h1>
+            <div class="subtitle">—— 隱藏與顯明 ——</div>
+             <div class="info-line">
+                <a href="text.html" class="verse-link" target="_blank">路加福音 一 67:80</a>
+            </div>
+           
+            <div class="info-line" style="margin-top:0.3rem;">從古老的聖經尋求現代生活的智慧</div>
+        </div>
+
+        <!-- ===== 區塊二：核心經文 ===== -->
+        <div class="scripture-section">
+            <h2>📖 核心經文</h2>
+            <div class="scripture-text">
+                「那孩子漸漸長大，心靈強健，<br>住在曠野，<br>直到他顯明在以色列人面前的日子。」
+            </div>
+            <div class="scripture-reference">—— 路加福音 1:80（新標點和合本上帝版）</div>
+        </div>
+
+        <!-- ===== 區塊三：分享大綱 ===== -->
+        <div class="outline-section">
+            <h2>📝 分享短講大綱</h2>
+
+            <!-- 一、開場 -->
+            <h3>一、開場：我們都經歷過「曠野」</h3>
+            <p><strong>現代人的曠野是什麼？</strong></p>
+            <ul>
+                <li>職場被邊緣化的時期</li>
+                <li>生病休養的季節</li>
+                <li>失業待業的空窗</li>
+                <li>事奉倦怠後的沉寂</li>
+                <li>社群媒體上的「被遺忘感」</li>
+            </ul>
+            <p><strong>共同的感受：</strong>被隱藏、沒有舞台、好像沒有人看見我的價值。</p>
+            <div class="highlight-box">
+                💭 <strong>提問思考：</strong>「你有沒有經歷過一段時間，覺得自己被上帝『放在一邊』？那段日子，你在做什麼？」
+            </div>
+
+            <!-- 二、曠野的聖經脈絡 -->
+            <h3>二、曠野的聖經脈絡：不只是地理，更是神學</h3>
+            <ul>
+                <li><strong>曠野是煉淨與預備之地：</strong>以色列人出埃及後曠野四十年（申8:2-3），上帝熬煉他們，叫他們知道「人活著不是單靠食物」。</li>
+                <li><strong>曠野是愛情與立約之地：</strong>耶利米書2:2「你幼年的恩愛，婚姻的愛情，你怎樣在曠野……跟隨我」。</li>
+                <li><strong>曠野是先知塑造之地：</strong>摩西在米甸曠野四十年、以利亞在曠野逃命、施洗約翰住在曠野直到顯明。</li>
+            </ul>
+            <div class="highlight-box">
+                🌟 <strong>核心信息：</strong>曠野不是上帝的遺忘，而是上帝的溫室。上帝用曠野栽培那些祂將要大用的人。
+            </div>
+
+            <!-- 中間插圖 -->
+            <div class="illustration-mid">
+                <img src="images/illustration2.jpg" alt="猶太曠野的日出景象">
+            </div>
+
+            <!-- 三、約翰的曠野操練 -->
+            <h3>三、約翰的曠野操練：三個關鍵元素</h3>
+
+            <h4>1. 「漸漸長大」——沒有捷徑的成長</h4>
+            <p>約翰的父母年老才得子，他本可以在祭司家族中享受特權，卻選擇（或被聖靈引導）進入曠野。「漸漸」提醒我們：屬靈的成熟無法速成，曠野的功課需要時間熬煉。</p>
+            <p><strong>🔹 現代應用：</strong>我們是否總是追求快速的成果？是否願意讓神用「漸漸」的方式塑造我們？</p>
+
+            <h4>2. 「心靈強健」——曠野的核心產物</h4>
+            <p>曠野剝奪了外在的依賴：沒有聖殿的體面、沒有祭司的頭銜、沒有群眾的掌聲。在什麼都沒有的時候，只剩下神的話——路加記載「神的話臨到曠野裡的約翰」（路3:2）。</p>
+            <p><strong>🔹 現代應用：</strong>我們的心靈強健嗎？當手機沒訊號、沒人按讚、事工沒有果效時，我們還能站立嗎？</p>
+
+            <h4>3. 「住在曠野」——不是路過，是定居</h4>
+            <p>原文「住在」表示持續的停留，不是短暫退修會，而是長期的生活方式。約翰選擇曠野為家，這意味著他接受曠野的簡樸、孤獨與艱苦。</p>
+            <p><strong>🔹 現代應用：</strong>我們願意「住在」神所安置的處境中，還是總想著逃離？是否把當下的環境當作神的訓練場？</p>
+
+            <!-- 四、直到顯明 -->
+            <h3>四、「直到顯明」——上帝有祂的時間表</h3>
+
+            <h4>1. 「直到」——曠野有期限</h4>
+            <p>曠野不是終點，而是通往命定的必經之路。約翰在曠野待了近三十年，但上帝沒有忘記他。</p>
+
+            <h4>2. 「顯明」的希臘文原意：公開指定、正式舉薦</h4>
+            <p>不是約翰自我推薦，是上帝親自在歷史舞台上把他推出來。路加福音3:1-2記載得非常精確：「凱撒提庇留在位第十五年……神的話臨到撒迦利亞的兒子約翰」。那個時刻，是上帝親自選定的。</p>
+
+            <h4>3. 顯明的目的不是為了自己，而是為了指出基督</h4>
+            <p>約翰說：「祂必興旺，我必衰微」（約3:30）；「看哪，神的羔羊！」（約1:29）——他顯明的最高峰，是把聚光燈轉向耶穌。</p>
+
+            <div class="highlight-box">
+                🌟 <strong>核心信息：</strong>上帝隱藏我們，是為了在對的時機顯明我們；而顯明我們的目的，從來不是為了我們自己，而是為了讓基督被看見。
+            </div>
+
+            <!-- 五、現代生活的應用 -->
+            <h3>五、現代生活的應用：我們的曠野操練</h3>
+            <ol>
+                <li><strong>停止與他人比較，接受你的季節</strong>——別人正在舞台上，你可能正在曠野中，這不是落後，這是預備。種子在土裡發芽的季節，沒有人看得見，但沒有這個階段，就不會有後來的收成。</li>
+                <li><strong>用曠野建立「心靈強健」的習慣</strong>——在沒有人看見的時候，建立讀經、禱告、默想的紀律；在沒有掌聲的時候，繼續忠心於神所託付的小事。</li>
+                <li><strong>將目光從「何時顯明」轉向「如何預備」</strong>——不要一直問「神啊，還要多久？」而是問「神啊，你要我在這段時間學什麼？」</li>
+                <li><strong>認清顯明的真正目的</strong>——如果我們渴望被看見是為了自己的榮耀，曠野就只是一種折磨；如果我們渴望被神使用是為了讓基督被看見，曠野就成為最寶貴的預備期。</li>
+            </ol>
+
+            <!-- 六、結語 -->
+            <h3>六、結語</h3>
+            <div class="highlight-box">
+                🌄 施洗約翰的曠野，不是上帝的遺忘，而是上帝親手打造的預備室。<br><br>
+                你今天所處的曠野，可能是上帝正在強健你的心靈，<br>
+                預備你在祂所定的日子，為祂發光——<br>
+                不是為自己的名，乃是為祂的名。
+            </div>
+
+            <!-- 建議時間分配 -->
+            <h4 style="font-size:1.35rem; margin-top:1.5rem;">⏱️ 建議時間分配</h4>
+            <table class="time-table">
+                <tr><th>環節</th><th>時間</th></tr>
+                <tr><td>開場：生活切入</td><td>2 分鐘</td></tr>
+                <tr><td>聖經背景</td><td>3 分鐘</td></tr>
+                <tr><td>約翰的曠野操練</td><td>4 分鐘</td></tr>
+                <tr><td>直到顯明</td><td>3 分鐘</td></tr>
+                <tr><td>現代生活應用</td><td>5 分鐘</td></tr>
+                <tr><td>結語</td><td>1 分鐘</td></tr>
+                <tr><td><strong>小組分享與禱告</strong></td><td><strong>12-15 分鐘</strong></td></tr>
+                <tr><td><strong>總計</strong></td><td><strong>30-33 分鐘</strong></td></tr>
+            </table>
+        </div>
+
+        <!-- ===== 區塊四：小組討論題 ===== -->
+        <div class="discussion-section">
+            <h2>💬 小組討論題</h2>
+
+            <div class="discussion-item">
+                <h3><span class="question-number">1</span> 回顧與坦誠</h3>
+                <p>你目前是否正在經歷某種「曠野季節」？（工作、家庭、服事、健康……）這個季節帶給你什麼感受？</p>
+            </div>
+
+            <div class="discussion-item">
+                <h3><span class="question-number">2</span> 心靈強健的檢視</h3>
+                <p>你覺得自己的「心靈」現在是強健、平穩、還是疲憊？哪些屬靈操練幫助你保持心靈強健？哪些部分需要重新開始？</p>
+            </div>
+
+            <div class="discussion-item">
+                <h3><span class="question-number">3</span> 隱藏與等待</h3>
+                <p>你曾經有過「被神隱藏」的經歷嗎？那段時間學到了什麼？現在回頭看，有沒有看見神的手？</p>
+            </div>
+
+            <div class="discussion-item">
+                <h3><span class="question-number">4</span> 顯明的目的</h3>
+                <p>當我們渴望在家庭、職場或教會中被看見、被肯定時，我們的動機是什麼？如何將這些渴望轉向「讓基督被看見」？</p>
+            </div>
+
+            <div class="discussion-item">
+                <h3><span class="question-number">5</span> 彼此代禱</h3>
+                <p>為正在曠野中的肢體禱告，求神賜下堅持的力量，也求神讓我們在曠野中聽見祂的聲音。</p>
+            </div>
+
+            <div class="footer-note">
+                🙏 願我們在曠野中遇見神，在隱藏中得著力量，在祂的時間裡被顯明，為祂發光。
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
