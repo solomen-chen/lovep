@@ -86,6 +86,205 @@ body {
 }
 
 /* =========================================================
+   分享與討論
+========================================================= */
+
+.discussion-section {
+    background:
+        linear-gradient(
+            rgba(248,243,234,0.96),
+            rgba(248,243,234,0.97)
+        ),
+        url("images/luke2_providence.jpeg")
+        center / cover fixed;
+}
+
+.discussion-intro {
+    max-width: 760px;
+    margin: -20px auto 45px;
+
+    text-align: center;
+
+    color: #6f645a;
+
+    font-size: 1.05rem;
+}
+
+.discussion-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.discussion-card {
+    position: relative;
+
+    padding: 38px 30px 32px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 40px rgba(70,50,30,0.10);
+
+    border-top: 4px solid #9a6a32;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.discussion-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 50px rgba(70,50,30,0.16);
+}
+
+.discussion-number {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background: #9a6a32;
+
+    color: white;
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.discussion-content h3 {
+    font-size: 1.35rem;
+
+    line-height: 1.6;
+
+    color: #493426;
+
+    margin-bottom: 18px;
+}
+
+.discussion-content > p {
+    color: #6c625a;
+
+    font-size: 0.96rem;
+
+    line-height: 1.9;
+
+    margin-bottom: 22px;
+}
+
+.discussion-question {
+    padding: 18px 18px;
+
+    background: #f7f1e8;
+
+    border-radius: 10px;
+
+    color: #5d5146;
+
+    font-size: 0.93rem;
+
+    line-height: 1.85;
+}
+
+.discussion-question strong {
+    display: block;
+
+    color: #9a6a32;
+
+    margin-bottom: 5px;
+}
+
+.discussion-ending {
+    max-width: 850px;
+
+    margin: 60px auto 0;
+
+    padding: 38px 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #f4eadb
+        );
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 40px rgba(70,50,30,0.08);
+}
+
+.discussion-ending-icon {
+    font-size: 1.8rem;
+
+    color: #9a6a32;
+
+    margin-bottom: 10px;
+}
+
+.discussion-ending h3 {
+    font-size: 1.5rem;
+
+    color: #4b3523;
+
+    margin-bottom: 12px;
+}
+
+.discussion-ending p {
+    color: #6c625a;
+
+    line-height: 2;
+}
+
+
+/* =========================================================
+   分享與討論 RWD
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .discussion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .discussion-card {
+        padding: 32px 28px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .discussion-ending {
+        padding: 30px 22px;
+    }
+
+    .discussion-content h3 {
+        font-size: 1.2rem;
+    }
+
+}
+
+/* =========================================================
    Hero
 ========================================================= */
 
@@ -734,7 +933,7 @@ footer strong {
         <h2>當凱撒掌權時，上帝正在掌管歷史</h2>
 
         <p>
-            從長老教會與改革宗神學的角度，
+            從長老教會的角度，
             思想耶穌基督的降生、上帝的主權、
             舊約應許的成就，以及基督甘願降卑的救恩。
         </p>
@@ -744,80 +943,7 @@ footer strong {
 </header>
 
 
-<!-- =====================================================
-     核心信息
-====================================================== -->
 
-<section class="section core-section">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="small">CORE MESSAGE</span>
-
-            <h2>這七節經文告訴我們什麼？</h2>
-
-            <p>
-                聖誕故事不是一個偶然事件，
-                而是上帝在歷史中一步一步完成祂救恩計畫的見證。
-            </p>
-
-        </div>
-
-
-        <div class="core-grid">
-
-            <div class="core-card">
-                <div class="number">01</div>
-                <h3>上帝掌管歷史</h3>
-                <p>
-                    凱撒下命令，
-                    上帝卻藉著凱撒的命令成就自己的旨意。
-                </p>
-            </div>
-
-            <div class="core-card">
-                <div class="number">02</div>
-                <h3>上帝信實守約</h3>
-                <p>
-                    伯利恆的出生，
-                    成就了舊約關於彌賽亞的預言。
-                </p>
-            </div>
-
-            <div class="core-card">
-                <div class="number">03</div>
-                <h3>基督道成肉身</h3>
-                <p>
-                    上帝的兒子真正進入人類歷史，
-                    成為真正的人。
-                </p>
-            </div>
-
-            <div class="core-card">
-                <div class="number">04</div>
-                <h3>基督甘願降卑</h3>
-                <p>
-                    君王沒有出生在皇宮，
-                    卻躺在卑微的馬槽裡。
-                </p>
-            </div>
-
-            <div class="core-card">
-                <div class="number">05</div>
-                <h3>救恩出於恩典</h3>
-                <p>
-                    人不知道上帝正在做什麼，
-                    上帝卻按自己的旨意完成救恩。
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- =====================================================
@@ -1655,6 +1781,172 @@ footer strong {
 
 </section>
 
+<!-- =====================================================
+     分享與討論
+====================================================== -->
+
+<section class="section discussion-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+           
+            <h2>分享與討論</h2>
+
+           
+        </div>
+
+
+        
+        <div class="discussion-grid">
+
+
+            <!-- 題目 1 -->
+
+            <article class="discussion-card">
+
+                <div class="discussion-number">
+                    01
+                </div>
+
+                <div class="discussion-content">
+
+                    <h3>
+                        當事情不如自己的計畫時，
+                        你是否仍相信上帝在掌管？
+                    </h3>
+
+                    <p>
+                        約瑟和馬利亞原本的生活，
+                        因為凱撒的命令而被迫改變。
+                        他們可能不知道為什麼必須前往伯利恆，
+                        但上帝正藉著這件事情成就祂的旨意。
+                    </p>
+
+                    <div class="discussion-question">
+
+                        <strong>分享：</strong>
+
+                        <span>
+                            最近有沒有一件事情，
+                            原本不是你所計畫的，
+                            後來卻發現它可能帶來另一個意義？
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 題目 2 -->
+
+            <article class="discussion-card">
+
+                <div class="discussion-number">
+                    02
+                </div>
+
+                <div class="discussion-content">
+
+                    <h3>
+                        你是否曾經因為環境卑微，
+                        而覺得自己不被上帝使用？
+                    </h3>
+
+                    <p>
+                        耶穌沒有出生在皇宮，
+                        而是躺在馬槽裡。
+                        上帝卻在這個看似卑微的地方，
+                        開始祂偉大的救恩工作。
+                    </p>
+
+                    <div class="discussion-question">
+
+                        <strong>分享：</strong>
+
+                        <span>
+                            在家庭、工作、教會或生活中，
+                            有沒有一些看起來很平凡的小事，
+                            你現在回頭看才發現上帝可能正在其中工作？
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 題目 3 -->
+
+            <article class="discussion-card">
+
+                <div class="discussion-number">
+                    03
+                </div>
+
+                <div class="discussion-content">
+
+                    <h3>
+                        當你看不懂上帝的帶領時，
+                        你通常會怎麼做？
+                    </h3>
+
+                    <p>
+                        約瑟和馬利亞當時看見的，
+                        可能只是一趟辛苦的旅程；
+                        但上帝看見的，
+                        卻是整個救恩計畫。
+                    </p>
+
+                    <div class="discussion-question">
+
+                        <strong>分享：</strong>
+
+                        <span>
+                            當你面對工作、家庭、健康、
+                            人際關係或未來的不確定時，
+                            什麼事情可以幫助你繼續信靠上帝？
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- 討論結語 -->
+
+        <div class="discussion-ending">
+
+            <div class="discussion-ending-icon">
+                ✦
+            </div>
+
+            <h3>
+                看不懂，不代表上帝沒有工作
+            </h3>
+
+            <p>
+                我們只能看見眼前的一小段路，
+                上帝卻看見完整的道路。
+                願我們在平凡、未知，
+                甚至不容易的環境中，
+                仍然相信那位掌管歷史的上帝。
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- =====================================================
      FOOTER
@@ -1667,7 +1959,7 @@ footer strong {
     </p>
 
     <p>
-        線上查經｜長老教會・改革宗信仰觀點
+        愛牧小組線上查經
     </p>
 
 </footer>
