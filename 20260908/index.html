@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>在平凡生活中看見上帝的救恩｜路加福音 2:21–40</title>
+
+<style>
+/* =========================================================
+   基本設定
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "PingFang TC",
+        sans-serif;
+
+    font-size:21px;
+    line-height:2.05;
+    color:#292724;
+    background:#f5f1e8;
+}
+
+/* =========================================================
+   共用
+========================================================= */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+.section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title .small{
+    display:block;
+    font-size:18px;
+    letter-spacing:4px;
+    color:#96784f;
+    margin-bottom:12px;
+}
+
+.section-title h2{
+    font-size:clamp(32px,4vw,48px);
+    line-height:1.35;
+    margin-bottom:18px;
+}
+
+.section-title p{
+    max-width:780px;
+    margin:auto;
+    color:#665f55;
+}
+
+.highlight{
+    color:#936c32;
+    font-weight:700;
+}
+
+/* =========================================================
+   Hero
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            rgba(25,20,15,.55),
+            rgba(25,20,15,.68)
+        ),
+        url("images/bg-01-jerusalem-temple.jpeg")
+        center/cover fixed;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    color:white;
+
+    position:relative;
+}
+
+.hero-content{
+    width:min(950px,92%);
+}
+
+.hero .label{
+    font-size:20px;
+    letter-spacing:5px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.35;
+    margin-bottom:30px;
+
+    text-shadow:
+        0 3px 10px rgba(0,0,0,.5);
+}
+
+.hero .subtitle{
+    font-size:clamp(23px,3vw,31px);
+    line-height:1.7;
+}
+
+.hero .scripture{
+    margin-top:35px;
+    font-size:23px;
+}
+
+.scroll-down{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:16px;
+    opacity:.8;
+}
+
+/* =========================================================
+   導讀
+========================================================= */
+
+.intro{
+    background:#fffdf8;
+}
+
+.intro-box{
+    max-width:900px;
+    margin:auto;
+
+    background:white;
+    padding:45px 55px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 12px 40px rgba(70,50,25,.08);
+}
+
+.intro-box p{
+    margin-bottom:25px;
+}
+
+.intro-quote{
+    border-left:6px solid #a17a42;
+    padding:20px 25px;
+    margin:35px 0;
+
+    background:#f8f2e7;
+    font-size:24px;
+    font-weight:600;
+}
+
+/* =========================================================
+   經文結構
+========================================================= */
+
+.structure{
+    background:#eee7d9;
+}
+
+.timeline{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:27px;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:#c4aa80;
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:80px;
+    margin-bottom:45px;
+}
+
+.timeline-number{
+    position:absolute;
+    left:0;
+    top:0;
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#8c6b3d;
+    color:white;
+
+    font-size:18px;
+    font-weight:bold;
+}
+
+.timeline-item h3{
+    font-size:27px;
+    margin-bottom:8px;
+}
+
+.timeline-item p{
+    color:#625b52;
+}
+
+/* =========================================================
+   經文段落
+========================================================= */
+
+.scripture-section{
+    background:#fffdf8;
+}
+
+.chapter{
+    margin-bottom:80px;
+}
+
+.chapter-heading{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    margin-bottom:30px;
+}
+
+.chapter-heading .num{
+    background:#8c6b3d;
+    color:white;
+
+    min-width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+    font-weight:bold;
+}
+
+.chapter-heading h3{
+    font-size:31px;
+}
+
+.scripture-card{
+    background:#f5efe3;
+
+    padding:35px 40px;
+
+    border-radius:16px;
+
+    margin-bottom:28px;
+
+    border:1px solid #e6dac7;
+}
+
+.scripture-label{
+    color:#8c6b3d;
+    font-size:17px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.scripture-text{
+    font-size:24px;
+    line-height:2;
+
+    padding-bottom:25px;
+    border-bottom:1px solid #ddcfba;
+
+    margin-bottom:25px;
+
+    color:#332d26;
+}
+
+.explanation h4{
+    font-size:24px;
+    color:#73572f;
+    margin:22px 0 8px;
+}
+
+.explanation p{
+    margin-bottom:16px;
+}
+
+.application{
+    margin-top:30px;
+
+    padding:25px 30px;
+
+    background:#fffaf0;
+
+    border-left:6px solid #b08a52;
+
+    border-radius:8px;
+}
+
+.application-title{
+    font-weight:bold;
+    font-size:22px;
+    color:#795a30;
+    margin-bottom:8px;
+}
+
+/* =========================================================
+   圖片段落
+========================================================= */
+
+.visual-break{
+    min-height:520px;
+
+    background-size:cover;
+    background-position:center;
+
+    background-attachment:fixed;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+}
+
+.visual-break::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(20,15,10,.52);
+}
+
+.visual-content{
+    position:relative;
+
+    color:white;
+
+    width:min(850px,90%);
+    margin:auto;
+
+    text-align:center;
+}
+
+.visual-content h2{
+    font-size:clamp(35px,5vw,58px);
+    line-height:1.4;
+
+    margin-bottom:20px;
+}
+
+.visual-content p{
+    font-size:24px;
+}
+
+/* =========================================================
+   核心信息
+========================================================= */
+
+.core{
+    background:#eee7d9;
+}
+
+.core-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+}
+
+.core-card{
+    background:white;
+
+    padding:35px;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 8px 25px rgba(70,50,25,.07);
+
+    transition:.3s;
+}
+
+.core-card:hover{
+    transform:translateY(-5px);
+}
+
+.core-card .number{
+    font-size:16px;
+    color:#9b7947;
+    letter-spacing:3px;
+}
+
+.core-card h3{
+    font-size:26px;
+    margin:10px 0 15px;
+}
+
+.core-card p{
+    color:#5e574e;
+}
+
+/* =========================================================
+   現代生活
+========================================================= */
+
+.modern{
+    background:#fffdf8;
+}
+
+.modern-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.modern-card{
+    overflow:hidden;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 10px 30px rgba(70,50,25,.08);
+}
+
+.modern-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.modern-card-content{
+    padding:30px;
+}
+
+.modern-card h3{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.modern-card p{
+    color:#625b52;
+}
+
+/* =========================================================
+   聖殿 → 拿撒勒
+========================================================= */
+
+.transition-section{
+    background:
+        linear-gradient(
+            rgba(25,20,15,.55),
+            rgba(25,20,15,.72)
+        ),
+        url("images/bg-03-nazareth-home.jpeg")
+        center/cover fixed;
+
+    color:white;
+}
+
+.transition-box{
+    max-width:900px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.transition-box h2{
+    font-size:clamp(38px,5vw,62px);
+    margin-bottom:30px;
+}
+
+.transition-box .arrow{
+    font-size:50px;
+    margin:20px;
+}
+
+.transition-box p{
+    font-size:25px;
+    line-height:2;
+}
+
+/* =========================================================
+   結語
+========================================================= */
+
+.conclusion{
+    background:#f2eadc;
+}
+
+.conclusion-box{
+    max-width:900px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.conclusion-box blockquote{
+    font-size:30px;
+    line-height:1.8;
+
+    color:#654b27;
+
+    margin:40px 0;
+}
+
+.conclusion-box p{
+    margin-bottom:20px;
+}
+
+/* =========================================================
+   討論
+========================================================= */
+
+.discussion{
+    background:#fffdf8;
+}
+
+.question{
+    background:#f4eee3;
+
+    padding:35px 40px;
+
+    border-radius:16px;
+
+    margin-bottom:25px;
+
+    border-left:7px solid #8c6b3d;
+}
+
+.question-number{
+    color:#8c6b3d;
+    font-weight:bold;
+    letter-spacing:3px;
+    font-size:17px;
+}
+
+.question h3{
+    font-size:26px;
+    margin:8px 0 12px;
+}
+
+.question p{
+    color:#625b52;
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+
+footer{
+    background:#29251f;
+    color:#ddd5c9;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    font-size:17px;
+}
+
+footer .main{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+/* =========================================================
+   回到頂端
+========================================================= */
+
+.back-top{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    background:#8c6b3d;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.2);
+
+    z-index:20;
+}
+
+/* =========================================================
+   平板
+========================================================= */
+
+@media(max-width:850px){
+
+    body{
+        font-size:20px;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .intro-box{
+        padding:35px 30px;
+    }
+
+    .core-grid,
+    .modern-grid{
+        grid-template-columns:1fr;
+    }
+
+    .visual-break,
+    .transition-section{
+        background-attachment:scroll;
+    }
+
+}
+
+/* =========================================================
+   手機
+========================================================= */
+
+@media(max-width:600px){
+
+    body{
+        font-size:19px;
+        line-height:2;
+    }
+
+    .container{
+        width:92%;
+    }
+
+    .section{
+        padding:60px 0;
+    }
+
+    .hero{
+        min-height:90vh;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero .subtitle{
+        font-size:22px;
+    }
+
+    .hero .scripture{
+        font-size:20px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .intro-box{
+        padding:28px 22px;
+    }
+
+    .intro-quote{
+        font-size:21px;
+        padding:18px;
+    }
+
+    .timeline-item{
+        padding-left:68px;
+    }
+
+    .timeline::before{
+        left:23px;
+    }
+
+    .timeline-number{
+        width:48px;
+        height:48px;
+        font-size:16px;
+    }
+
+    .timeline-item h3{
+        font-size:24px;
+    }
+
+    .chapter-heading{
+        align-items:flex-start;
+    }
+
+    .chapter-heading .num{
+        min-width:58px;
+        height:58px;
+        font-size:21px;
+    }
+
+    .chapter-heading h3{
+        font-size:26px;
+    }
+
+    .scripture-card{
+        padding:25px 20px;
+    }
+
+    .scripture-text{
+        font-size:22px;
+    }
+
+    .explanation h4{
+        font-size:22px;
+    }
+
+    .application{
+        padding:22px;
+    }
+
+    .core-card{
+        padding:27px;
+    }
+
+    .modern-card img{
+        height:220px;
+    }
+
+    .modern-card-content{
+        padding:25px;
+    }
+
+    .transition-box p{
+        font-size:21px;
+    }
+
+    .conclusion-box blockquote{
+        font-size:25px;
+    }
+
+    .question{
+        padding:27px 23px;
+    }
+
+    .question h3{
+        font-size:23px;
+    }
+
+    .back-top{
+        right:15px;
+        bottom:15px;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+
+<div class="hero-content">
+
+    <div class="label">
+        線上查經｜路加福音
+    </div>
+
+    <h1>
+        在平凡生活中<br>
+        看見上帝的救恩
+    </h1>
+
+    <div class="subtitle">
+        從耶穌被獻上，到西面與亞拿看見救恩
+    </div>
+
+    <div class="scripture">
+        路加福音 2:21–40
+    </div>
+
+</div>
+
+<div class="scroll-down">
+    ↓ 向下開始查經
+</div>
+
+
+</header>
+
+<!-- =====================================================
+     導讀
+===================================================== -->
+
+<section class="section intro">
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <span class="small">
+        INTRODUCTION
+    </span>
+
+    <h2>
+        這段經文在說什麼？
+    </h2>
+
+    <p>
+        耶穌來到世界，不只是發生一個神蹟，
+        而是進入一個真實的家庭、真實的歷史，
+        最後回到一個普通的地方生活。
+    </p>
+
+</div>
+
+
+<div class="intro-box">
+
+    <p>
+        路加福音 2:21–40 描述耶穌出生後，
+        約瑟和馬利亞按照律法，
+        將耶穌帶到耶路撒冷的聖殿。
+    </p>
+
+    <p>
+        在那裡，他們遇見了
+        <strong>西面</strong>與
+        <strong>亞拿</strong>。
+    </p>
+
+    <p>
+        西面等候上帝已經很久，
+        當他看見耶穌時，
+        他知道自己已經看見了上帝所預備的救恩。
+    </p>
+
+    <p>
+        亞拿同樣是一位長年禱告、敬拜、
+        等候上帝的年長姊妹。
+        她看見耶穌後，也向其他人宣告這個好消息。
+    </p>
+
+    <div class="intro-quote">
+
+        這段經文真正要我們思想的問題是：
+
+        <br><br>
+
+        <span class="highlight">
+            「今天的我們，看見耶穌了嗎？」
+        </span>
+
+    </div>
+
+    <p>
+        而更重要的是：
+        我們是否能把在聖殿裡所領受的信仰，
+        帶回到自己的「拿撒勒」——
+        家庭、工作、人際關係與每天的生活？
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     經文結構
+===================================================== -->
+
+<section class="section structure">
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <span class="small">
+        LUKE 2:21–40
+    </span>
+
+    <h2>
+        經文結構
+    </h2>
+
+    <p>
+        這段經文可以分成五個重要階段。
+    </p>
+
+</div>
+
+
+<div class="timeline">
+
+    <div class="timeline-item">
+
+        <div class="timeline-number">01</div>
+
+        <h3>
+            2:21–24｜耶穌被獻上
+        </h3>
+
+        <p>
+            耶穌接受割禮，
+            約瑟和馬利亞按照律法把祂帶到聖殿。
+        </p>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-number">02</div>
+
+        <h3>
+            2:25–32｜西面看見救恩
+        </h3>
+
+        <p>
+            一位長久等候的老人，
+            在聖靈引導下認出耶穌就是上帝的救恩。
+        </p>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-number">03</div>
+
+        <h3>
+            2:33–35｜馬利亞的心被刺透
+        </h3>
+
+        <p>
+            耶穌的來到帶來榮耀，
+            也帶來十字架道路上的痛苦。
+        </p>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-number">04</div>
+
+        <h3>
+            2:36–38｜亞拿的等待與見證
+        </h3>
+
+        <p>
+            年老的亞拿長久禱告、敬拜，
+            看見耶穌後向眾人宣告救贖。
+        </p>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-number">05</div>
+
+        <h3>
+            2:39–40｜回到拿撒勒
+        </h3>
+
+        <p>
+            聖殿的經歷結束後，
+            耶穌回到普通家庭中漸漸長大。
+        </p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     2:21
+===================================================== -->
+
+<section class="section scripture-section">
+
+<div class="container">
+
+<div class="chapter">
+
+
+<div class="chapter-heading">
+
+    <div class="num">2:21</div>
+
+    <h3>
+        耶穌接受割禮
+    </h3>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文
+    </div>
+
+    <div class="scripture-text">
+        「滿了八天，就給孩子行割禮，
+        與他起名叫耶穌；
+        這就是沒有成胎以前，
+        天使所起的名。」
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            按照猶太人的律法，
+            男孩出生第八天要接受割禮。
+        </p>
+
+        <p>
+            耶穌雖然是上帝的兒子，
+            卻真正進入人的歷史、文化與生活。
+        </p>
+
+        <p>
+            祂不是遠離人類生活的上帝，
+            而是成為真正的人，
+            從嬰兒開始成長。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            上帝的救恩進入世界，
+            是從一個嬰兒、一個家庭、
+            一天一天的生活開始。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                信仰不只是主日聚會。
+                洗碗、工作、照顧家人、
+                探訪老人、服事教會，
+                都可以成為信仰生活的一部分。
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<!-- =====================================================
+     2:22–24
+===================================================== -->
+
+<div class="chapter">
+
+
+<div class="chapter-heading">
+
+    <div class="num">2:22</div>
+
+    <h3>
+        把孩子獻與主
+    </h3>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:22–24
+    </div>
+
+    <div class="scripture-text">
+        約瑟和馬利亞按照摩西律法，
+        把耶穌帶到耶路撒冷，
+        要把孩子獻與主。
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            「獻與主」提醒我們，
+            孩子不是父母的私人財產。
+        </p>
+
+        <p>
+            約瑟和馬利亞知道：
+            這個孩子是上帝所賜、
+            也是上帝所託付的。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            我們所擁有的一切，
+            包括家庭、子女、工作、
+            金錢、時間與能力，
+            都是上帝所託付的。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                成熟的基督徒不只是問：
+                「上帝能給我什麼？」
+                更要問：
+                <strong>「上帝要我如何使用祂所託付給我的？」</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     聖殿背景
+===================================================== -->
+
+<section class="visual-break"
+style="background-image:url('images/bg-02-temple-light.jpeg');">
+
+
+<div class="visual-content">
+
+    <h2>
+        「我的眼睛已經看見你的救恩」
+    </h2>
+
+    <p>
+        西面等候了很久，
+        直到有一天，他在聖殿裡遇見耶穌。
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     西面
+===================================================== -->
+
+<section class="section scripture-section">
+
+<div class="container">
+
+<div class="chapter">
+
+
+<div class="chapter-heading">
+
+    <div class="num">2:25</div>
+
+    <h3>
+        西面：等待上帝的人
+    </h3>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:25–26
+    </div>
+
+    <div class="scripture-text">
+        「在耶路撒冷有一個人，名叫西面；
+        這人又公義又虔誠，
+        素常盼望以色列的安慰者來到，
+        又有聖靈在他身上。」
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            西面是一個公義、虔誠、
+            長久等候上帝的人。
+        </p>
+
+        <p>
+            他不知道上帝什麼時候成就應許，
+            卻仍然繼續等候。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            信心不只是相信上帝會照我的時間表做事，
+            而是相信即使我不知道時間表，
+            上帝仍然掌權。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                有些禱告可能需要等很久。
+                「還沒有答案」不等於
+                「上帝沒有工作」。
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:27–32
+    </div>
+
+    <div class="scripture-text">
+        西面在聖靈感動下進入聖殿，
+        遇見抱著孩子的約瑟和馬利亞，
+        就認出這孩子就是上帝所預備的救恩。
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            西面不是單靠自己的智慧認出耶穌。
+            路加特別指出：
+            <strong>聖靈在他身上。</strong>
+        </p>
+
+        <p>
+            他所看見的不只是「一個嬰兒」，
+            而是上帝的救恩。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            人能真正認識基督，
+            不只是因為知識，
+            也需要聖靈開啟人的心。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                每一次查經開始時，
+                都值得禱告：
+                <strong>
+                「求聖靈開我們的心，
+                讓我們不只是讀懂文字，
+                更能看見基督。」
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     馬利亞
+===================================================== -->
+
+<section class="section scripture-section">
+
+<div class="container">
+
+<div class="chapter">
+
+
+<div class="chapter-heading">
+
+    <div class="num">2:33</div>
+
+    <h3>
+        馬利亞的心也要被刀刺透
+    </h3>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:33–35
+    </div>
+
+    <div class="scripture-text">
+        西面告訴馬利亞，
+        這孩子要叫許多人跌倒、
+        許多人興起，
+        也預告她自己的心將被刀刺透。
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            耶穌的到來不是讓所有人都舒服。
+            祂會要求人做選擇：
+            接受祂或拒絕祂。
+        </p>
+
+        <p>
+            對馬利亞而言，
+            蒙受大恩並不代表人生從此沒有痛苦。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            跟隨上帝不代表人生一定順利。
+            有時候，上帝的工作甚至會經過
+            人眼中的痛苦與失敗。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                當我們遇到疾病、失落、
+                家庭問題、服事挫折時，
+                不要輕易推論：
+                「上帝離開我了。」
+            </p>
+
+            <p>
+                十字架提醒我們：
+                <strong>
+                上帝甚至能在痛苦中完成祂的工作。
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     亞拿
+===================================================== -->
+
+<section class="section scripture-section">
+
+<div class="container">
+
+<div class="chapter">
+
+
+<div class="chapter-heading">
+
+    <div class="num">2:36</div>
+
+    <h3>
+        年老的亞拿
+    </h3>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:36–37
+    </div>
+
+    <div class="scripture-text">
+        「又有女先知亞拿……
+        不離開聖殿，
+        禁食祈求，
+        晝夜事奉上帝。」
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            亞拿是一位年老的寡婦，
+            從人的角度看，
+            她似乎不是社會上的重要人物。
+        </p>
+
+        <p>
+            但是她在上帝的救恩故事中
+            扮演了重要角色。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            年齡、身分、社會地位，
+            都不是上帝衡量服事價值的唯一標準。
+        </p>
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                有些人可能因為年紀大了，
+                覺得自己「沒有用了」。
+            </p>
+
+            <p>
+                但亞拿提醒我們：
+                <strong>
+                禱告、陪伴、鼓勵、見證，
+                都是非常重要的服事。
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:38
+    </div>
+
+    <div class="scripture-text">
+        「正當那時，她進前來稱謝上帝，
+        將孩子的事對一切盼望耶路撒冷得救贖的人講說。」
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            亞拿看見耶穌之後，
+            沒有把這份喜樂留給自己。
+        </p>
+
+        <p>
+            她稱謝上帝，
+            然後向其他人分享。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            遇見基督，
+            自然會產生感謝與見證。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                傳福音不一定要站上講台。
+                一句：
+                「我們一起禱告，好嗎？」
+                也可能是一個很真實的福音見證。
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     拿撒勒
+===================================================== -->
+
+<section class="visual-break"
+style="background-image:url('images/bg-03-nazareth-home.jpeg');">
+
+
+<div class="visual-content">
+
+    <h2>
+        從聖殿回到拿撒勒
+    </h2>
+
+    <p>
+        敬拜結束了，生活繼續。
+        <br>
+        而信仰真正的考驗，
+        往往就在離開教會之後。
+    </p>
+
+</div>
+
+
+</section>
+
+<section class="section scripture-section">
+
+<div class="container">
+
+<div class="chapter">
+
+
+<div class="chapter-heading">
+
+    <div class="num">2:39</div>
+
+    <h3>
+        回到拿撒勒
+    </h3>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:39–40
+    </div>
+
+    <div class="scripture-text">
+        「約瑟和馬利亞照主的律法辦完了一切的事，
+        就回加利利，到自己的城拿撒勒去了。」
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            聖殿裡發生了非常重要的事情：
+            西面、亞拿都認出耶穌就是救恩。
+        </p>
+
+        <p>
+            但是經文接下來卻非常平靜：
+            <strong>他們回家了。</strong>
+        </p>
+
+        <p>
+            耶穌回到拿撒勒，
+            在一個普通家庭裡繼續成長。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            信仰不只是聖殿裡的敬拜，
+            更是在普通生活中活出來。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                主日的敬拜，
+                最後要帶我們回到星期一。
+            </p>
+
+            <p>
+                回到家庭、工作、
+                社區與人際關係，
+                才是真正活出信仰的地方。
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="scripture-card">
+
+    <div class="scripture-label">
+        經文｜2:40
+    </div>
+
+    <div class="scripture-text">
+        「孩子漸漸長大，強健起來，
+        充滿智慧，又有上帝的恩在他身上。」
+    </div>
+
+
+    <div class="explanation">
+
+        <h4>
+            📖 經文解讀
+        </h4>
+
+        <p>
+            「漸漸長大」代表一個過程。
+            耶穌不是突然跳過成長，
+            而是在真實的人生中逐漸長大。
+        </p>
+
+        <p>
+            身體成長、智慧成長，
+            同時也活在上帝的恩典中。
+        </p>
+
+
+        <h4>
+            💡 信仰意義
+        </h4>
+
+        <p>
+            健康的基督徒生命，
+            也應該是一個持續成長的生命。
+        </p>
+
+
+        <div class="application">
+
+            <div class="application-title">
+                🏠 今日生活
+            </div>
+
+            <p>
+                我們不需要要求自己
+                「一天變成完全人」。
+            </p>
+
+            <p>
+                今天比昨天更有愛一點、
+                更有耐心一點、
+                更願意饒恕一點、
+                更願意禱告一點，
+                都是生命的成長。
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     七個核心信息
+===================================================== -->
+
+<section class="section core">
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <span class="small">
+        SEVEN KEY MESSAGES
+    </span>
+
+    <h2>
+        七個核心信息
+    </h2>
+
+    <p>
+        如果要把路加福音 2:21–40 濃縮，
+        可以記住這七件事。
+    </p>
+
+</div>
+
+
+<div class="core-grid">
+
+    <div class="core-card">
+        <div class="number">01</div>
+        <h3>耶穌進入真實人生</h3>
+        <p>
+            上帝的救恩不是遠離人的生活，
+            而是進入家庭、工作與日常。
+        </p>
+    </div>
+
+
+    <div class="core-card">
+        <div class="number">02</div>
+        <h3>我們是管家，不是主人</h3>
+        <p>
+            家庭、子女、金錢、能力與時間，
+            都是上帝所託付的。
+        </p>
+    </div>
+
+
+    <div class="core-card">
+        <div class="number">03</div>
+        <h3>信仰需要等候</h3>
+        <p>
+            西面提醒我們：
+            上帝沒有按照我的時間表工作，
+            不代表上帝沒有工作。
+        </p>
+    </div>
+
+
+    <div class="core-card">
+        <div class="number">04</div>
+        <h3>聖靈使我們看見基督</h3>
+        <p>
+            求聖靈開啟我們的眼睛，
+            讓我們在日常生活中認出上帝的工作。
+        </p>
+    </div>
+
+
+    <div class="core-card">
+        <div class="number">05</div>
+        <h3>耶穌是所有人的光</h3>
+        <p>
+            教會不是封閉的俱樂部，
+            而是被差遣出去成為光的群體。
+        </p>
+    </div>
+
+
+    <div class="core-card">
+        <div class="number">06</div>
+        <h3>跟隨基督仍可能經歷苦難</h3>
+        <p>
+            馬利亞的經歷提醒我們，
+            苦難不一定代表上帝離開我們。
+        </p>
+    </div>
+
+
+    <div class="core-card">
+
+        <div class="number">07</div>
+
+        <h3>
+            服事不受年齡限制
+        </h3>
+
+        <p>
+            亞拿提醒我們，
+            禱告、陪伴與見證，
+            都是上帝寶貴的服事。
+        </p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     現代生活
+===================================================== -->
+
+<section class="section modern">
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <span class="small">
+        FAITH IN DAILY LIFE
+    </span>
+
+    <h2>
+        把聖經帶進今天的生活
+    </h2>
+
+    <p>
+        西面與亞拿看見的是耶穌，
+        我們今天要學習在生活中看見上帝。
+    </p>
+
+</div>
+
+
+<div class="modern-grid">
+
+    <div class="modern-card">
+
+        <img src="images/ill-09-seeing-god-in-daily-life.jpeg">
+
+        <div class="modern-card-content">
+
+            <h3>
+                當我們照顧一個人
+            </h3>
+
+            <p>
+                不只是看到「一個需要被照顧的人」，
+                而是看到一個上帝所愛、
+                交在我們面前的人。
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="modern-card">
+
+        <img src="images/ill-06-anna-praying.jpeg">
+
+        <div class="modern-card-content">
+
+            <h3>
+                當我們覺得自己老了
+            </h3>
+
+            <p>
+                我們可能覺得自己能做的事情越來越少，
+                但亞拿提醒我們：
+                禱告本身就是重要的服事。
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="modern-card">
+
+        <img src="images/ill-07-anna-witnesses.jpeg">
+
+        <div class="modern-card-content">
+
+            <h3>
+                當我們想傳福音
+            </h3>
+
+            <p>
+                不一定要站上講台。
+                分享自己的生命故事、
+                一起禱告，
+                都可以成為福音的見證。
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="modern-card">
+
+        <img src="images/ill-08-return-to-nazareth.jpeg">
+
+        <div class="modern-card-content">
+
+            <h3>
+                當主日聚會結束
+            </h3>
+
+            <p>
+                真正的信仰生活才正要開始。
+                我們要把在教會領受的恩典，
+                帶回家庭、工作與社區。
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     聖殿 → 拿撒勒
+===================================================== -->
+
+<section class="section transition-section">
+
+<div class="container">
+
+
+<div class="transition-box">
+
+    <h2>
+        從聖殿到拿撒勒
+    </h2>
+
+    <div class="arrow">
+        ↓
+    </div>
+
+    <p>
+        聖殿代表敬拜、聖靈、啟示與救恩。
+    </p>
+
+    <p>
+        拿撒勒代表家庭、工作、
+        人際關係與平凡生活。
+    </p>
+
+    <div class="arrow">
+        ↓
+    </div>
+
+    <p>
+        <strong>
+            真正的信仰，
+            不只是我們在聖殿裡如何敬拜上帝，
+            而是離開聖殿之後，
+            如何在自己的「拿撒勒」活出福音。
+        </strong>
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     結語
+===================================================== -->
+
+<section class="section conclusion">
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <span class="small">
+        CONCLUSION
+    </span>
+
+    <h2>
+        結語
+    </h2>
+
+</div>
+
+
+<div class="conclusion-box">
+
+    <p>
+        約瑟和馬利亞帶著耶穌進入聖殿，
+        西面和亞拿在聖殿裡看見救恩。
+    </p>
+
+    <p>
+        但故事沒有停在聖殿。
+    </p>
+
+    <blockquote>
+
+        「他們回到拿撒勒。」
+
+    </blockquote>
+
+    <p>
+        這也是我們今天的信仰道路。
+    </p>
+
+    <p>
+        我們在教會敬拜，
+        在查經中聆聽上帝的話，
+        在禱告中經歷上帝的恩典。
+    </p>
+
+    <p>
+        然後，
+        我們離開教會，
+        回到自己的家庭、
+        工作、社區與人際關係。
+    </p>
+
+    <p>
+        <strong>
+            那裡，就是我們今天的「拿撒勒」。
+        </strong>
+    </p>
+
+    <blockquote>
+
+        「主啊，
+        求祢讓我不只在教會看見祢，
+        也讓我在每天的生活中看見祢。」
+
+    </blockquote>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     分享與討論
+===================================================== -->
+
+<section class="section discussion">
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <span class="small">
+        SHARE & DISCUSSION
+    </span>
+
+    <h2>
+        分享與討論
+    </h2>
+
+    <p>
+        不只是回答問題，
+        而是讓聖經進入我們自己的生命故事。
+    </p>
+
+</div>
+
+
+<div class="question">
+
+    <div class="question-number">
+        QUESTION 01
+    </div>
+
+    <h3>
+        西面等候上帝很久，最後才看見耶穌。
+        你生命中是否也有一件「等候很久」的事情？
+    </h3>
+
+    <p>
+        如果上帝目前還沒有照你的期待回答，
+        你會如何學習在等待中繼續相信祂？
+    </p>
+
+</div>
+
+
+<div class="question">
+
+    <div class="question-number">
+        QUESTION 02
+    </div>
+
+    <h3>
+        我們常常把「教會生活」與「日常生活」分開。
+        你的「拿撒勒」是哪裡？
+    </h3>
+
+    <p>
+        在家庭、工作、服事、人際關係中，
+        有沒有一個地方是你特別需要把信仰活出來的？
+    </p>
+
+</div>
+
+
+<div class="question">
+
+    <div class="question-number">
+        QUESTION 03
+    </div>
+
+    <h3>
+        亞拿年紀老邁，
+        仍然透過禱告與見證服事上帝。
+        今天你可以做什麼？
+    </h3>
+
+    <p>
+        如果暫時不考慮「體力」、
+        「年齡」或「能力」，
+        你認為上帝現在仍然可以透過你
+        祝福哪一個人？
+    </p>
+
+</div>
+
+
+<div class="intro-box" style="margin-top:50px;">
+
+    <div class="intro-quote">
+
+        最後一起思想：
+
+        <br><br>
+
+        <span class="highlight">
+            「我在每天的生活中，
+            是否仍然看得見耶穌？」
+        </span>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+
+<footer>
+
+
+<div class="main">
+    在平凡生活中看見上帝的救恩
+</div>
+
+<div>
+    路加福音 2:21–40
+</div>
+
+<div style="margin-top:20px;">
+    線上查經｜從古老的聖經尋求現代生活的智慧
+</div>
+
+
+</footer>
+
+<!-- =====================================================
+     Back to top
+===================================================== -->
+
+<a href="#" class="back-top" aria-label="回到頂端">
+    ↑
+</a>
+
+</body>
+</html>
