@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>路加福音 2:8-20 查經｜從古老聖經尋求現代生活的智慧</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a365d;
+      --primary-light: #2c5282;
+      --accent: #c9a227;
+      --accent-soft: #f6e7b4;
+      --bg-soft: #f8f5f0;
+      --text: #2d3748;
+      --text-light: #4a5568;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --shadow: 0 10px 40px rgba(26, 54, 93, 0.12);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      background: var(--bg-soft);
+      background-image: url('images/bg-night-field.jpeg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+
+    /* 半透明遮罩，讓文字更易讀 */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(248, 245, 240, 0.92) 0%, rgba(248, 245, 240, 0.88) 50%, rgba(248, 245, 240, 0.94) 100%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* ===== Header ===== */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+      letter-spacing: 0.05em;
+    }
+
+    header h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    header .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    header .version {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--primary-light);
+      font-weight: 500;
+    }
+
+    /* ===== Intro Card ===== */
+    .intro-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 48px;
+      border-left: 5px solid var(--accent);
+    }
+
+    .intro-card h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .intro-card p {
+      color: var(--text-light);
+      font-size: 1.02rem;
+    }
+
+    /* ===== Verse Section ===== */
+    .verse-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 36px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .verse-section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(26, 54, 93, 0.15);
+    }
+
+    .verse-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .verse-number {
+      background: var(--accent);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .verse-header h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .verse-body {
+      padding: 28px 32px 32px;
+    }
+
+    .verse-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      color: var(--primary);
+      background: var(--accent-soft);
+      padding: 18px 22px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--accent);
+      line-height: 1.75;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+
+    .section-label:first-of-type {
+      margin-top: 0;
+    }
+
+    .section-label .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .explanation, .application {
+      color: var(--text-light);
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+
+    .application {
+      background: #f0f7ff;
+      padding: 16px 20px;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary-light);
+      margin-top: 8px;
+    }
+
+    /* Illustration */
+    .illustration {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 20px 0 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .illustration-caption {
+      font-size: 0.85rem;
+      color: #718096;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    /* ===== Summary ===== */
+    .summary-card {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a365d 100%);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      box-shadow: var(--shadow);
+      margin-top: 48px;
+      margin-bottom: 36px;
+    }
+
+    .summary-card h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+      color: var(--accent-soft);
+    }
+
+    .summary-card p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      opacity: 0.95;
+    }
+
+    .summary-card ul {
+      margin: 20px 0 0 20px;
+      font-size: 1.02rem;
+    }
+
+    .summary-card li {
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    /* ===== Discussion ===== */
+    .discussion-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--accent);
+    }
+
+    .discussion-card h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .discussion-card ol {
+      padding-left: 22px;
+      color: var(--text-light);
+    }
+
+    .discussion-card li {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    footer .quote {
+      font-family: 'Noto Serif TC', serif;
+      font-style: italic;
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .verse-body, .intro-card, .summary-card, .discussion-card {
+        padding: 22px 20px;
+      }
+      .verse-header {
+        padding: 14px 18px;
+      }
+      header {
+        padding: 40px 16px 30px;
+      }
+    }
+
+    /* Print friendly */
+    @media print {
+      body {
+        background: white;
+      }
+      body::before {
+        display: none;
+      }
+      .verse-section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="badge">長老教會查經小組</div>
+      <h1>路加福音 第2章 8–20節</h1>
+      <p class="subtitle">從古老的聖經尋求現代生活的智慧</p>
+      <p class="version">新標點和合本 · 上帝版</p>
+    </header>
+
+    <!-- Intro -->
+    <div class="intro-card">
+      <h2>本週查經導言</h2>
+      <p>
+        這段經文是耶穌降生後，天使向野地牧羊人報喜訊的經典敘事。路加特別強調「卑微者先聽福音」——不是祭司、文士或權貴，而是社會地位低下、常被視為不潔的牧羊人。對熟悉聖經、熱心服事的長老教會兄姐來說，這段提醒我們：上帝的啟示常臨到「在崗位上盡責」的人，並呼召我們以信實行動回應。
+      </p>
+    </div>
+
+    <!-- ===== 第8節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">8</div>
+        <h3>在伯利恆之野地裏有牧羊的人</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          在伯利恆之野地裏有牧羊的人，夜間按着更次看守羊羣。
+        </div>
+        <img src="images/illust-shepherds-night.jpeg" alt="夜間看守羊群的牧羊人" class="illustration">
+        <p class="illustration-caption">夜間按着更次看守羊羣的牧羊人</p>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          牧羊人在夜間輪班守夜，忠於日常職責。伯利恆附近的野地是放牧區，牧羊人在當時社會地位低微，常被視為不潔（因與動物接觸、無法常守禮儀潔淨）。上帝卻選擇他們作為第一批聽聞救主降生的人。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          在職場、家庭或教會服事中，我們常覺得自己「只是普通人」或「在平凡崗位」。然而，上帝常在我們「按更次看守」——認真做好本分——的時候，賜下特別的遇見。例如：一位夜班護士或清潔工、一位在家照顧家人的兄姐，可能在日常辛勞中經歷上帝的同在與引導。不要輕看「平凡的忠心」。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第9節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">9</div>
+        <h3>主的榮光四面照着他們</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          有主的使者站在他們旁邊，主的榮光四面照着他們；牧羊的人就甚懼怕。
+        </div>
+        <img src="images/illust-angel-glory.jpeg" alt="天使顯現與主的榮光" class="illustration">
+        <p class="illustration-caption">主的使者與四面照耀的榮光</p>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          「主的榮光」使人自然畏懼，因為人與聖潔的上帝相遇時，會意識到自己的有限與不潔。恐懼是真實的屬靈反應。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          當我們在禱告、敬拜或突然的處境中感受到上帝的臨在（或良心被光照），常會先有不安或懼怕。這不是壞事，而是提醒我們要謙卑。例如：在忙碌服事後忽然被提醒自己的驕傲，或在困境中經歷「超自然的平安卻伴隨敬畏」。健康的懼怕會引向更深的信靠，而不是逃避。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第10-11節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">10–11</div>
+        <h3>大喜的信息，是關乎萬民的</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          那天使對他們說：「不要懼怕！我報給你們大喜的信息，是關乎萬民的；因今天在大衛的城裏，為你們生了救主，就是主基督。」
+        </div>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          天使先安慰「不要懼怕」，再宣告「大喜的信息」（福音）——關乎「萬民」（不只以色列），而且「為你們」生了救主（Saviour）、主（Lord）、基督（Messiah）。這是個人化的好消息，也是普世的。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          福音不是抽象教義，而是「為你」的。在壓力、焦慮或自卑時，我們常需要先聽見「不要懼怕」。例如：一位在職場被邊緣化的兄姐、或為孩子操心的父母，可以重新領受——救主已為你而生。教會服事中，我們傳福音時也應先幫助人卸下恐懼，再分享「為你」的好消息。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第12節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">12</div>
+        <h3>那就是記號了</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          你們要看見一個嬰孩，包着布，臥在馬槽裏，那就是記號了。
+        </div>
+        <img src="images/illust-manger.jpeg" alt="臥在馬槽裏的嬰孩" class="illustration">
+        <p class="illustration-caption">包着布、臥在馬槽裏的嬰孩——謙卑的記號</p>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          記號不是華麗宮殿，而是最卑微的馬槽與襁褓。上帝用「出乎意料的平凡」作為確認。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          我們常期待「震撼的神蹟」作為上帝同在的證據，但上帝常透過平凡細節印證祂的話。例如：在困境中，一位弟兄姊妹的一句安慰、一次偶然的經文提醒、或家人的溫暖舉動，可能就是「馬槽記號」。服事中，不要輕看「不起眼的回應」——那可能正是上帝的確認。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第13-14節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">13–14</div>
+        <h3>在至高之處榮耀歸與上帝</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          忽然，有一大隊天兵同那天使讚美上帝說：在至高之處榮耀歸與上帝！在地上平安歸與他所喜悅的人！
+        </div>
+        <img src="images/illust-heavenly-host.jpeg" alt="天軍讚美上帝" class="illustration">
+        <p class="illustration-caption">一大隊天兵同聲讚美</p>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          天軍的讚美把焦點從人轉向上帝——榮耀歸上，平安（shalom，整全的福樂）臨到「他所喜悅的人」（那些蒙祂恩典的人）。平安不是沒有衝突，而是與上帝和好後的狀態。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          真正的平安來自「榮耀歸上帝」，而不是環境順利。在現代生活中，我們常追求外在平安（經濟、健康、關係），卻忽略內心與上帝的對齊。例如：在家庭衝突或教會意見分歧時，先「榮耀歸上帝」——承認祂的主權——反而能帶來真實的平安。服事時，我們的讚美與感恩，本身就是在地上延續天軍的頌讚。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第15-16節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">15–16</div>
+        <h3>我們往伯利恆去</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          眾天使離開他們，升天去了。牧羊的人彼此說：「我們往伯利恆去，看看所成的事，就是主所指示我們的。」他們急忙去了，就尋見馬利亞和約瑟，又有那嬰孩臥在馬槽裏；
+        </div>
+        <img src="images/illust-shepherds-journey.jpeg" alt="牧羊人急忙前往伯利恆" class="illustration">
+        <p class="illustration-caption">牧羊人急忙前往尋見救主</p>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          天使離開後，牧羊人立刻行動——「彼此說」、「急忙去」、「尋見」。他們沒有停留在「感動」階段，而是用行動驗證並領受。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          屬靈經歷若只停在感覺，就容易消散。聽見上帝的話後，要「急忙」回應。例如：讀經或聽道後有感動，就立刻採取具體行動（打電話關心、調整服事優先次序、或向某人分享）。在忙碌現代生活中，「急忙」常被拖延取代——這段提醒我們：信實的回應要及時。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第17-18節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">17–18</div>
+        <h3>就把天使論這孩子的話傳開了</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          既然看見，就把天使論這孩子的話傳開了。凡聽見的，就詫異牧羊之人對他們所說的話。
+        </div>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          牧羊人成為第一批見證人，主動傳開。聽者「詫異」（希奇、驚訝），顯示福音常出人意料。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          真實的遇見必然帶來見證。我們不需要完美口才，只需分享「我所看見、所聽見的」。例如：在職場或社區中，自然分享上帝如何幫助自己度過難關；在教會服事中，鼓勵弟兄姊妹把個人經歷轉化為見證。人們可能先「詫異」，但種子已撒下。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第19節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">19</div>
+        <h3>馬利亞卻把這一切的事存在心裏</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          馬利亞卻把這一切的事存在心裏，反覆思想。
+        </div>
+        <img src="images/illust-mary-pondering.jpeg" alt="馬利亞反覆思想" class="illustration">
+        <p class="illustration-caption">馬利亞把一切事存在心裏，反覆思想</p>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          馬利亞的反應是內省與沉思——把經歷「存」在心中，反覆思想（ponder）。這是深層的屬靈操練。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          在資訊爆炸、快速回應的時代，我們常立刻發文、分享、或行動，卻少了「存在心裏、反覆思想」。馬利亞提醒我們：有些經歷需要沉澱。例如：重大決定前、服事高潮後、或挫折時，刻意留時間默想與禱告，讓真理更深扎根。這也是長老教會傳統中「安靜在主前」的智慧。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 第20節 ===== -->
+    <section class="verse-section">
+      <div class="verse-header">
+        <div class="verse-number">20</div>
+        <h3>就歸榮耀與上帝，讚美他</h3>
+      </div>
+      <div class="verse-body">
+        <div class="verse-text">
+          牧羊的人回去了，因所聽見所看見的一切事，正如天使向他們所說的，就歸榮耀與上帝，讚美他。
+        </div>
+
+        <div class="section-label"><span class="dot"></span> 解釋</div>
+        <p class="explanation">
+          他們「回去」原本的崗位，但生命已被改變——因驗證了上帝的話，就歸榮耀與讚美。經歷沒有讓他們逃離日常，而是帶着更新的心回去。
+        </p>
+
+        <div class="section-label"><span class="dot"></span> 現代應用</div>
+        <p class="application">
+          真正的屬靈高峰，最終要回到日常。我們不必永遠「在山上」，而是把榮耀與讚美帶進職場、家庭、教會服事。例如：參加完培靈會或特會後，回到原來的服事崗位，卻帶着更深的感恩與見證。這才是持續的「現代智慧」——在平凡中活出超凡。
+        </p>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <div class="summary-card">
+      <h2>總結給查經小組</h2>
+      <p>
+        這段經文的核心智慧是：<strong>上帝向忠於崗位的卑微人啟示救主，呼召他們以行動回應、以見證傳揚、以沉思深化、並以讚美回到日常</strong>。對熱心服事的兄姐而言，這提醒我們：服事的動力不在於「被看見」，而在於「被上帝遇見」後，自然流露的榮耀歸上與平安分享。
+      </p>
+    </div>
+
+    <!-- Discussion -->
+    <div class="discussion-card">
+      <h2>思考與討論問題</h2>
+      <ol>
+        <li>我們目前的「野地守夜」是什麼？上帝可能如何在其中對我們說話？</li>
+        <li>最近有什麼「馬槽記號」印證了上帝的話？</li>
+        <li>我們如何在「急忙行動」與「反覆思想」之間取得平衡？</li>
+      </ol>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p class="quote">「在至高之處榮耀歸與上帝！在地上平安歸與他所喜悅的人！」</p>
+      <p>願這段古老經文繼續成為我們現代生活的智慧泉源。</p>
+      <p style="margin-top: 16px; font-size: 0.85rem;">路加福音 2:8–20 · 新標點和合本上帝版 · 長老教會查經小組</p>
+    </footer>
+  </div>
+</body>
+</html>
