@@ -246,6 +246,25 @@ a{
     color:#625b52;
 }
 
+/* 特別經文連結樣式 */
+.special-phrase {
+    color: #936c32;                 /* 與周圍經文不同的顏色 */
+    font-weight: 700;               /* 較粗字重，營造不同字型感覺 */
+    font-style: italic;             /* 斜體，增加區隔 */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.special-phrase:hover {
+    color: #c48a3a;                 /* hover 時顏色變亮 */
+    background-color: rgba(147, 108, 50, 0.12);
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
 /* =========================================================
    經文段落
 ========================================================= */
@@ -488,6 +507,32 @@ a{
 
 .modern-card p{
     color:#625b52;
+}
+
+/* 「獻與主」連結 */
+.scripture-link {
+    color: #b35c3e;
+    font-family: "Noto Serif TC", "標楷體", serif;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid #d8a28e;
+    padding: 0 3px;
+    transition: all 0.25s ease;
+}
+
+/* 滑鼠移上去 */
+.scripture-link:hover {
+    color: #ffffff;
+    background-color: #b35c3e;
+    border-radius: 5px;
+    padding: 3px 8px;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(179, 92, 62, 0.25);
+}
+
+/* 點擊時 */
+.scripture-link:active {
+    transform: scale(0.96);
 }
 
 /* =========================================================
@@ -1062,14 +1107,11 @@ footer .main{
 <div class="scripture-card">
 
     <div class="scripture-label">
-        經文
+        經文｜2:21
     </div>
 
     <div class="scripture-text">
-        「滿了八天，就給孩子行割禮，
-        與他起名叫耶穌；
-        這就是沒有成胎以前，
-        天使所起的名。」
+        滿了八天，就給孩子行割禮，與他起名叫耶穌；這就是沒有成胎以前，天使所起的名。
     </div>
 
 
@@ -1154,9 +1196,14 @@ footer .main{
     </div>
 
     <div class="scripture-text">
-        約瑟和馬利亞按照摩西律法，
-        把耶穌帶到耶路撒冷，
-        要把孩子獻與主。
+        按摩西律法滿了潔淨的日子，他們帶着孩子上耶路撒冷去，要把他
+        <a href="q1.html"
+        target="_blank"
+        class="scripture-link">
+            獻與主
+        </a>
+        ，（正如主的律法上所記：「凡頭生的男子必稱聖歸主。」）
+        又要照主的律法上所說，或用一對斑鳩，或用兩隻雛鴿獻祭。
     </div>
 
 
@@ -1269,10 +1316,7 @@ style="background-image:url('images/bg-02-temple-light.jpeg');">
     </div>
 
     <div class="scripture-text">
-        「在耶路撒冷有一個人，名叫西面；
-        這人又公義又虔誠，
-        素常盼望以色列的安慰者來到，
-        又有聖靈在他身上。」
+        在耶路撒冷有一個人，名叫西面；這人又公義又虔誠，素常盼望以色列的安慰者來到，又有聖靈在他身上。他得了聖靈的啟示，知道自己未死以前，必看見主所立的基督。
     </div>
 
 
@@ -1330,9 +1374,13 @@ style="background-image:url('images/bg-02-temple-light.jpeg');">
     </div>
 
     <div class="scripture-text">
-        西面在聖靈感動下進入聖殿，
-        遇見抱著孩子的約瑟和馬利亞，
-        就認出這孩子就是上帝所預備的救恩。
+        他受了聖靈的感動，進入聖殿，正遇見耶穌的父母抱着孩子進來，要照律法的規矩辦理。西面就用手接過他來，稱頌上帝說：<br><br>
+        「主啊！如今可以照你的話，<br>
+        釋放僕人安然去世；<br><br>
+        因為我的眼睛已經看見你的救恩－<br><br>
+        就是你在萬民面前所預備的：<br><br>
+        是照亮外邦人的光，<br>
+        又是你民以色列的榮耀。」
     </div>
 
 
@@ -1423,10 +1471,7 @@ style="background-image:url('images/bg-02-temple-light.jpeg');">
     </div>
 
     <div class="scripture-text">
-        西面告訴馬利亞，
-        這孩子要叫許多人跌倒、
-        許多人興起，
-        也預告她自己的心將被刀刺透。
+        孩子的父母因這論耶穌的話就希奇。西面給他們祝福，又對孩子的母親馬利亞說：「這孩子被立，是要叫以色列中<a href="q2.html" target="_blank" class="special-phrase">許多人跌倒，許多人興起</a>；又要作毀謗的話柄，叫許多人心裏的意念顯露出來；你自己的心也要被刀刺透。」
     </div>
 
 
@@ -1521,10 +1566,7 @@ style="background-image:url('images/bg-02-temple-light.jpeg');">
     </div>
 
     <div class="scripture-text">
-        「又有女先知亞拿……
-        不離開聖殿，
-        禁食祈求，
-        晝夜事奉上帝。」
+        又有女先知，名叫亞拿，是亞設支派法內力的女兒，年紀已經老邁，從作童女出嫁的時候，同丈夫住了七年就寡居了，現在已經八十四歲，並不離開聖殿，禁食祈求，晝夜事奉上帝。
     </div>
 
 
@@ -1588,8 +1630,7 @@ style="background-image:url('images/bg-02-temple-light.jpeg');">
     </div>
 
     <div class="scripture-text">
-        「正當那時，她進前來稱謝上帝，
-        將孩子的事對一切盼望耶路撒冷得救贖的人講說。」
+        正當那時，她進前來稱謝上帝，將孩子的事對一切盼望耶路撒冷得救贖的人講說。
     </div>
 
 
@@ -1697,8 +1738,7 @@ style="background-image:url('images/bg-03-nazareth-home.jpeg');">
     </div>
 
     <div class="scripture-text">
-        「約瑟和馬利亞照主的律法辦完了一切的事，
-        就回加利利，到自己的城拿撒勒去了。」
+        約瑟和馬利亞照主的律法辦完了一切的事，就回加利利，到自己的城拿撒勒去了。孩子漸漸長大，強健起來，充滿智慧，又有上帝的恩在他身上。
     </div>
 
 
@@ -1749,72 +1789,6 @@ style="background-image:url('images/bg-03-nazareth-home.jpeg');">
                 回到家庭、工作、
                 社區與人際關係，
                 才是真正活出信仰的地方。
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="scripture-card">
-
-    <div class="scripture-label">
-        經文｜2:40
-    </div>
-
-    <div class="scripture-text">
-        「孩子漸漸長大，強健起來，
-        充滿智慧，又有上帝的恩在他身上。」
-    </div>
-
-
-    <div class="explanation">
-
-        <h4>
-            📖 經文解讀
-        </h4>
-
-        <p>
-            「漸漸長大」代表一個過程。
-            耶穌不是突然跳過成長，
-            而是在真實的人生中逐漸長大。
-        </p>
-
-        <p>
-            身體成長、智慧成長，
-            同時也活在上帝的恩典中。
-        </p>
-
-
-        <h4>
-            💡 信仰意義
-        </h4>
-
-        <p>
-            健康的基督徒生命，
-            也應該是一個持續成長的生命。
-        </p>
-
-
-        <div class="application">
-
-            <div class="application-title">
-                🏠 今日生活
-            </div>
-
-            <p>
-                我們不需要要求自己
-                「一天變成完全人」。
-            </p>
-
-            <p>
-                今天比昨天更有愛一點、
-                更有耐心一點、
-                更願意饒恕一點、
-                更願意禱告一點，
-                都是生命的成長。
             </p>
 
         </div>

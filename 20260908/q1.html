@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>兒女是賞賜，還是父母的所有物？｜詩篇127:3</title>
+
+    <meta name="description"
+          content="從詩篇127:3探討兒女是耶和華所賜的產業、所給的賞賜，以及父母對兒女的權柄與責任。">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                "Noto Sans TC",
+                "Microsoft JhengHei",
+                sans-serif;
+            background: #f7f3ea;
+            color: #3f4038;
+            line-height: 1.9;
+            font-size: 18px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.35),
+                    rgba(255,255,255,0.55)
+                ),
+                url("images/q1-bg-hero.jpeg")
+                center / cover no-repeat;
+        }
+
+        .hero-content {
+            width: 100%;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            font-size: 1.15rem;
+            letter-spacing: 4px;
+            color: #5d6943;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            line-height: 1.35;
+            margin: 0 auto 25px;
+            color: #38442d;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(255,255,255,0.8);
+        }
+
+        .hero-verse {
+            max-width: 850px;
+            margin: auto;
+            font-family: "Noto Serif TC", "PMingLiU", serif;
+            font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+            color: #403c31;
+            background: rgba(255,255,255,0.72);
+            padding: 25px 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .hero-subtitle {
+            margin-top: 25px;
+            font-size: 1.25rem;
+            color: #586746;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           COMMON
+        ========================= */
+
+        section {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #455536;
+            margin: 0 0 15px;
+        }
+
+        .section-lead {
+            max-width: 800px;
+            margin: 0 auto 45px;
+            text-align: center;
+            color: #777;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(65,60,40,0.08);
+            margin-bottom: 30px;
+        }
+
+        .verse-card {
+            border-left: 7px solid #75845a;
+            background: #fffdf7;
+        }
+
+        .verse-text {
+            font-family: "Noto Serif TC", "PMingLiU", serif;
+            font-size: 1.5rem;
+            line-height: 2;
+            text-align: center;
+            color: #39372f;
+        }
+
+        .reference {
+            text-align: center;
+            color: #778265;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .highlight {
+            color: #667747;
+            font-weight: bold;
+        }
+
+        .important {
+            color: #9a6945;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           SCRIPTURE
+        ========================= */
+
+        #scripture {
+            background:
+                linear-gradient(
+                    rgba(247,243,234,0.88),
+                    rgba(247,243,234,0.88)
+                ),
+                url("images/q1-bg-paper.jpeg")
+                center / cover fixed;
+        }
+
+        .scripture-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .scripture-image img {
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+        }
+
+
+        /* =========================
+           GIFT VS OWNERSHIP
+        ========================= */
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 20px;
+            align-items: stretch;
+            margin-top: 40px;
+        }
+
+        .comparison-box {
+            padding: 35px;
+            border-radius: 18px;
+        }
+
+        .gift-box {
+            background: #f1f5e8;
+            border: 1px solid #cbd4b9;
+        }
+
+        .ownership-box {
+            background: #faf0e8;
+            border: 1px solid #e1c8b2;
+        }
+
+        .comparison-box h3 {
+            margin-top: 0;
+            font-size: 1.45rem;
+        }
+
+        .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.8rem;
+            color: #7a875d;
+        }
+
+        .example-box {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .example-box img {
+            width: 320px;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+        }
+
+
+        /* =========================
+           PARENTS ROLE
+        ========================= */
+
+        .roles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 45px;
+        }
+
+        .role-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .role-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: #728052;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .role-card img {
+            width: 220px;
+            margin: 20px auto 0;
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           ISAAC
+        ========================= */
+
+        #isaac {
+            background: #f4efe5;
+        }
+
+        .isaac-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .isaac-image img {
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .lesson {
+            margin-top: 25px;
+            padding: 22px;
+            border-radius: 12px;
+            background: #fff;
+            border-left: 5px solid #8a936f;
+        }
+
+
+        /* =========================
+           DAILY APPLICATION
+        ========================= */
+
+        .application-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .application-item {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .application-item h3 {
+            color: #586942;
+            margin-top: 0;
+        }
+
+
+        /* =========================
+           STEWARD
+        ========================= */
+
+        .steward {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .steward img {
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .quote {
+            font-family: "Noto Serif TC", "PMingLiU", serif;
+            font-size: 1.5rem;
+            color: #586442;
+            padding: 25px;
+            border-top: 1px solid #c7ccb9;
+            border-bottom: 1px solid #c7ccb9;
+            margin: 25px 0;
+        }
+
+
+        /* =========================
+           SUMMARY
+        ========================= */
+
+        #summary {
+            background:
+                linear-gradient(
+                    rgba(247,243,234,0.78),
+                    rgba(247,243,234,0.88)
+                ),
+                url("images/q1-bg-closing.jpeg")
+                center / cover no-repeat;
+        }
+
+        .summary-card {
+            max-width: 850px;
+            margin: auto;
+            background: rgba(255,255,255,0.93);
+            border-radius: 22px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .summary-card h3 {
+            color: #53643b;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .summary-main {
+            font-size: 1.35rem;
+            text-align: center;
+            line-height: 2;
+        }
+
+
+        /* =========================
+           PRAYER
+        ========================= */
+
+        .prayer {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .prayer img {
+            width: 220px;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+        }
+
+        .prayer-text {
+            font-family: "Noto Serif TC", "PMingLiU", serif;
+            font-size: 1.25rem;
+            text-align: left;
+            background: rgba(255,255,255,0.8);
+            padding: 35px;
+            border-radius: 18px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #4f5d3d;
+            color: #f4f2e9;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            body {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-verse {
+                padding: 20px;
+            }
+
+            .scripture-layout,
+            .isaac-layout,
+            .steward {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+                height: 40px;
+            }
+
+            .roles {
+                grid-template-columns: 1fr;
+            }
+
+            .application-list {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-card {
+                padding: 30px 22px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content container">
+
+        <div class="hero-label">
+            詩篇 127:3
+        </div>
+
+        <h1>
+            兒女是「賞賜」<br>
+            還是父母的「所有物」？
+        </h1>
+
+        <div class="hero-verse">
+            「兒女是耶和華所賜的產業；
+            所懷的胎是他所給的賞賜。」
+        </div>
+
+        <div class="hero-subtitle">
+            上帝所賜的福分，也是一份託付
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==================================================
+     SCRIPTURE
+================================================== -->
+
+<section id="scripture">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            一、先看聖經怎麼說
+        </h2>
+
+        <p class="section-lead">
+            詩篇 127 篇把兒女放在「耶和華所賜」的脈絡中，
+            首先強調的是生命的來源與祝福。
+        </p>
+
+        <div class="scripture-layout">
+
+            <div class="card verse-card">
+
+                <div class="verse-text">
+                    「兒女是耶和華所賜的產業；
+                    所懷的胎是他所給的賞賜。」
+                </div>
+
+                <div class="reference">
+                    —— 詩篇 127:3
+                </div>
+
+                <p>
+                    這節經文至少告訴我們兩件事情：
+                </p>
+
+                <ol>
+                    <li>
+                        <span class="highlight">兒女的生命來源於上帝。</span>
+                    </li>
+
+                    <li>
+                        <span class="highlight">
+                            兒女是上帝賜給家庭的福分。
+                        </span>
+                    </li>
+                </ol>
+
+            </div>
+
+            <div class="scripture-image">
+                <img src="images/q1-ps127-verse.jpeg"
+                     alt="聖經與十字架">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     GIFT VS OWNERSHIP
+================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            二、「賞賜」不等於「所有權」
+        </h2>
+
+        <p class="section-lead">
+            我們平常理解「賞賜」，很容易想到「送給我，
+            所以就是我的」。但是兒女是「人」，不是物品。
+        </p>
+
+        <div class="comparison">
+
+            <div class="comparison-box gift-box">
+
+                <h3>🎁 一般所說的「賞賜」</h3>
+
+                <p>
+                    例如老闆賞賜我一萬元。
+                </p>
+
+                <p>
+                    錢給了我之後，我可以合法地使用、管理它。
+                </p>
+
+                <p class="highlight">
+                    重點：強調「得到」。
+                </p>
+
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="comparison-box ownership-box">
+
+                <h3>👨‍👩‍👧 兒女的「賞賜」</h3>
+
+                <p>
+                    上帝把一個寶貴的生命賜給父母，
+                    父母因此成為孩子的父母。
+                </p>
+
+                <p>
+                    但是孩子不是一件可以任意處置的物品。
+                </p>
+
+                <p class="important">
+                    重點：強調「生命的賜予」與「父母的託付」。
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card example-box">
+
+            <img src="images/q1-gift.jpeg"
+                 alt="禮物象徵賞賜">
+
+            <h3>
+                所以真正的問題是：
+            </h3>
+
+            <p>
+                「上帝把孩子賜給我」，
+                是否代表「我可以完全決定孩子的一切」？
+            </p>
+
+            <p class="important">
+                答案：不是。
+            </p>
+
+            <p>
+                父母擁有的是<strong>父母的身分、權柄與責任</strong>，
+                而不是對另一個人的「任意處置權」。
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     PARENTS ROLE
+================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            三、父母的角色：託付，而非擁有
+        </h2>
+
+        <p class="section-lead">
+            從聖經的角度來看，父母的權柄是真實的，
+            但這個權柄應當受到上帝旨意的約束。
+        </p>
+
+        <div class="roles">
+
+            <div class="role-card">
+
+                <div class="role-number">1</div>
+
+                <h3>上帝所賜的</h3>
+
+                <p>
+                    兒女不是父母「理所當然擁有」的東西，
+                    而是上帝所賜的生命。
+                </p>
+
+                <p>
+                    因此父母首先應當：
+                    <strong>珍惜、感恩。</strong>
+                </p>
+
+                <img src="images/q1-steward.jpeg"
+                     alt="父母接受上帝託付">
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">2</div>
+
+                <h3>父母的責任</h3>
+
+                <p>
+                    父母有養育、保護、引導與教導兒女的責任。
+                </p>
+
+                <p>
+                    「教養孩童，使他走當行的道，
+                    就是到老他也不偏離。」
+                </p>
+
+                <p class="reference">
+                    箴言 22:6
+                </p>
+
+                <img src="images/q1-parent-care.jpeg"
+                     alt="父母教導孩子">
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">3</div>
+
+                <h3>最終仍屬於上帝</h3>
+
+                <p>
+                    父母不是兒女的「神」。
+                </p>
+
+                <p>
+                    孩子的生命、人格、未來與信仰，
+                    最終都在上帝的主權之下。
+                </p>
+
+                <img src="images/q1-cross-family.jpeg"
+                     alt="家庭走在十字架的道路上">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ISAAC
+================================================== -->
+
+<section id="isaac">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            四、聖經中的例子：以撒
+        </h2>
+
+        <p class="section-lead">
+            亞伯拉罕與以撒的故事，可以幫助我們更深理解
+            「兒女是父母的孩子，但生命的主權仍在上帝手中」。
+        </p>
+
+        <div class="isaac-layout">
+
+            <div class="isaac-image">
+
+                <img src="images/q1-isaac.jpeg"
+                     alt="亞伯拉罕與以撒">
+
+            </div>
+
+            <div>
+
+                <h3>
+                    以撒是亞伯拉罕的兒子
+                </h3>
+
+                <p>
+                    以撒是上帝應許給亞伯拉罕的兒子，
+                    是亞伯拉罕非常珍愛的孩子。
+                </p>
+
+                <p>
+                    但是在創世記 22 章，
+                    上帝要求亞伯拉罕把以撒獻上。
+                </p>
+
+                <div class="lesson">
+
+                    <strong>這件事情提醒我們：</strong>
+
+                    <p>
+                        以撒確實是亞伯拉罕的兒子，
+                        但亞伯拉罕不能把自己當成以撒生命的「主人」。
+                    </p>
+
+                    <p>
+                        <span class="highlight">
+                            兒女屬於家庭的關係，
+                            但人的生命最終仍然在上帝的主權之下。
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     STEWARD
+================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            五、父母真正擁有的是什麼？
+        </h2>
+
+        <div class="steward">
+
+            <img src="images/q1-parent-care.jpeg"
+                 alt="父母陪伴孩子">
+
+            <div>
+
+                <p>
+                    如果把「所有權」理解成：
+                    「我可以任意決定、任意控制、任意處置」，
+                    那麼父母並沒有這樣的權利。
+                </p>
+
+                <p>
+                    但父母確實擁有：
+                </p>
+
+                <ul>
+                    <li>父母的身分</li>
+                    <li>養育兒女的責任</li>
+                    <li>保護兒女的責任</li>
+                    <li>教導兒女的權柄</li>
+                    <li>陪伴兒女成長的使命</li>
+                </ul>
+
+                <div class="quote">
+                    「父母不是孩子的主人，
+                    而是上帝託付孩子的人。」
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     DAILY APPLICATION
+================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            六、這個觀念如何影響我們的家庭？
+        </h2>
+
+        <p class="section-lead">
+            「孩子是上帝所賜的」不是一句漂亮的宗教用語，
+            它其實會改變父母與兒女相處的方式。
+        </p>
+
+        <div class="application-list">
+
+            <div class="application-item">
+
+                <h3>① 從「我的孩子」到「上帝託付我的孩子」</h3>
+
+                <p>
+                    「我的孩子」沒有錯，
+                    但我們可以再多想一步：
+                </p>
+
+                <p class="highlight">
+                    「主啊，祢把這個孩子交給我，
+                    我要怎樣照祢的心意來愛他？」
+                </p>
+
+            </div>
+
+
+            <div class="application-item">
+
+                <h3>② 少一點控制，多一點陪伴</h3>
+
+                <p>
+                    父母很容易把自己的期待，
+                    當成孩子人生唯一正確的答案。
+                </p>
+
+                <p>
+                    但孩子有自己的性格、恩賜與人生道路。
+                </p>
+
+            </div>
+
+
+            <div class="application-item">
+
+                <h3>③ 權柄的目的，是幫助孩子成長</h3>
+
+                <p>
+                    父母的管教不是為了證明：
+                    「我是老大，你必須聽我的。」
+                </p>
+
+                <p>
+                    而是為了幫助孩子學習真理、
+                    責任、愛與敬畏上帝。
+                </p>
+
+            </div>
+
+
+            <div class="application-item">
+
+                <h3>④ 感恩，而不是理所當然</h3>
+
+                <p>
+                    當父母把孩子視為「上帝的賞賜」，
+                    就會更容易看見：
+                </p>
+
+                <p class="highlight">
+                    孩子的存在本身，就是一份恩典。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SUMMARY
+================================================== -->
+
+<section id="summary">
+
+    <div class="container">
+
+        <div class="summary-card">
+
+            <h3>
+                七、最後的整理
+            </h3>
+
+            <p class="summary-main">
+                兒女是上帝賜給父母的珍貴福分，
+                <br>
+                也是上帝託付父母照顧的生命。
+            </p>
+
+            <hr>
+
+            <p>
+                所以，我們可以很自然地說：
+            </p>
+
+            <p class="summary-main">
+                <strong>「這是我的孩子。」</strong>
+            </p>
+
+            <p>
+                但基督徒父母還可以再多說一句：
+            </p>
+
+            <p class="summary-main highlight">
+                <strong>
+                    「主啊，這是祢賜給我的孩子，
+                    求祢幫助我忠心地照顧他。」
+                </strong>
+            </p>
+
+            <p>
+                這就是「賞賜」與「所有權」最大的不同。
+            </p>
+
+            <p>
+                <strong>
+                    父母有權柄，但權柄是為了愛與養育；
+                    父母有責任，但生命的最終主權仍然屬於上帝。
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     PRAYER
+================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="prayer">
+
+            <h2 class="section-title">
+                八、一同禱告
+            </h2>
+
+            <img src="images/q1-prayer.jpeg"
+                 alt="禱告的雙手">
+
+            <div class="prayer-text">
+
+                <p>
+                    親愛的天父，感謝祢將兒女賜給我們，
+                    讓我們在家庭中經歷祢的恩典。
+                </p>
+
+                <p>
+                    求祢幫助我們明白，
+                    兒女不是我們可以任意控制的人，
+                    而是祢所託付給我們珍貴的生命。
+                </p>
+
+                <p>
+                    求祢賜給父母智慧，
+                    讓我們有愛心、有耐心，
+                    能夠在真理中教導，
+                    在恩典中陪伴。
+                </p>
+
+                <p>
+                    也求祢幫助我們放下過度的控制與期待，
+                    學習把兒女交在祢手中，
+                    相信祢對他們的生命有美好的計畫。
+                </p>
+
+                <p>
+                    奉主耶穌基督的名禱告，
+                    阿們。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        「兒女是耶和華所賜的產業；
+        所懷的胎是他所給的賞賜。」
+    </p>
+
+    <p>
+        詩篇 127:3
+    </p>
+
+</footer>
+
+</body>
+</html>
