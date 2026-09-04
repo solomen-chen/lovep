@@ -607,6 +607,49 @@ a{
 
 .discussion{
     background:#fffdf8;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.discussion .container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.discussion .section-title,
+.discussion .intro-box{
+    grid-column:1 / -1;
+}
+
+.discussion .section-title{
+    margin-bottom:5px;
+}
+
+.discussion .question{
+    margin-bottom:0;
+    padding:24px 26px;
+}
+
+.discussion .question h3{
+    font-size:23px;
+    line-height:1.65;
+}
+
+.discussion .question p{
+    line-height:1.75;
+}
+
+.discussion .intro-box{
+    margin-top:0 !important;
+    padding:20px 28px;
+}
+
+.discussion .intro-quote{
+    margin:0;
+    padding:12px 20px;
+    font-size:21px;
 }
 
 .question{
@@ -713,6 +756,26 @@ footer .main{
     .visual-break,
     .transition-section{
         background-attachment:scroll;
+    }
+
+    .discussion{
+        display:block;
+    }
+
+    .discussion .container{
+        display:block;
+    }
+
+    .discussion .section-title{
+        margin-bottom:35px;
+    }
+
+    .discussion .question{
+        margin-bottom:25px;
+    }
+
+    .discussion .intro-box{
+        margin-top:50px !important;
     }
 
 }
@@ -2173,19 +2236,12 @@ style="background-image:url('images/bg-03-nazareth-home.jpeg');">
 
 <div class="section-title">
 
-    <span class="small">
-        SHARE & DISCUSSION
-    </span>
-
+    
     <h2>
         分享與討論
     </h2>
 
-    <p>
-        不只是回答問題，
-        而是讓聖經進入我們自己的生命故事。
-    </p>
-
+    
 </div>
 
 
@@ -2243,28 +2299,12 @@ style="background-image:url('images/bg-03-nazareth-home.jpeg');">
         如果暫時不考慮「體力」、
         「年齡」或「能力」，
         你認為上帝現在仍然可以透過你
-        祝福哪一個人？
+        祝福哪一個人？哪一件事？
     </p>
 
 </div>
 
 
-<div class="intro-box" style="margin-top:50px;">
-
-    <div class="intro-quote">
-
-        最後一起思想：
-
-        <br><br>
-
-        <span class="highlight">
-            「我在每天的生活中，
-            是否仍然看得見耶穌？」
-        </span>
-
-    </div>
-
-</div>
 
 
 </div>
