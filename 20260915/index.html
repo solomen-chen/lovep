@@ -85,11 +85,53 @@
       display: inline-block;
     }
 
+    .intro-hero {
+      background: linear-gradient(135deg, rgba(44, 95, 124, 0.95), rgba(26, 58, 74, 0.95));
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border: none;
+    }
+
+    .intro-hero .main-title {
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
     .card h3 {
       font-size: 1.25rem;
       color: var(--primary-dark);
       margin: 1.4rem 0 0.6rem;
       font-weight: 600;
+    }
+
+    .card h3.exegesis-title {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .card h3 .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 50%;
+      background: rgba(201, 162, 39, 0.15);
+      border: 1px solid rgba(201, 162, 39, 0.5);
+      color: var(--accent);
+      font-size: 0.95rem;
+      line-height: 1;
+      flex-shrink: 0;
     }
 
     .card p, .card li {
@@ -106,33 +148,44 @@
       margin-bottom: 0.55rem;
     }
 
-    /* 經文預留區 */
+    /* 經文區 */
     .scripture-box {
       background: linear-gradient(135deg, #faf6ef, #f0e9dc);
-      border: 2px dashed #c9a227;
+      border: 2px solid #c9a227;
       border-radius: 12px;
-      padding: 1.4rem 1.2rem;
-      margin: 1.2rem 0;
-      min-height: 120px;
+      padding: 1.6rem 1.5rem;
+      margin: 1.4rem 0;
       position: relative;
     }
-    .scripture-box::before {
-      content: "📖 請在此貼上完整經文（新標點和合本）";
-      position: absolute;
-      top: -12px;
-      left: 16px;
-      background: #faf6ef;
-      padding: 0 10px;
-      font-size: 0.9rem;
-      color: #8a7a5a;
-      font-weight: 500;
+
+    .scripture-box .scripture-text {
+      font-size: 1.15rem;
+      line-height: 2;
+      color: #2d1f0a;
     }
-    .scripture-box .placeholder {
-      color: #a09070;
-      font-style: italic;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 1rem;
+
+    .scripture-box .scripture-text p {
+      margin-bottom: 0.8rem;
+      text-align: justify;
+      text-indent: 1.6em;
+    }
+
+    .scripture-box .scripture-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .scripture-box .verse-number {
+      font-weight: 700;
+      color: #9a7838;
+      font-size: 0.95rem;
+      vertical-align: super;
+      margin-right: 0.15rem;
+      margin-left: 0.15rem;
+    }
+
+    .scripture-box .red-letter {
+      color: #a83232;
+      font-weight: 500;
     }
 
     /* 導言 */
@@ -227,6 +280,7 @@
       .top-bar h1 { font-size: 1.3rem; }
       .card { padding: 1.3rem 1.1rem; }
       .card h2 { font-size: 1.35rem; }
+      .scripture-box .scripture-text { font-size: 1.05rem; }
     }
 
     /* 列印友善 */
@@ -239,31 +293,27 @@
 </head>
 <body>
 
-  <div class="top-bar">
+  <!-- <div class="top-bar">
     <h1>路加福音 2:41-52 逐節查經</h1>
     <div class="subtitle">「少年耶穌在聖殿中」</div>
-  </div>
+  </div> -->
 
   <div class="container">
+
+    <section class="card intro-hero">
+      <h2 class="main-title">走了一天才發現：<br>我們何時在忙碌中失落了耶穌？</h2>
+    </section>
 
     <!-- 導言 -->
     <section class="card intro-card">
       <span class="version">版本依據：新標點和合本上帝版</span>
+      <br>
       <h2>導言</h2>
       <p>路加福音 2:41-52 是四福音書中唯一記載耶穌少年時期（十二歲）的事件，前後緊接著耶穌的誕生敘事，後面則直接跳到耶穌約三十歲開始傳道之前（路 3 章）。這段經文承先啟後，讓我們看見「道成肉身」的耶穌，是如何在一個敬虔的猶太家庭中，按部就班地成長、學習律法、並逐漸意識到祂與天父獨特的關係。</p>
       <p>對長老教會、已有相當聖經根基的兄姐而言，這段經文的重點不在於「發生了什麼奇蹟」，而在於：<strong>一個委身的家庭、一個信仰的傳承、一個逐漸顯明的呼召</strong>。</p>
     </section>
 
-    <!-- 完整經文預留區（總覽） -->
-    <section class="card">
-      <h2>📖 經文全文（預留位置）</h2>
-      <div class="scripture-box">
-        <div class="placeholder">
-          請在此貼上 路加福音 2:41-52 完整經文<br>
-          （可從聖經軟體或網站複製後貼上）
-        </div>
-      </div>
-    </section>
+    
 
     <!-- 第41～42節 -->
     <section class="card" id="v41-42">
@@ -274,14 +324,17 @@
         <div class="caption">約瑟、馬利亞帶著十二歲的耶穌，每年上耶路撒冷守逾越節</div>
       </div>
 
+      <div class="scripture-box">
+        <div class="scripture-text">
+          <p><span class="verse-number">41</span>每年到逾越節，他父母就上耶路撒冷去。</p>
+          <p><span class="verse-number">42</span>當他十二歲的時候，他們按着節期的規矩上去。</p>
+        </div>
+      </div>
+
       <h3>經文大意</h3>
       <p>約瑟和馬利亞每年逾越節都上耶路撒冷去；耶穌十二歲那年，他們照常按節期規矩同去。</p>
 
-      <div class="scripture-box">
-        <div class="placeholder">請在此貼上 2:41-42 經文</div>
-      </div>
-
-      <h3>解經</h3>
+      <h3 class="exegesis-title"><span class="section-icon">✦</span></h3>
       <ul>
         <li>逾越節是猶太人三大朝聖節期之一（另兩個是五旬節、住棚節），律法規定成年男子每年應上耶路撒冷過節（申 16:16）。從加利利的拿撒勒到耶路撒冷約需三、四天路程，對一個木匠家庭而言，這是相當的時間與經濟成本。</li>
         <li>「每年」二字顯示這不是偶一為之的敬虔，而是持之以恆的信仰生活習慣。</li>
@@ -303,14 +356,18 @@
         <div class="caption">父母發現耶穌不在同行隊伍中，立刻回頭焦急尋找</div>
       </div>
 
+      <div class="scripture-box">
+        <div class="scripture-text">
+          <p><span class="verse-number">43</span>守滿了節期，他們回去，孩童耶穌仍舊在耶路撒冷。他的父母並不知道，</p>
+          <p><span class="verse-number">44</span>以為他在同行的人中間，走了一天的路程，就在親族和熟識的人中找他，</p>
+          <p><span class="verse-number">45</span>既找不着，就回耶路撒冷去找他。</p>
+        </div>
+      </div>
+
       <h3>經文大意</h3>
       <p>守滿節期後他們回程，少年耶穌卻仍留在耶路撒冷，父母並不知道；他們以為祂在同行的人群中，走了一天才發現不對，便回頭在親族熟人中焦急尋找。</p>
 
-      <div class="scripture-box">
-        <div class="placeholder">請在此貼上 2:43-45 經文</div>
-      </div>
-
-      <h3>解經</h3>
+      <h3 class="exegesis-title"><span class="section-icon">✦</span></h3>
       <ul>
         <li>當時上耶路撒冷過節的加利利人常結隊同行，沿途互相照應，男女分行也是常見情況，因此約瑟、馬利亞一開始「以為祂在同行的人中間」並不算失職，反映當時的社會生活實況。</li>
         <li>但發現耶穌不在之後，他們立刻「回耶路撒冷去找他」——顯出父母對孩子高度的責任感，並沒有僥倖等待，而是立刻採取行動。</li>
@@ -332,14 +389,17 @@
         <div class="caption">耶穌坐在聖殿的拉比中間，一面聽、一面問，眾人希奇祂的聰明與應對</div>
       </div>
 
+      <div class="scripture-box">
+        <div class="scripture-text">
+          <p><span class="verse-number">46</span>過了三天，就遇見他在殿裏，坐在教師中間，一面聽，一面問。</p>
+          <p><span class="verse-number">47</span>凡聽見他的，都希奇他的聰明和他的應對。</p>
+        </div>
+      </div>
+
       <h3>經文大意</h3>
       <p>過了三天，他們在聖殿裡找到耶穌，祂正坐在教師（拉比）中間，一面聽、一面問；凡聽見的人都因祂的聰明與應對而希奇。</p>
 
-      <div class="scripture-box">
-        <div class="placeholder">請在此貼上 2:46-47 經文</div>
-      </div>
-
-      <h3>解經</h3>
+      <h3 class="exegesis-title"><span class="section-icon">✦</span></h3>
       <ul>
         <li>「三天」極可能包含：一天發現祂不在同行隊伍中、一天返回耶路撒冷、第三天才在聖殿找到——顯示尋找的過程並不輕鬆，父母內心必然極度焦慮。</li>
         <li>耶穌所在的位置是聖殿院內拉比講學之處，當時的教學方式即是師生問答；耶穌「一面聽，一面問」，展現的是謙卑受教又主動思考的態度，而非誇耀或炫技。</li>
@@ -361,14 +421,17 @@
         <div class="caption">馬利亞說「你父親和我一直傷心地找你」，耶穌回答「豈不知我應當在我父的家裡嗎？」</div>
       </div>
 
+      <div class="scripture-box">
+        <div class="scripture-text">
+          <p><span class="verse-number">48</span>他父母看見就很希奇。他母親對他說：「我兒！為甚麼向我們這樣行呢？看哪，你父親和我傷心來找你！」</p>
+          <p><span class="verse-number">49</span><span class="red-letter">耶穌說：「為甚麼找我呢？豈不知我應當以我父的事為念嗎？」</span></p>
+        </div>
+      </div>
+
       <h3>經文大意</h3>
       <p>父母看見祂十分驚訝，馬利亞說：「我兒，為什麼這樣對我們？你父親和我一直傷心地找你！」耶穌回答：「為什麼找我呢？豈不知我應當在我父的家裡（或譯：以我父的事為念）嗎？」</p>
 
-      <div class="scripture-box">
-        <div class="placeholder">請在此貼上 2:48-49 經文</div>
-      </div>
-
-      <h3>解經</h3>
+      <h3 class="exegesis-title"><span class="section-icon">✦</span></h3>
       <ul>
         <li>馬利亞的話語中帶著人之常情的委屈與焦急，這完全合理——沒有一位母親會對孩子失蹤三天無動於衷。</li>
         <li>值得留意的是，馬利亞說「你父親和我」，指的是約瑟；但耶穌的回答卻提到「我父」，指向的是天父上帝。這是路加福音中耶穌第一次公開表明自己與天父之間獨特的父子關係，是這段經文神學上最關鍵的一句話。</li>
@@ -385,14 +448,16 @@
     <section class="card" id="v50">
       <h2>第 50 節：不明白，卻沒有拒絕</h2>
 
+      <div class="scripture-box">
+        <div class="scripture-text">
+          <p><span class="verse-number">50</span>他所說的這話，他們不明白。</p>
+        </div>
+      </div>
+
       <h3>經文大意</h3>
       <p>他們不明白耶穌所說的這話。</p>
 
-      <div class="scripture-box">
-        <div class="placeholder">請在此貼上 2:50 經文</div>
-      </div>
-
-      <h3>解經</h3>
+      <h3 class="exegesis-title"><span class="section-icon">✦</span></h3>
       <ul>
         <li>短短一節卻極為誠實：即使是被上帝揀選、親自領受天使報信的馬利亞與約瑟，對耶穌話語中更深的屬靈意涵，仍「不明白」。</li>
         <li>但重要的是，「不明白」不等於「不相信」或「拒絕」。他們沒有因不明白而責備、否定耶穌，而是繼續陪伴、繼續帶著疑問前行（與下一節「存在心裡」相呼應）。</li>
@@ -413,14 +478,17 @@
         <div class="caption">耶穌回到拿撒勒，順從父母；智慧和身量，以及上帝和人喜愛祂的心，都一齊增長</div>
       </div>
 
+      <div class="scripture-box">
+        <div class="scripture-text">
+          <p><span class="verse-number">51</span>他就同他們下去，回到拿撒勒，並且順從他們。他母親把這一切的事都存在心裏。</p>
+          <p><span class="verse-number">52</span>耶穌的智慧和身量，並上帝和人喜愛他的心，都一齊增長。</p>
+        </div>
+      </div>
+
       <h3>經文大意</h3>
       <p>耶穌跟父母回到拿撒勒，且順從他們；馬利亞把這一切的事存在心裡。耶穌的智慧和身量，以及上帝和人喜愛祂的心，都一齊增長。</p>
 
-      <div class="scripture-box">
-        <div class="placeholder">請在此貼上 2:51-52 經文</div>
-      </div>
-
-      <h3>解經</h3>
+      <h3 class="exegesis-title"><span class="section-icon">✦</span></h3>
       <ul>
         <li>耶穌雖已表明祂與天父獨特的關係，但緊接著卻是「順從」二字——顯示真正的屬靈成熟，不是脫離既有的權柄與群體去彰顯「特殊性」，而是在日常生活的本分中活出忠心。這與後來保羅論基督「存心順服，以至於死」（腓 2:8）的精神一脈相承。</li>
         <li>馬利亞「存在心裡」的動作與路加福音 2:19（耶穌出生時牧羊人的見證）前後呼應，顯示這是路加刻意鋪陳的敘事手法，暗示福音書作者資料的來源之一可能正是馬利亞本人的回憶與見證。</li>
@@ -446,8 +514,8 @@
     </section>
 
     <div class="footer">
-      路加福音 2:41-52 逐節查經｜少年耶穌在聖殿中<br>
-      適用於線上／實體小組查經聚會
+      路加福音 2:41-52 ｜少年耶穌在聖殿中<br>
+      愛牧小組線上查經
     </div>
 
   </div>
