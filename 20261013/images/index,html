@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>忙碌生活中的「天開時刻」｜路加福音 3:21~38</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#c9a227;
+    --deep:#12233b;
+    --ink:#1e2a38;
+    --soft:#f7f3e9;
+    --blue:#5b8fc9;
+    --line:rgba(201,162,39,.45);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",sans-serif;
+    font-size:24px;          /* 大字體：線上聚會遠距閱讀 */
+    line-height:2.0;
+    color:var(--ink);
+    background:#ece7db;
+    -webkit-text-size-adjust:100%;
+  }
+
+  /* ============ 固定導覽列 ============ */
+  .topbar{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:999;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4em 1.4em;
+    align-items:center;
+    justify-content:center;
+    padding:.7em 1.2em;
+    background:rgba(18,35,59,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--line);
+  }
+  .topbar .brand{
+    color:#f4dfa8;
+    font-weight:900;
+    font-size:1.05rem;
+    letter-spacing:.05em;
+    margin-right:.6em;
+  }
+  .topbar a{
+    color:#f0ece2;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:500;
+    padding:.15em .1em;
+    border-bottom:2px solid transparent;
+    transition:.25s;
+  }
+  .topbar a:hover{color:#ffd873;border-bottom-color:#ffd873;}
+
+  /* ============ 通用區塊 ============ */
+  section{
+    position:relative;
+    padding:6.5rem 6vw;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+  }
+  section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,253,247,.86);
+    z-index:0;
+  }
+  section > .inner{
+    position:relative;
+    z-index:2;
+    max-width:1120px;
+    margin:0 auto;
+  }
+
+  h1,h2,h3{
+    font-family:"Noto Serif TC","PMingLiU",serif;
+    line-height:1.45;
+    letter-spacing:.02em;
+  }
+
+  h2.section-title{
+    font-size:clamp(1.9rem,3.6vw,2.9rem);
+    color:var(--deep);
+    margin-bottom:1.6rem;
+    padding-bottom:.5rem;
+    border-bottom:4px solid var(--gold);
+    display:inline-block;
+  }
+
+  h3{
+    font-size:clamp(1.4rem,2.4vw,1.9rem);
+    color:#8a6a10;
+    margin:2.2rem 0 .9rem;
+    padding-left:.75rem;
+    border-left:8px solid var(--gold);
+  }
+
+  p{margin-bottom:1.1rem;}
+
+  .verse-box{
+    background:linear-gradient(135deg,#fffdf6,#f6efdc);
+    border:2px solid var(--line);
+    border-left:12px solid var(--gold);
+    border-radius:10px;
+    padding:1.6rem 1.9rem;
+    margin:1.4rem 0;
+    font-size:1.08em;
+    box-shadow:0 6px 22px rgba(0,0,0,.07);
+  }
+  .verse-box .vnum{
+    color:#a8860f;
+    font-weight:900;
+    margin-right:.35em;
+  }
+
+  .key{
+    background:linear-gradient(transparent 62%, #ffe89a 62%);
+    font-weight:700;
+    padding:0 .1em;
+  }
+
+  ul.point-list, ol.point-list{
+    margin:.6rem 0 1.2rem 1.5rem;
+  }
+  ul.point-list li, ol.point-list li{
+    margin-bottom:.7rem;
+    padding-left:.3rem;
+  }
+
+  /* ============ 封面 ============ */
+  #cover{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:8rem 6vw 6rem;
+    background-image:url("images/bg-heaven-open.jpeg");
+  }
+  #cover::before{
+    background:linear-gradient(180deg,
+      rgba(10,22,40,.72) 0%,
+      rgba(10,22,40,.55) 45%,
+      rgba(10,22,40,.80) 100%);
+  }
+  #cover .inner{max-width:1000px;}
+  #cover .eyebrow{
+    display:inline-block;
+    color:#ffd873;
+    border:2px solid rgba(255,216,115,.6);
+    border-radius:999px;
+    padding:.25em 1.3em;
+    font-size:1rem;
+    letter-spacing:.22em;
+    margin-bottom:1.8rem;
+  }
+  #cover h1{
+    font-size:clamp(2.2rem,6vw,4.4rem);
+    color:#fffdf5;
+    font-weight:900;
+    text-shadow:0 4px 26px rgba(0,0,0,.65);
+    margin-bottom:1.2rem;
+  }
+  #cover .sub{
+    font-size:clamp(1.05rem,2.2vw,1.5rem);
+    color:#f0e4c4;
+    margin-bottom:2.4rem;
+    letter-spacing:.06em;
+  }
+  #cover .ref{
+    font-size:clamp(1.1rem,2.4vw,1.6rem);
+    color:#ffe9a8;
+    font-weight:700;
+    border-top:2px solid rgba(255,216,115,.5);
+    border-bottom:2px solid rgba(255,216,115,.5);
+    display:inline-block;
+    padding:.5em 1.6em;
+  }
+  #cover .scroll-hint{
+    margin-top:3rem;
+    color:#d9cfae;
+    font-size:1rem;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+
+  /* ============ 圖卡 ============ */
+  figure.illust{
+    margin:2rem auto;
+    text-align:center;
+  }
+  figure.illust img{
+    width:100%;
+    max-width:820px;
+    border-radius:14px;
+    border:4px solid #fff;
+    box-shadow:0 12px 34px rgba(0,0,0,.20);
+    display:block;
+    margin:0 auto;
+  }
+  figure.illust figcaption{
+    margin-top:.85rem;
+    font-size:.92rem;
+    color:#6b6250;
+    letter-spacing:.04em;
+  }
+
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    align-items:center;
+    margin:1.6rem 0;
+  }
+  @media(max-width:860px){
+    .two-col{grid-template-columns:1fr;}
+  }
+
+  /* ============ 應用卡 ============ */
+  .app-card{
+    background:#fff;
+    border-radius:16px;
+    border-top:8px solid var(--gold);
+    padding:1.8rem 2rem;
+    margin:1.6rem 0;
+    box-shadow:0 8px 26px rgba(0,0,0,.09);
+  }
+  .app-card h3{
+    margin-top:0;
+    border-left:none;
+    padding-left:0;
+    color:var(--deep);
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+  }
+  .app-card h3 .num{
+    flex:0 0 auto;
+    width:2.1em;height:2.1em;
+    display:grid;place-items:center;
+    background:var(--gold);
+    color:#fff;
+    border-radius:50%;
+    font-size:.82em;
+    font-family:"Noto Sans TC",sans-serif;
+    font-weight:900;
+  }
+
+  /* ============ 討論題 ============ */
+  .q-item{
+    background:#fffdf6;
+    border:2px dashed var(--line);
+    border-radius:14px;
+    padding:1.4rem 1.7rem;
+    margin-bottom:1.3rem;
+    display:flex;
+    gap:1rem;
+    align-items:flex-start;
+  }
+  .q-item .qnum{
+    flex:0 0 auto;
+    width:2.2em;height:2.2em;
+    display:grid;place-items:center;
+    background:var(--deep);
+    color:#ffd873;
+    border-radius:50%;
+    font-weight:900;
+    font-size:.9em;
+  }
+
+  /* ============ 祈禱區 ============ */
+  #prayer{
+    background-image:url("images/bg-blessing-light.jpeg");
+    color:#fffdf5;
+  }
+  #prayer::before{
+    background:linear-gradient(180deg,rgba(9,20,36,.86),rgba(9,20,36,.92));
+  }
+  #prayer h2.section-title{color:#ffe9a8;border-bottom-color:rgba(255,233,168,.6);}
+  #prayer .prayer-text{
+    font-size:1.12em;
+    line-height:2.25;
+    color:#f4efe2;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,216,115,.35);
+    border-radius:16px;
+    padding:2rem 2.2rem;
+  }
+  #prayer .amen{
+    text-align:right;
+    font-weight:900;
+    color:#ffd873;
+    font-size:1.25em;
+    margin-top:1rem;
+  }
+
+  footer{
+    background:var(--deep);
+    color:#b9c3d1;
+    text-align:center;
+    padding:2.4rem 6vw;
+    font-size:.92rem;
+    line-height:1.9;
+  }
+  footer strong{color:#ffd873;}
+
+  /* ============ 大字 / 高對比輔助 ============ */
+  @media(max-width:600px){
+    body{font-size:21px;}
+    section{padding:5rem 5vw;background-attachment:scroll;}
+    .topbar{font-size:.85rem;gap:.3em .9em;padding:.5em .6em;}
+    .topbar a{font-size:.92rem;}
+    .topbar .brand{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== 導覽列 ===================== -->
+<nav class="topbar">
+  <span class="brand">路加福音 3:21~38</span>
+  <a href="#cover">封面</a>
+  <a href="#scripture">經文</a>
+  <a href="#v21">第21節</a>
+  <a href="#v22">第22節</a>
+  <a href="#apply">生活應用</a>
+  <a href="#discuss">討論題</a>
+  <a href="#prayer">祈禱</a>
+</nav>
+
+<!-- ===================== 封面 ===================== -->
+<section id="cover">
+  <div class="inner">
+    <span class="eyebrow">線 上 查 經 聚 會</span>
+    <h1>忙碌生活中的<br>「天開時刻」</h1>
+    <p class="sub">從耶穌受洗的禱告，看見天為你我而開</p>
+    <div class="ref">路加福音 3:21~38｜新標點和合本上帝版</div>
+    <p class="scroll-hint">▼ 請向下滑動開始聚會 ▼</p>
+  </div>
+</section>
+
+<!-- ===================== 經文 ===================== -->
+<section id="scripture" style="background-image:url('images/bg-scripture-light.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">本週經文</h2>
+
+    <div class="verse-box">
+      <span class="vnum">21</span>眾百姓都受了洗，耶穌也受了洗。正禱告的時候，天就開了，
+      <span class="vnum">22</span>聖靈降臨在他身上，形狀彷彿鴿子；又有聲音從天上來，說：「你是我的愛子，我喜悅你。」
+    </div>
+
+    <div class="verse-box">
+      <span class="vnum">23</span>耶穌開頭傳道，年紀約有三十歲。依人看來，他是約瑟的兒子；約瑟是希里的兒子；……（族譜從略）……
+      <span class="vnum">38</span>以挪士是塞特的兒子；塞特是亞當的兒子；亞當是上帝的兒子。
+    </div>
+
+    <figure class="illust">
+      <img src="images/ill-dove.jpeg" alt="聖靈如鴿子降臨">
+      <figcaption>聖靈降臨在他身上，形狀彷彿鴿子。（路 3:22）</figcaption>
+    </figure>
+
+    <p style="font-size:1.02em;color:#5d5545;">
+      <strong>聚會焦點：</strong>本週我們不只看一段古老的受洗記載，
+      更要問一個很現代、很切身的問題——
+      <span class="key">在忙碌到幾乎喘不過氣的日子裡，我的「天」還開著嗎？</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== 第21節 ===================== -->
+<section id="v21" style="background-image:url('images/bg-quiet-prayer.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">第 21 節｜正禱告的時候，天就開了</h2>
+
+    <div class="two-col">
+      <div>
+        <h3>路加特別強調的細節</h3>
+        <p>
+          路加記載耶穌受洗時，特別強調了一個細節——
+          <span class="key">耶穌是在「禱告的時候」，天就開了。</span>
+          這不是偶然的描寫。在路加福音中，禱告是耶穌事奉的核心力量來源，
+          作者一再記錄耶穌以禱告作為工作中最重要的支撐
+          （參 5:16、6:12、9:18、28~29、11:1、22:32、41、23:34、46）。
+        </p>
+      </div>
+      <figure class="illust" style="margin:0;">
+        <img src="images/ill-praying-hands.jpeg" alt="雙手在聖經上合十禱告">
+        <figcaption>正禱告的時候，天就開了。</figcaption>
+      </figure>
+    </div>
+
+    <h3>「天開了」是什麼意思？</h3>
+    <p>
+      「天開了」是象徵性的說法，表明上帝與耶穌之間親密的關係，
+      也象徵物質世界與屬靈世界之間的門暫時打開，
+      上帝的啟示直接臨到人間。天開了，不是因為耶穌做了什麼驚天動地的大事，
+      而是因為祂在那裡禱告。
+    </p>
+
+    <h3>耶穌為何要受洗？</h3>
+    <p>
+      耶穌是無罪的，約翰所施的是悔改的洗，耶穌為何要接受？
+      這洗禮對耶穌而言不是認罪的洗禮，而是<span class="key">膏抹禮</span>——
+      如同舊約時代大祭司和君王就職時需要先受膏。
+      耶穌開始傳道時「年紀約有三十歲」，正符合利未人三十歲正式在聖殿服侍的律法規定（民 4 章），
+      也是大衛登基的年齡（撒下 5:4）。
+      透過這地上的洗禮，聖父用聖靈膏聖子，
+      這是從天上而來的膏抹禮，也是三一真神三個位格同時顯現的獨特時刻。
+    </p>
+
+    <figure class="illust">
+      <img src="images/ill-baptism-jordan.jpeg" alt="約旦河受洗場景">
+      <figcaption>耶穌也受了洗，正禱告的時候，天就開了。（路 3:21）</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== 第22節 ===================== -->
+<section id="v22" style="background-image:url('images/bg-scripture-light.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">第 22 節｜你是我的愛子，我喜悅你</h2>
+
+    <div class="verse-box">
+      聖靈降臨在他身上，形狀彷彿鴿子；又有聲音從天上來，說：<br>
+      「<span class="key">你是我的愛子，我喜悅你。</span>」
+    </div>
+
+    <h3>三一上帝同時顯現的時刻</h3>
+    <p>
+      這節經文呈現了三位一體上帝同時顯現的場景：
+      聖子在水裡受洗，聖靈如鴿子降臨，聖父從天上發聲。
+      天父所說的「你是我的愛子，我喜悅你」，
+      同時呼應了<span class="key">詩篇 2:7</span>（君王登基的宣告）
+      和<span class="key">以賽亞書 42:1</span>（受苦僕人的預言），
+      將彌賽亞的君王身分與僕人身分合而為一。
+    </p>
+
+    <h3>「我喜悅你」不是「我喜歡你」</h3>
+    <p>
+      「我喜悅你」並非一般「我喜歡你」的意思，
+      而是聚焦於上帝為人類救恩所定的計劃集中在耶穌身上——
+      耶穌是上帝救贖計劃的成就者。
+      天開了、聖靈降下、天父發聲，這三件事同時發生，
+      標誌著舊約時代落下帷幕，新約時代從此展開。
+    </p>
+
+    <div class="two-col">
+      <figure class="illust" style="margin:0;">
+        <img src="images/ill-morning-quiet-time.jpeg" alt="清晨窗邊的安靜靈修時光">
+        <figcaption>天開了，是從禱告開始的。</figcaption>
+      </figure>
+      <div>
+        <h3>對「忙碌的現代人」的意義</h3>
+        <p>
+          天父在耶穌<strong>開始服事之前</strong>就宣告「你是我的愛子」。
+          這個順序非常重要：<span class="key">先是身分，後是事工。</span>
+          我們很容易反過來活——用做多少事來證明自己有多少價值。
+          但天上的聲音提醒我們：在我們做任何事之前，天父已經喜悅我們了。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 生活應用 ===================== -->
+<section id="apply" style="background-image:url('images/bg-ordinary-life.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">現代日常生活應用</h2>
+
+    <figure class="illust">
+      <img src="images/ill-busy-commute.jpeg" alt="台灣城市早晨通勤的忙碌景象">
+      <figcaption>在忙碌的通勤與工作中，我們的「天」還開著嗎？</figcaption>
+    </figure>
+
+    <!-- 應用 1 -->
+    <div class="app-card">
+      <h3><span class="num">1</span>把禱告放回日常與服事的中心</h3>
+      <p>
+        耶穌是在「正禱告的時候」天就開了。這提醒我們，
+        屬靈的突破往往發生在禱告之中。
+        我們的日常禱告是否常常流於形式、匆匆帶過？
+        耶穌的事奉以禱告為根基，我們在教會的服事——
+        無論是長老、執事、主日學老師、聖歌隊員——
+        是否也以禱告作為服事的根基？
+      </p>
+      <p>
+        如果我們的服事很忙碌卻很少禱告，
+        可能正在靠自己的力量而非聖靈的力量。
+        正如耶穌在曠野、在山上都獨自禱告，
+        我們也需要在生活中刻意分別出安靜禱告的時間，
+        讓「天開」的經驗成為我們服事的常態。
+      </p>
+      <p style="background:#fff8e1;border-radius:10px;padding:.9rem 1.2rem;">
+        <strong>本週操練：</strong>每天選一段固定的 10 分鐘——
+        通勤的車上、午休的桌前、睡前的床邊——
+        關掉通知，單單向天父說話，也聽祂說話。
+      </p>
+    </div>
+
+    <!-- 應用 2 -->
+    <div class="app-card">
+      <h3><span class="num">2</span>先被愛，再服事——確認身分先於事工</h3>
+      <p>
+        天父在耶穌<strong>開始傳道之前</strong>就宣告「你是我的愛子」。
+        耶穌在曠野受試探時，撒但的第一個試探正是針對這個身分：
+        「你若是上帝的兒子……」（4:3）。
+      </p>
+      <p>
+        在我們的文化處境中，很多信徒——尤其是熱心服事的兄姐——
+        容易陷入一種危機：<span class="key">以事工表現來定義自己的價值。</span>
+        服事有果效就覺得自己有價值，服事遇到瓶頸就覺得自己不夠好。
+        但天父的宣告順序很清楚：
+        <strong>先確認「你是我的愛子」，然後才差派你去事奉。</strong>
+        我們的價值來自於被上帝所愛、所喜悅，
+        而不是來自於我們做了多少。
+      </p>
+      <p>
+        長老教會的兄姐們，特別是在教會中承擔多項服事的同工，
+        需要常常回到這個根基：天父也對你說：
+        「你是我的愛子，我喜悅你。」
+        在服事的疲乏中，這個聲音是我們重新得力的源頭。
+      </p>
+    </div>
+
+    <!-- 應用 3 -->
+    <div class="app-card">
+      <h3><span class="num">3</span>平凡日常中的「天開」——三十歲的預備</h3>
+      <p>
+        耶穌三十歲才開始公開傳道，在此之前，
+        祂在拿撒勒做了三十年的木匠。
+        這三十年不是浪費，而是道成肉身的真實預備——
+        祂直接經驗了工作的辛苦、勞動者的心境，
+        也經歷了人生命中各樣的悲歡喜樂。
+      </p>
+      <p>
+        對我們而言，退休後的年日、職場上的年資、家庭中的付出，
+        這些看似「還沒開始服事」的階段，
+        都是上帝在預備我們。
+        長老教會中有許多兄姐在退休後才投入更多的教會服事，
+        之前幾十年的職場經驗和人生歷練，
+        正是上帝所使用來造就他人的素材。
+      </p>
+      <figure class="illust" style="margin-top:1.4rem;">
+        <img src="images/ill-carpenter-workshop.jpeg" alt="傳統木匠工作坊">
+        <figcaption>三十年的木匠歲月，是天開之前的預備。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 討論題 ===================== -->
+<section id="discuss" style="background-image:url('images/bg-community.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">小組討論題目</h2>
+
+    <div class="q-item">
+      <span class="qnum">1</span>
+      <div>
+        耶穌是在禱告時經歷天開了。你最近的禱告生活如何？
+        在忙碌的服事中，你是否曾經歷過「天開」的時刻？那是什麼樣的光景？
+      </div>
+    </div>
+
+    <div class="q-item">
+      <span class="qnum">2</span>
+      <div>
+        天父在耶穌開始服事之前就說「你是我的愛子」。
+        你認為自己的價值主要來自什麼——事工表現、他人的肯定，還是天父的愛？
+        這個問題如何影響你的服事心態？
+      </div>
+    </div>
+
+    <div class="q-item">
+      <span class="qnum">3</span>
+      <div>
+        路加將家譜追溯到亞當，強調福音的普世性。
+        在長老教會的處境中，你如何看待未信主的家人和鄰舍？
+        路加的家譜對你有什麼啟發？
+      </div>
+    </div>
+
+    <div class="q-item">
+      <span class="qnum">4</span>
+      <div>
+        耶穌在三十歲之前默默無聞地在拿撒勒做木匠。
+        你目前的「拿撒勒歲月」是什麼？
+        你如何看待自己生命中看似平凡、尚未「開始服事」的階段？
+      </div>
+    </div>
+
+    <div class="q-item">
+      <span class="qnum">5</span>
+      <div>
+        本週你願意具體採取哪一項行動，
+        讓「天開」不只是聖經裡的畫面，
+        而是你忙碌生活中真實的經驗？
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 祈禱 ===================== -->
+<section id="prayer">
+  <div class="inner">
+    <h2 class="section-title">結束祈禱</h2>
+    <div class="prayer-text">
+      亞伯拉罕的上帝，以撒的上帝，雅各的上帝啊，<br>
+      祢是世人的上主，也是我們台灣人的上帝。<br>
+      祢的愛長闊高深，亙古長存。<br>
+      祢沒有忘記我們，仍然把福音傳給我們，<br>
+      祢也是我們先祖的上帝，我們要永世萬代敬拜事奉祢。<br><br>
+      求祢幫助我們在禱告中經歷天開的恩典，<br>
+      在平凡的日子中確信自己是祢所愛的兒女，<br>
+      在家族和社區中成為福音的見證。<br>
+      靠耶穌尊名禱告，
+      <div class="amen">阿們。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 頁尾 ===================== -->
+<footer>
+  <p><strong>線上查經聚會教材</strong>｜路加福音 3:21~38</p>
+  <p>聖經採用：新標點和合本上帝版</p>
+  <p>從古老的聖經，尋求現代生活的智慧。</p>
+</footer>
+
+</body>
+</html>
