@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你是我的愛子，我喜悅你｜「喜悅」的三個意義</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#c9a227;
+    --deep:#12233b;
+    --ink:#1e2a38;
+    --soft:#f7f3e9;
+    --rose:#b22222;
+    --line:rgba(201,162,39,.45);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",sans-serif;
+    font-size:22px;
+    line-height:2.0;
+    color:var(--ink);
+    background:#ece7db;
+    -webkit-text-size-adjust:100%;
+  }
+
+  /* ============ 固定導覽列 ============ */
+  .topbar{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:999;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4em 1.4em;
+    align-items:center;
+    justify-content:center;
+    padding:.7em 1.2em;
+    background:rgba(18,35,59,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--line);
+  }
+  .topbar .brand{
+    color:#f4dfa8;
+    font-weight:900;
+    font-size:1.05rem;
+    letter-spacing:.05em;
+    margin-right:.6em;
+  }
+  .topbar a{
+    color:#f0ece2;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:500;
+    padding:.15em .1em;
+    border-bottom:2px solid transparent;
+    transition:.25s;
+  }
+  .topbar a:hover{color:#ffd873;border-bottom-color:#ffd873;}
+
+  /* ============ 通用區塊 ============ */
+  section{
+    position:relative;
+    padding:6rem 6vw;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+  }
+  section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,253,247,.87);
+    z-index:0;
+  }
+  section > .inner{
+    position:relative;
+    z-index:2;
+    max-width:1080px;
+    margin:0 auto;
+  }
+
+  h1,h2,h3{
+    font-family:"Noto Serif TC","PMingLiU",serif;
+    line-height:1.45;
+    letter-spacing:.02em;
+  }
+
+  h2.section-title{
+    font-size:clamp(1.8rem,3.4vw,2.7rem);
+    color:var(--deep);
+    margin-bottom:1.6rem;
+    padding-bottom:.5rem;
+    border-bottom:4px solid var(--gold);
+    display:inline-block;
+  }
+
+  h3{
+    font-size:clamp(1.35rem,2.3vw,1.8rem);
+    color:#8a6a10;
+    margin:2rem 0 .9rem;
+    padding-left:.75rem;
+    border-left:8px solid var(--gold);
+  }
+
+  p{margin-bottom:1.1rem;}
+
+  .key{
+    background:linear-gradient(transparent 62%, #ffe89a 62%);
+    font-weight:700;
+    padding:0 .1em;
+  }
+
+  .verse-box{
+    background:linear-gradient(135deg,#fffdf6,#f6efdc);
+    border:2px solid var(--line);
+    border-left:12px solid var(--gold);
+    border-radius:10px;
+    padding:1.6rem 1.9rem;
+    margin:1.4rem 0;
+    font-size:1.08em;
+    box-shadow:0 6px 22px rgba(0,0,0,.07);
+  }
+  .verse-box .vnum{
+    color:#a8860f;
+    font-weight:900;
+    margin-right:.35em;
+  }
+
+  /* ============ 封面 ============ */
+  #cover{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:8rem 6vw 6rem;
+    background-image:url("images/like-cover-bg.jpeg");
+  }
+  #cover::before{
+    background:linear-gradient(180deg,
+      rgba(10,22,40,.74) 0%,
+      rgba(10,22,40,.55) 45%,
+      rgba(10,22,40,.82) 100%);
+  }
+  #cover .inner{max-width:1000px;}
+  #cover .eyebrow{
+    display:inline-block;
+    color:#ffd873;
+    border:2px solid rgba(255,216,115,.6);
+    border-radius:999px;
+    padding:.25em 1.3em;
+    font-size:1rem;
+    letter-spacing:.22em;
+    margin-bottom:1.8rem;
+  }
+  #cover h1{
+    font-size:clamp(2.2rem,5.8vw,4.2rem);
+    color:#fffdf5;
+    font-weight:900;
+    text-shadow:0 4px 26px rgba(0,0,0,.65);
+    margin-bottom:1.2rem;
+  }
+  #cover .sub{
+    font-size:clamp(1.05rem,2.2vw,1.5rem);
+    color:#f0e4c4;
+    margin-bottom:2.2rem;
+    letter-spacing:.06em;
+  }
+  #cover .ref{
+    font-size:clamp(1.05rem,2.2vw,1.5rem);
+    color:#ffe9a8;
+    font-weight:700;
+    border-top:2px solid rgba(255,216,115,.5);
+    border-bottom:2px solid rgba(255,216,115,.5);
+    display:inline-block;
+    padding:.5em 1.6em;
+  }
+  #cover .scroll-hint{
+    margin-top:3rem;
+    color:#d9cfae;
+    font-size:1rem;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+
+  /* ============ 圖卡 ============ */
+  figure.illust{
+    margin:2rem auto;
+    text-align:center;
+  }
+  figure.illust img{
+    width:100%;
+    max-width:820px;
+    border-radius:14px;
+    border:4px solid #fff;
+    box-shadow:0 12px 34px rgba(0,0,0,.20);
+    display:block;
+    margin:0 auto;
+  }
+  figure.illust figcaption{
+    margin-top:.85rem;
+    font-size:.92rem;
+    color:#6b6250;
+    letter-spacing:.04em;
+  }
+
+  /* ============ 三個意義卡 ============ */
+  .meaning-card{
+    background:#fff;
+    border-radius:16px;
+    border-top:8px solid var(--gold);
+    padding:1.8rem 2rem;
+    margin:1.8rem 0;
+    box-shadow:0 8px 26px rgba(0,0,0,.09);
+    position:relative;
+  }
+  .meaning-card .num-badge{
+    display:inline-grid;
+    place-items:center;
+    width:2.4em;height:2.4em;
+    background:var(--gold);
+    color:#fff;
+    border-radius:50%;
+    font-weight:900;
+    font-size:.9em;
+    margin-right:.5em;
+    vertical-align:middle;
+  }
+  .meaning-card h3{
+    margin-top:0;
+    border-left:none;
+    padding-left:0;
+    color:var(--deep);
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+    font-size:clamp(1.3rem,2.2vw,1.7rem);
+  }
+  .meaning-card h3 .sub-en{
+    font-size:.75em;
+    color:#a8860f;
+    font-weight:600;
+    letter-spacing:.08em;
+    margin-left:.3em;
+  }
+  .meaning-card .highlight{
+    background:#fff8e1;
+    border-left:5px solid var(--gold);
+    border-radius:0 8px 8px 0;
+    padding:.9rem 1.3rem;
+    margin:1rem 0;
+    font-weight:500;
+  }
+
+  /* ============ 禮物 vs 獎品 ============ */
+  .gift-prize{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.6rem;
+    margin:1.8rem 0;
+  }
+  @media(max-width:760px){
+    .gift-prize{grid-template-columns:1fr;}
+  }
+  .gp-box{
+    border-radius:16px;
+    padding:1.6rem 1.8rem;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+  }
+  .gp-box.gift{
+    background:linear-gradient(135deg,#fff9e6,#fff3d1);
+    border:2px solid var(--gold);
+  }
+  .gp-box.prize{
+    background:linear-gradient(135deg,#f2f2f2,#e8e8e8);
+    border:2px solid #b0b0b0;
+  }
+  .gp-box h4{
+    font-family:"Noto Serif TC",serif;
+    font-size:1.5rem;
+    margin-bottom:.8rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+  .gp-box.gift h4{color:#a8860f;}
+  .gp-box.prize h4{color:#666;}
+  .gp-box .icon{
+    font-size:1.6rem;
+  }
+
+  /* ============ 情境對比 ============ */
+  .scene{
+    border-radius:16px;
+    padding:1.6rem 2rem;
+    margin:1.4rem 0;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+  }
+  .scene.scene-a{
+    background:#fdf0f0;
+    border-left:10px solid #c0392b;
+  }
+  .scene.scene-b{
+    background:#f0f8f0;
+    border-left:10px solid #27ae60;
+  }
+  .scene h4{
+    font-family:"Noto Serif TC",serif;
+    font-size:1.35rem;
+    margin-bottom:.9rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+  .scene.scene-a h4{color:#c0392b;}
+  .scene.scene-b h4{color:#27ae60;}
+  .scene ul{
+    list-style:none;
+    padding-left:0;
+  }
+  .scene ul li{
+    padding:.45rem 0 .45rem 1.8rem;
+    position:relative;
+    line-height:1.85;
+  }
+  .scene.scene-a ul li::before{
+    content:"✗";
+    position:absolute;
+    left:0;
+    color:#c0392b;
+    font-weight:900;
+  }
+  .scene.scene-b ul li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#27ae60;
+    font-weight:900;
+  }
+
+  /* ============ 結論橫幅 ============ */
+  .conclusion-banner{
+    background:linear-gradient(135deg,var(--deep),#1e3a5f);
+    color:#fffdf5;
+    border-radius:20px;
+    padding:2.6rem 2.4rem;
+    text-align:center;
+    margin:2.4rem 0;
+    box-shadow:0 16px 40px rgba(0,0,0,.22);
+  }
+  .conclusion-banner .big{
+    font-family:"Noto Serif TC",serif;
+    font-size:clamp(1.6rem,3.2vw,2.4rem);
+    font-weight:900;
+    color:#ffd873;
+    letter-spacing:.06em;
+    line-height:1.6;
+  }
+  .conclusion-banner .small{
+    font-size:1.05rem;
+    color:#d9cfae;
+    margin-top:1rem;
+  }
+  /* ============ 經文 hover 預覽 ============ */
+.ref-hover{
+  font-weight:700;
+  color:#8a6a10;
+  border-bottom:3px solid var(--gold);
+  cursor:help;
+  position:relative;
+  display:inline-block;
+  padding:0 2px;
+  transition:color .2s ease, border-bottom-color .2s ease;
+}
+
+.ref-hover:hover{
+  color:#b22222;
+  border-bottom-color:#b22222;
+}
+  
+
+  /* 預覽圖片：固定顯示在畫面右下角，預設隱藏 */
+  .ref-preview{
+    position:fixed;
+    right:10px;
+    bottom:24px;
+    max-width:min(45vw, 500px);
+    max-height:min(45vh, 350px);
+    width:auto;
+    height:auto;
+    border:3px solid #c9a227;
+    border-radius:14px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    background:#fffdf6;
+    padding:6px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(12px) scale(0.97);
+    pointer-events:none;
+    transition:opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+    z-index:99999;
+  }
+
+  .ref-preview.show{       /* 取代 .ref-hover:hover .ref-preview */
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0) scale(1);
+  }
+
+  /* ============ 連結按鈕 ============ */
+  .link-btn{
+    display:inline-block;
+    font-weight:800;
+    color:#b22222;
+    text-decoration:none;
+    border-bottom:3px solid transparent;
+    padding:0 3px;
+    border-radius:4px;
+    transition:color .2s ease, background-color .2s ease, border-bottom-color .2s ease;
+    cursor:pointer;
+  }
+  .link-btn:hover{
+    color:#8b0000;
+    background-color:#fff0e6;
+    border-bottom-color:#8b0000;
+  }
+
+  footer{
+    background:var(--deep);
+    color:#b9c3d1;
+    text-align:center;
+    padding:2.4rem 6vw;
+    font-size:.92rem;
+    line-height:1.9;
+  }
+  footer strong{color:#ffd873;}
+
+  @media(max-width:600px){
+    body{font-size:20px;}
+    section{padding:5rem 5vw;background-attachment:scroll;}
+    .topbar{font-size:.85rem;gap:.3em .9em;padding:.5em .6em;}
+    .topbar a{font-size:.92rem;}
+    .topbar .brand{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== 導覽列 ===================== -->
+<nav class="topbar">
+  <span class="brand">你是我的愛子，我喜悅你</span>
+  <a href="#cover">封面</a>
+  <a href="#verse">經文</a>
+  <a href="#meanings">三個意義</a>
+  <a href="#gift">禮物與獎品</a>
+  <a href="#scenes">情境對比</a>
+  <a href="#conclusion">結論</a>
+</nav>
+
+<!-- ===================== 封面 ===================== -->
+<section id="cover">
+  <div class="inner">
+    <span class="eyebrow">靈 修 默 想</span>
+    <h1>你是我的愛子<br>我喜悅你</h1>
+    <p class="sub">「喜悅」不是因為你做了什麼，<br>而是因為你是誰。</p>
+    <div class="ref">路加福音 3:22</div>
+    <p class="scroll-hint">▼ 向下滑動，認識天父的喜悅 ▼</p>
+  </div>
+</section>
+
+<!-- ===================== 經文 ===================== -->
+<section id="verse" style="background-image:url('images/like-scripture-bg.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">經文</h2>
+
+    <div class="verse-box">
+      聖靈降臨在他身上，形狀彷彿鴿子；又有聲音從天上來，說：<br>
+      「<a href="like.html" target="_blank" rel="noopener noreferrer" class="link-btn" title="點擊深入了解「喜悅」的三個意義（另開新分頁）">你是我的愛子，我喜悅你。</a>」
+    </div>
+
+    <figure class="illust">
+      <img src="images/like-ill-dove.jpeg" alt="聖靈如鴿子降臨，天上有聲音說：你是我的愛子">
+      <figcaption>天父從天上發聲，宣告祂對愛子的喜悅。（路 3:22）</figcaption>
+    </figure>
+
+    <p style="font-size:1.05em;color:#5d5545;">
+      這一句從天上而來的話，是耶穌公開事奉的起點。
+      在祂還沒有講過一篇道、行過一件神蹟之前，
+      天父就先說了：<span class="key">「你是我的愛子，我喜悅你。」</span>
+      這句話裡藏著三個極深的意義。
+    </p>
+  </div>
+</section>
+
+<!-- ===================== 三個意義 ===================== -->
+<section id="meanings" style="background-image:url('images/like-meanings-bg.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">「喜悅」包含三個意義</h2>
+
+    <!-- 意義 1 -->
+    <div class="meaning-card">
+      <h3>
+        <span class="num-badge">1</span>
+        完全的「滿足」
+        <span class="sub-en">Satisfaction</span>
+      </h3>
+      <p>
+        耶穌三十年來在拿撒勒做木匠，沒有講過道、沒有行過神蹟，
+        活在一個平凡、甚至被看不起的生活中。
+        但天父看祂三十年的隱藏、順服、聖潔，
+        說：<span class="key">夠了，太好了，我完全滿意。</span>
+      </p>
+      <div class="highlight">
+        天父的滿足，不是因為耶穌做了什麼驚天動地的事，
+        而是因為祂就是那位順服、聖潔的愛子。
+      </div>
+    </div>
+
+    <!-- 意義 2 -->
+    <div class="meaning-card">
+      <h3>
+        <span class="num-badge">2</span>
+        主動的「揀選」
+        <span class="sub-en">Election</span>
+      </h3>
+      <p>
+        <span class="ref-hover" data-img="images/like-eph1-5.png">以弗所書 1:5</span>
+        說神「按著自己意旨所喜悅的」預定我們。
+        所以天父是在說：
+      </p>
+      <div class="highlight">
+        「兒子，我定意了，我樂意揀選你來完成拯救的計畫。<br>
+        我把全世界交給你，我放心。」
+      </div>
+      <p>
+        這是一份使命的託付——<span class="key">我喜悅你，所以我選擇你。</span>
+      </p>
+    </div>
+
+    <!-- 意義 3 -->
+    <div class="meaning-card">
+      <h3>
+        <span class="num-badge">3</span>
+        光看著你就很開心的那種喜歡
+        <span class="sub-en">Delight</span>
+      </h3>
+      <p>
+        不是因為你做了什麼，是天父看著你這個人，
+        心裡就覺得溫暖、甜蜜、越看越喜歡。
+      </p>
+      <p>
+        就像爸媽看著剛睡著的孩子，什麼都沒做，
+        就忍不住覺得：<span class="key">怎麼這麼可愛。</span>
+      </p>
+      <div class="highlight">
+        神對耶穌，就是這種打從心裡湧出來、單純的喜歡。
+      </div>
+    </div>
+
+    <figure class="illust">
+      <img src="images/like-ill-parent-child.jpeg" alt="父母凝視熟睡的孩子，眼中滿是喜悅">
+      <figcaption>天父看著你，就像父母看著熟睡的孩子，心裡滿是喜悅。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== 禮物 vs 獎品 ===================== -->
+<section id="gift" style="background-image:url('images/like-gift-bg.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">身份是【禮物】，不是【獎品】</h2>
+
+    <div class="gift-prize">
+      <div class="gp-box gift">
+        <h4><span class="icon">🎁</span>禮物</h4>
+        <p style="font-size:1.1em;font-weight:700;color:#a8860f;">無條件得到</p>
+        <p>
+          不需要先證明自己、不需要先做出成績。
+          禮物是出自送禮者的愛，單單因為他願意給。
+        </p>
+      </div>
+      <div class="gp-box prize">
+        <h4><span class="icon">🏆</span>獎品</h4>
+        <p style="font-size:1.1em;font-weight:700;color:#666;">努力奮鬥所得</p>
+        <p>
+          經過一番努力、奮鬥……所得到的代價。
+          獎品是靠表現換來的，表現不好就沒有。
+        </p>
+      </div>
+    </div>
+
+    <div class="conclusion-banner" style="margin-top:1.8rem;">
+      <div class="big">
+        你在天父眼中，是禮物，不是獎品。
+      </div>
+      <div class="small">
+        祂喜悅你，不是因為你夠好，而是因為你是祂的孩子。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 情境對比 ===================== -->
+<section id="scenes" style="background-image:url('images/like-scenes-bg.jpeg');">
+  <div class="inner">
+    <h2 class="section-title">兩種教養，兩種人生</h2>
+
+    <div class="scene scene-a">
+      <h4>情境 A｜用愛當作條件</h4>
+      <ul>
+        <li>父母：「你不好好吃飯，我就不愛你了。」</li>
+        <li>父母：「你不好好寫功課，我就不愛你了。」</li>
+      </ul>
+      <p style="margin-top:.9rem;color:#8b3a3a;">
+        孩子感受到的是：<strong>我的價值，取決於我的表現。</strong>
+        愛變成一種交易，需要不斷用行為去換取。
+      </p>
+    </div>
+
+    <div class="scene scene-b">
+      <h4>情境 B｜用愛成為根基</h4>
+      <ul>
+        <li>無需付出任何代價，就感受到父母的愛。</li>
+        <li>覺得溫暖、幸福，於是自動自發：好好吃飯、好好寫功課。</li>
+        <li>不是為了換取愛，而是為了<strong>回報愛</strong>。</li>
+      </ul>
+      <p style="margin-top:.9rem;color:#1e6b3a;">
+        孩子感受到的是：<strong>我本身就是被愛的。</strong>
+        因為被愛，所以願意回應；因為安全，所以願意成長。
+      </p>
+    </div>
+
+    <figure class="illust">
+      <img src="images/like-ill-two-ways.jpeg" alt="兩種教養方式的對比：條件式的愛 vs 無條件的愛">
+      <figcaption>天父的愛是情境 B——先被愛，然後才回應。</figcaption>
+    </figure>
+
+    <p style="font-size:1.05em;color:#5d5545;margin-top:1.6rem;">
+      天父對耶穌說的「我喜悅你」，正是情境 B 的愛。
+      耶穌還沒有開始服事，天父就已經喜悅祂。
+      我們的身份也是如此——<span class="key">先是被愛的兒女，然後才是服事的工人。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== 結論 ===================== -->
+<section id="conclusion" style="background-image:url('images/like-conclusion-bg.jpeg');">
+  <div class="inner">
+    
+
+    <div class="conclusion-banner">
+      <div class="big">
+        「你是我的愛子，我喜悅你。」
+      </div>
+      <div class="small">
+        這句話，天父也對你說。<br>
+        在你還沒有做出任何成績之前，祂就已經喜悅你。<br>
+        你的身份是禮物，不是獎品。
+      </div>
+    </div>
+
+    <figure class="illust">
+      <img src="images/like-ill-embrace.jpeg" alt="天父張開雙臂擁抱祂的孩子">
+      <figcaption>在我們做任何事之前，天父已經喜悅我們了。</figcaption>
+    </figure>
+
+    <p style="text-align:center;font-size:1.1em;color:#5d5545;margin-top:1.4rem;">
+      願你今天活在這個真理裡：<br>
+      <span class="key">你不是靠表現換取愛，你是先被愛，才去回應。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== 頁尾 ===================== -->
+<footer>
+  <p><strong>靈修默想</strong>｜路加福音 3:22</p>
+  <p>聖經採用：新標點和合本上帝版</p>
+  <p>你是我的愛子，我喜悅你。</p>
+</footer>
+
+<!-- ===================== hover 圖片預覽 ===================== -->
+<script>
+  document.querySelectorAll('.ref-hover').forEach(function(el) {
+    const imgSrc = el.getAttribute('data-img');
+    if (!imgSrc) return;
+
+    const preview = document.createElement('img');
+    preview.src = imgSrc;
+    preview.alt = '經文預覽';
+    preview.className = 'ref-preview';
+    document.body.appendChild(preview);
+
+    el.addEventListener('mouseenter', () => preview.classList.add('show'));
+    el.addEventListener('mouseleave', () => preview.classList.remove('show'));
+  });
+</script>
+
+</body>
+</html>

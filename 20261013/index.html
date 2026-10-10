@@ -326,6 +326,153 @@
     .topbar a{font-size:.92rem;}
     .topbar .brand{display:none;}
   }
+
+  /* ============ 粗體紅色「族譜從略」連結 ============ */
+  .genealogy-omitted {
+    font-weight: 800;
+    color: #b22222;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease, background-color 0.2s ease;
+    padding: 0 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 3px;
+  }
+  .genealogy-omitted:hover {
+    color: #8b0000;
+    background-color: #fff0e6;
+    border-bottom-color: #8b0000;
+    text-decoration: none;
+  }
+
+  /* ============ 經文引用 hover 預覽 ============ */
+  .ref-hover {
+    font-weight: 700;
+    border-bottom: 3px solid #c9a227;
+    cursor: help;
+    position: relative;
+    display: inline-block;
+    color: #8a6a10;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    padding: 0 2px;
+  }
+  .ref-hover:hover {
+    color: #b22222;
+    border-bottom-color: #b22222;
+  }
+  /* ============ 經文點擊浮動視窗 ============ */
+  .verse-pop{
+    font-weight:900;
+    color:#8a6a10;
+    text-decoration:underline;
+    text-decoration-thickness:3px;
+    text-underline-offset:5px;
+    text-decoration-color:#c9a227;
+    cursor:pointer;
+    padding:0 2px;
+    border-radius:3px;
+    transition:color .2s ease, background-color .2s ease, text-decoration-color .2s ease;
+  }
+  .verse-pop:hover,
+  .verse-pop:focus-visible{
+    color:#b22222;
+    background-color:#fff0e6;
+    text-decoration-color:#b22222;
+    outline:none;
+  }
+
+  .verse-modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:1.5rem;
+    background:rgba(10,22,40,.6);
+    backdrop-filter:blur(3px);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .25s ease, visibility .25s ease;
+  }
+  .verse-modal-overlay.open{
+    opacity:1;
+    visibility:visible;
+  }
+  .verse-modal{
+    position:relative;
+    width:100%;
+    max-width:640px;
+    background:linear-gradient(135deg,#fffdf6,#f6efdc);
+    border:2px solid var(--line);
+    border-left:12px solid var(--gold);
+    border-radius:14px;
+    padding:2rem 2.2rem 1.8rem;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    transform:translateY(12px) scale(.97);
+    transition:transform .25s ease;
+  }
+  .verse-modal-overlay.open .verse-modal{
+    transform:translateY(0) scale(1);
+  }
+  .verse-modal .vm-ref{
+    font-family:"Noto Serif TC","PMingLiU",serif;
+    font-weight:900;
+    font-size:1.15em;
+    color:#a8860f;
+    margin-bottom:.6rem;
+  }
+  .verse-modal .vm-text{
+    font-size:1.05em;
+    line-height:2;
+    color:var(--ink);
+    margin:0;
+  }
+  .verse-modal .vm-close{
+    position:absolute;
+    top:.5rem;
+    right:.8rem;
+    border:none;
+    background:none;
+    font-size:2rem;
+    line-height:1;
+    color:#8a6a10;
+    cursor:pointer;
+    padding:.2rem .5rem;
+  }
+  .verse-modal .vm-close:hover{color:#b22222;}
+
+  /* ============ 討論題：單一畫面不捲動 ============ */
+  #discuss.one-screen{
+    min-height:100vh;
+    min-height:100dvh;              /* 手機瀏覽器網址列也納入計算 */
+    display:flex;
+    align-items:center;             /* 內容垂直置中 */
+    padding:calc(4.5rem + 2vh) 6vw 3vh;   /* 上方留空間給固定導覽列 */
+  }
+  #discuss.one-screen > .inner{
+    width:100%;
+  }
+  #discuss.one-screen .section-title{
+    font-size:clamp(1.5rem, 4.5vh, 2.6rem);
+    margin-bottom:clamp(.6rem, 2.5vh, 1.6rem);
+  }
+  #discuss.one-screen .q-item{
+    padding:clamp(.7rem, 2.2vh, 1.4rem) clamp(1rem, 2vw, 1.7rem);
+    margin-bottom:clamp(.6rem, 2vh, 1.3rem);
+    font-size:clamp(1.05rem, 5vh, 1.5rem);   /* 依螢幕高度縮放 */
+    line-height:1.75;
+    align-items:center;
+  }
+  #discuss.one-screen .q-item:last-child{
+    margin-bottom:0;
+  }
+  #discuss.one-screen .qnum{
+    width:2em;
+    height:2em;
+    font-size:.85em;
+  }
 </style>
 </head>
 <body>
@@ -364,7 +511,8 @@
     </div>
 
     <div class="verse-box">
-      <span class="vnum">23</span>耶穌開頭傳道，年紀約有三十歲。依人看來，他是約瑟的兒子；約瑟是希里的兒子；……（族譜從略）……
+      <span class="vnum">23</span>耶穌開頭傳道，年紀約有三十歲。依人看來，他是約瑟的兒子；約瑟是希里的兒子；
+      <a href="family.html" target="_blank" rel="noopener noreferrer" class="genealogy-omitted" title="點擊查看完整的耶穌家譜（另開新分頁）">.....（族譜從略）.....</a>
       <span class="vnum">38</span>以挪士是塞特的兒子；塞特是亞當的兒子；亞當是上帝的兒子。
     </div>
 
@@ -374,7 +522,7 @@
     </figure>
 
     <p style="font-size:1.02em;color:#5d5545;">
-      <strong>聚會焦點：</strong>本週我們不只看一段古老的受洗記載，
+      <strong>焦點：</strong>本週我們不只看一段古老的受洗記載，
       更要問一個很現代、很切身的問題——
       <span class="key">在忙碌到幾乎喘不過氣的日子裡，我的「天」還開著嗎？</span>
     </p>
@@ -394,7 +542,7 @@
           <span class="key">耶穌是在「禱告的時候」，天就開了。</span>
           這不是偶然的描寫。在路加福音中，禱告是耶穌事奉的核心力量來源，
           作者一再記錄耶穌以禱告作為工作中最重要的支撐
-          （參 5:16、6:12、9:18、28~29、11:1、22:32、41、23:34、46）。
+          （參 <span class="ref-hover" data-img="images/516.png">5:16</span>、<span class="ref-hover" data-img="images/612.png">6:12</span>、<span class="ref-hover" data-img="images/918.png">9:18</span>、28~29、11:1、22:32、41、23:34、46）。
         </p>
       </div>
       <figure class="illust" style="margin:0;">
@@ -436,7 +584,7 @@
 
     <div class="verse-box">
       聖靈降臨在他身上，形狀彷彿鴿子；又有聲音從天上來，說：<br>
-      「<span class="key">你是我的愛子，我喜悅你。</span>」
+      「<span class="key"><a href="like.html" target="_blank" rel="noopener noreferrer" class="link-btn">你是我的愛子，我喜悅你。</a></span>」
     </div>
 
     <h3>三一上帝同時顯現的時刻</h3>
@@ -504,11 +652,7 @@
         我們也需要在生活中刻意分別出安靜禱告的時間，
         讓「天開」的經驗成為我們服事的常態。
       </p>
-      <p style="background:#fff8e1;border-radius:10px;padding:.9rem 1.2rem;">
-        <strong>本週操練：</strong>每天選一段固定的 10 分鐘——
-        通勤的車上、午休的桌前、睡前的床邊——
-        關掉通知，單單向天父說話，也聽祂說話。
-      </p>
+      
     </div>
 
     <!-- 應用 2 -->
@@ -552,7 +696,9 @@
         都是上帝在預備我們。
         長老教會中有許多兄姐在退休後才投入更多的教會服事，
         之前幾十年的職場經驗和人生歷練，
-        正是上帝所使用來造就他人的素材。
+        正是上帝所使用來造就他人的素材。<span class="verse-pop" role="button" tabindex="0"
+        data-ref="歌後 1:4"
+        data-text="我們在一切患難中，他就安慰我們，叫我們能用上帝所賜的安慰去安慰那遭各樣患難的人。">(歌後 1:4)</span>
       </p>
       <figure class="illust" style="margin-top:1.4rem;">
         <img src="images/ill-carpenter-workshop.jpeg" alt="傳統木匠工作坊">
@@ -563,7 +709,7 @@
 </section>
 
 <!-- ===================== 討論題 ===================== -->
-<section id="discuss" style="background-image:url('images/bg-community.jpeg');">
+<section id="discuss" class="one-screen" style="background-image:url('images/bg-community.jpeg');">
   <div class="inner">
     <h2 class="section-title">小組討論題目</h2>
 
@@ -571,66 +717,27 @@
       <span class="qnum">1</span>
       <div>
         耶穌是在禱告時經歷天開了。你最近的禱告生活如何？
-        在忙碌的服事中，你是否曾經歷過「天開」的時刻？那是什麼樣的光景？
+        在忙碌的日常生活中，你是否曾經歷過「天開」的時刻？那是什麼樣的光景？
       </div>
     </div>
 
     <div class="q-item">
       <span class="qnum">2</span>
       <div>
-        天父在耶穌開始服事之前就說「你是我的愛子」。
-        你認為自己的價值主要來自什麼——事工表現、他人的肯定，還是天父的愛？
-        這個問題如何影響你的服事心態？
+        你是否有參與教會服事?請分享您酸甜苦辣的心得與經驗
       </div>
     </div>
 
     <div class="q-item">
       <span class="qnum">3</span>
       <div>
-        路加將家譜追溯到亞當，強調福音的普世性。
-        在長老教會的處境中，你如何看待未信主的家人和鄰舍？
-        路加的家譜對你有什麼啟發？
-      </div>
-    </div>
-
-    <div class="q-item">
-      <span class="qnum">4</span>
-      <div>
-        耶穌在三十歲之前默默無聞地在拿撒勒做木匠。
-        你目前的「拿撒勒歲月」是什麼？
-        你如何看待自己生命中看似平凡、尚未「開始服事」的階段？
-      </div>
-    </div>
-
-    <div class="q-item">
-      <span class="qnum">5</span>
-      <div>
-        本週你願意具體採取哪一項行動，
-        讓「天開」不只是聖經裡的畫面，
-        而是你忙碌生活中真實的經驗？
+        若您尚未參與教會服事，您最有興趣參與的事工是哪一項?
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 祈禱 ===================== -->
-<section id="prayer">
-  <div class="inner">
-    <h2 class="section-title">結束祈禱</h2>
-    <div class="prayer-text">
-      亞伯拉罕的上帝，以撒的上帝，雅各的上帝啊，<br>
-      祢是世人的上主，也是我們台灣人的上帝。<br>
-      祢的愛長闊高深，亙古長存。<br>
-      祢沒有忘記我們，仍然把福音傳給我們，<br>
-      祢也是我們先祖的上帝，我們要永世萬代敬拜事奉祢。<br><br>
-      求祢幫助我們在禱告中經歷天開的恩典，<br>
-      在平凡的日子中確信自己是祢所愛的兒女，<br>
-      在家族和社區中成為福音的見證。<br>
-      靠耶穌尊名禱告，
-      <div class="amen">阿們。</div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ===================== 頁尾 ===================== -->
 <footer>
@@ -638,6 +745,94 @@
   <p>聖經採用：新標點和合本上帝版</p>
   <p>從古老的聖經，尋求現代生活的智慧。</p>
 </footer>
+
+<!-- ===================== hover 圖片預覽（動態 <img>） ===================== -->
+<script>
+  document.querySelectorAll('.ref-hover').forEach(function(el) {
+    const imgSrc = el.getAttribute('data-img');
+    if (!imgSrc) return;
+
+    // 建立預覽圖片
+    const preview = document.createElement('img');
+    preview.src = imgSrc;
+    preview.alt = '經文預覽';
+    preview.style.position = 'absolute';
+    preview.style.bottom = '140%';
+    preview.style.left = '50%';
+    preview.style.transform = 'translateX(-50%) scale(0.96)';
+    preview.style.maxWidth = 'min(90vw, 720px)';
+    preview.style.maxHeight = 'min(75vh, 560px)';
+    preview.style.width = 'auto';
+    preview.style.height = 'auto';
+    preview.style.border = '3px solid #c9a227';
+    preview.style.borderRadius = '12px';
+    preview.style.boxShadow = '0 16px 48px rgba(0,0,0,0.35)';
+    preview.style.backgroundColor = '#fffdf6';
+    preview.style.opacity = '0';
+    preview.style.pointerEvents = 'none';
+    preview.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+    preview.style.zIndex = '9999';
+
+    el.style.position = 'relative';
+    el.appendChild(preview);
+
+    el.addEventListener('mouseenter', function() {
+      preview.style.opacity = '1';
+      preview.style.transform = 'translateX(-50%) scale(1)';
+    });
+
+    el.addEventListener('mouseleave', function() {
+      preview.style.opacity = '0';
+      preview.style.transform = 'translateX(-50%) scale(0.96)';
+    });
+  });
+</script>
+
+<!-- ===================== 經文浮動視窗 ===================== -->
+<div class="verse-modal-overlay" id="verseModal" aria-hidden="true">
+  <div class="verse-modal" role="dialog" aria-modal="true" aria-labelledby="vmRef">
+    <button class="vm-close" type="button" aria-label="關閉">&times;</button>
+    <div class="vm-ref" id="vmRef"></div>
+    <p class="vm-text" id="vmText"></p>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const overlay = document.getElementById('verseModal');
+    const refEl   = document.getElementById('vmRef');
+    const textEl  = document.getElementById('vmText');
+    let lastFocus = null;
+
+    function openModal(trigger){
+      lastFocus = trigger;
+      refEl.textContent  = trigger.dataset.ref;
+      textEl.textContent = trigger.dataset.text;
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden','false');
+      overlay.querySelector('.vm-close').focus();
+    }
+    function closeModal(){
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden','true');
+      if(lastFocus) lastFocus.focus();
+    }
+
+    document.querySelectorAll('.verse-pop').forEach(function(el){
+      el.addEventListener('click', function(){ openModal(el); });
+      el.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(el); }
+      });
+    });
+
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay || e.target.classList.contains('vm-close')) closeModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+  })();
+</script>
 
 </body>
 </html>
