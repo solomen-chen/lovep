@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忙著服事上帝？別忘了親近上帝！｜路加福音4:31–44線上查經</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #c59b27;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
+            --scripture-bg: #fefce8;
+            --scripture-border: #eab308;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 22px; /* 適合線上會議分享的大字體 Base Size */
+        }
+
+        /* 導覽與頂部標題 */
+        header {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.95)), url('images/bg-main.jpeg') center/cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: #fef08a;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #e2e8f0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 經文預留區區塊 */
+        .scripture-box {
+            background-color: var(--scripture-bg);
+            border-left: 8px solid var(--scripture-border);
+            padding: 25px 30px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .scripture-box h4 {
+            color: #854d0e;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .scripture-placeholder {
+            font-size: 1.35rem;
+            color: #713f12;
+            font-style: italic;
+            line-height: 2;
+            white-space: pre-line;
+            border: 2px dashed #fde047;
+            padding: 15px;
+            background-color: #fffde7;
+            border-radius: 6px;
+        }
+
+        /* 卡片與章節樣式 */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .section-title {
+            font-size: 2.1rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        .section-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .app-box {
+            background-color: #eff6ff;
+            border-left: 6px solid #3b82f6;
+            padding: 20px 25px;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+
+        .app-box h5 {
+            color: #1d4ed8;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        /* 小組討論問題區 */
+        .discussion-box {
+            background-color: #f0fdf4;
+            border: 2px solid #86efac;
+            padding: 25px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .discussion-box h5 {
+            color: #15803d;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .discussion-box ul {
+            padding-left: 25px;
+        }
+
+        .discussion-box li {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        /* 總結區塊 */
+        .summary-card {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            padding: 45px;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .summary-card h2 {
+            font-size: 2.2rem;
+            color: #fde047;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+        }
+
+        .summary-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .summary-item h4 {
+            font-size: 1.4rem;
+            color: #93c5fd;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 40px;
+        }
+
+        /* 響應式微調 */
+        @media (max-width: 768px) {
+            body { font-size: 18px; }
+            header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.6rem; }
+            .summary-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頁首標題區 -->
+    <header>
+        <h1>忙著服事上帝？別忘了親近上帝！</h1>
+        <p>路加福音 4:31–44 逐節查經與生命應用</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 前言簡介 -->
+        <div class="section-card">
+            <h2 class="section-title">📌 經文背景與核心提醒</h2>
+            <p>本段經文記載耶穌在迦百農的事奉：在會堂帶有權柄地教導、趕出污鬼、醫治西門岳母與眾人，最後卻選擇離開忙碌的服事現場，退到曠野禱告，並堅持前往各處傳揚上帝國的福音。</p>
+            <p><strong>核心反思：</strong>我們是否也常常「忙著服事上帝，卻沒有時間親近上帝」？讓我們從耶穌的榜樣中，重新調整服事與生命的優先順序。</p>
+        </div>
+
+        <!-- 第一部分：教導帶有權柄 -->
+        <div class="section-card">
+            <h2 class="section-title">一、 耶穌的教導帶有權柄（路 4:31–32）</h2>
+            
+            <!-- 經文預留區 -->
+            <div class="scripture-box">
+                <h4>📖 經文預留區（路加福音 4:31–32）</h4>
+                <div class="scripture-placeholder">
+【在此貼入經文：路加福音 4:31–32】
+例如：31 耶穌下到迦百農，就是加利利的一座城，在安息日教訓眾人。 32 他們很希奇他的教訓，因為他的話裡有權柄。
+                </div>
+            </div>
+
+            <img src="images/illustration-teaching.jpeg" alt="耶穌在會堂教導" class="section-img">
+
+            <h3>💡 解經精華</h3>
+            <p>耶穌的事奉從「教導」開始。眾人希奇，因為祂的教導直接觸及真理，帶有屬靈的權柄，而非僅是重複人的教條。聖經真理不只是一套知識，更能直接塑造我們的生命與生活。</p>
+
+            <div class="app-box">
+                <h5>🌱 現代生活應用</h5>
+                <p>我們參加禮拜、帶領查經、服事做久了，容易變成例行公事。真正重要的，不只是人有沒有來到教會完成責任，而是我們有沒有讓上帝的話語真實改變我們的生命。</p>
+            </div>
+
+            <div class="discussion-box">
+                <h5>💬 小組討論</h5>
+                <ul>
+                    <li>我們參加聚會與服事，主要是為了完成責任，還是期待生命繼續被上帝改變？</li>
+                    <li>對聖經的認識，如何真實影響我們處理衝突、金錢與人際關係的方式？</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 第二部分：勝過邪惡的權柄 -->
+        <div class="section-card">
+            <h2 class="section-title">二、 命令污鬼離去，勝過邪惡（路 4:33–37）</h2>
+            
+            <!-- 經文預留區 -->
+            <div class="scripture-box">
+                <h4>📖 經文預留區（路加福音 4:33–37）</h4>
+                <div class="scripture-placeholder">
+【在此貼入經文：路加福音 4:33–37】
+                </div>
+            </div>
+
+            <img src="images/illustration-authority.jpeg" alt="耶穌展現權柄" class="section-img">
+
+            <h3>💡 解經精華</h3>
+            <p>污鬼認識耶穌是上帝的聖者，但「知道」並不等於「順服」。耶穌以權柄斥責污鬼並使其離開，顯明祂勝過黑暗勢力，且焦點永遠放在拯救人的安全與自由上。</p>
+
+            <div class="app-box">
+                <h5>🌱 現代生活應用</h5>
+                <p>宗教知識不能取代與上帝的親密關係。同時，面對職場霸凌、家庭傷害或不公義時，信仰不只是默默忍耐，更包含採取合理的行動來保護受害者。</p>
+            </div>
+
+            <div class="discussion-box">
+                <h5>💬 小組討論</h5>
+                <ul>
+                    <li>我們有沒有「知道應該怎麼做，卻不願意去做」的信仰盲點？</li>
+                    <li>當我們發現自己知道真理卻沒有活出來時，可以如何坦承並回應上帝？</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 第三部分：醫治與關懷實際需要 -->
+        <div class="section-card">
+            <h2 class="section-title">三、 走入家庭，醫治關懷（路 4:38–41）</h2>
+            
+            <!-- 經文預留區 -->
+            <div class="scripture-box">
+                <h4>📖 經文預留區（路加福音 4:38–41）</h4>
+                <div class="scripture-placeholder">
+【在此貼入經文：路加福音 4:38–41】
+                </div>
+            </div>
+
+            <img src="images/illustration-healing.jpeg" alt="耶穌醫治西門岳母" class="section-img">
+
+            <h3>💡 解經精華</h3>
+            <p>耶穌從公開的會堂進入西門的家，親自按手醫治西門的岳母與各樣病人。西門岳母康復後起來服事，展示了蒙恩後感恩的回應，但也提醒我們：教會是彼此扶持的肢體，軟弱時安心接受照顧同樣被上帝接納。</p>
+
+            <div class="app-box">
+                <h5>🌱 現代生活應用</h5>
+                <p>我們容易關心教會看得見的事工，卻忽略家庭中默默承擔責任的家人。關懷不應只停留在口頭「我為你禱告」，也包含陪伴與實際行動。</p>
+            </div>
+
+            <div class="discussion-box">
+                <h5>💬 小組討論</h5>
+                <ul>
+                    <li>我們的服事是否容易偏向「完成工作」，而忽略了「關懷生命」？</li>
+                    <li>當自己身心疲憊需要休養時，能否坦然接受別人的服事與照顧？</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 第四部分：退到曠野禱告與使命 -->
+        <div class="section-card">
+            <h2 class="section-title">四、 退到曠野禱告，堅持天國使命（路 4:42–44）</h2>
+            
+            <!-- 經文預留區 -->
+            <div class="scripture-box">
+                <h4>📖 經文預留區（路加福音 4:42–44）</h4>
+                <div class="scripture-placeholder">
+【在此貼入經文：路加福音 4:42–44】
+                </div>
+            </div>
+
+            <img src="images/illustration-prayer.jpeg" alt="耶穌退到曠野禱告" class="section-img">
+
+            <h3>💡 解經精華</h3>
+            <p>經歷了高強度的服事後，耶穌天一亮就退到曠野安靜。當群眾想要留住祂時，耶穌清楚知道自己的使命：「我必須在別城傳上帝國的福音，因為我奉差原是為此。」祂不讓群眾的期待或掌聲取代天父的旨意。</p>
+
+            <div class="app-box">
+                <h5>🌱 現代生活應用</h5>
+                <p>熱心服事的人常陷入「被所有人需要」的疲憊中。我們需要的不是再多接一項工作，而是停下來親近上帝，重新整理生命的優先順序。</p>
+            </div>
+
+            <div class="discussion-box">
+                <h5>💬 小組討論</h5>
+                <ul>
+                    <li>你是否有過「忙著服事上帝，卻沒有時間親近上帝」的經驗？</li>
+                    <li>面對眾人的期待與上帝的呼召，我們該如何學會拒絕與適時停下？</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 總結與四個提醒 -->
+        <div class="summary-card">
+            <h2>✨ 本次查經的四個信仰提醒</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <h4>1. 聽見真理，改變生命</h4>
+                    <p>不只是增加聖經知識，更是讓上帝的話進入家庭、工作與人際關係。</p>
+                </div>
+                <div class="summary-item">
+                    <h4>2. 關懷生命，化為行動</h4>
+                    <p>關懷不只停留在嘴上，更是願意花時間聆聽、陪伴與分擔實際困難。</p>
+                </div>
+                <div class="summary-item">
+                    <h4>3. 熱心服事，親近上帝</h4>
+                    <p>服事再忙碌，也必須安排安靜的時間親近上帝，避免失去喜樂與方向。</p>
+                </div>
+                <div class="summary-item">
+                    <h4>4. 走出熟悉，走向世界</h4>
+                    <p>不只照顧教會內部的運作，更要關注社區與世上困苦人的需要。</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>路加福音四章查經教材｜供線上查經小組、聚會分享使用</p>
+    </footer>
+
+</body>
+</html>
