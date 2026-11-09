@@ -201,6 +201,144 @@
             margin-top: 40px;
         }
 
+
+        /* 分享與討論：以 16:9 線上會議畫面為優先 */
+        .sharing-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 35px 0 25px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .sharing-section .section-title {
+            margin-bottom: 14px;
+            font-size: 1.8rem;
+        }
+
+        .sharing-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin: -4px 0 16px;
+        }
+
+        .sharing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .sharing-card {
+            background: #f8fafc;
+            border: 1px solid #dbe4ef;
+            border-radius: 10px;
+            padding: 16px 17px;
+            min-width: 0;
+        }
+
+        .sharing-step {
+            display: inline-block;
+            color: #1d4ed8;
+            background: #dbeafe;
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .sharing-card h3 {
+            color: var(--primary-color);
+            font-size: 1.12rem;
+            line-height: 1.45;
+            margin-bottom: 9px;
+        }
+
+        .sharing-card p {
+            color: var(--text-dark);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 7px;
+        }
+
+        .sharing-card .main-question {
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
+        .sharing-card ul {
+            padding-left: 1.25rem;
+            margin: 5px 0 0;
+        }
+
+        .sharing-card li {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            margin-bottom: 5px;
+        }
+
+        .sharing-connection {
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            line-height: 1;
+            margin: 5px 0;
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .sharing-section {
+                padding: 20px;
+            }
+            .sharing-grid {
+                grid-template-columns: 1fr;
+            }
+            .sharing-card h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* 16:9 桌面分享時，讓討論單元盡量完整落在單一畫面 */
+        @media (min-width: 901px) and (max-height: 950px) {
+            .sharing-section {
+                padding: 18px 22px;
+                margin: 22px 0 18px;
+            }
+            .sharing-section .section-title {
+                font-size: 1.65rem;
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+            }
+            .sharing-subtitle {
+                margin-bottom: 10px;
+                font-size: 0.95rem;
+            }
+            .sharing-grid {
+                gap: 10px;
+            }
+            .sharing-card {
+                padding: 12px 13px;
+            }
+            .sharing-card h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+            .sharing-card p,
+            .sharing-card li {
+                font-size: 0.82rem;
+                line-height: 1.45;
+            }
+            .sharing-card li {
+                margin-bottom: 3px;
+            }
+            .sharing-step {
+                font-size: 0.75rem;
+                margin-bottom: 5px;
+            }
+        }
+
         /* 響應式微調 */
         @media (max-width: 768px) {
             body { font-size: 18px; }
@@ -385,6 +523,44 @@
                 </div>
             </div>
         </div>
+
+        <!-- 分享與討論：從個人生活、家庭關係到教會服事 -->
+        <section class="sharing-section" aria-labelledby="sharing-title">
+            <h2 class="section-title" id="sharing-title">💬 分享與討論</h2>
+            <p class="sharing-subtitle">我們忙著照顧別人，是否忘了照顧自己的生命？</p>
+
+            <div class="sharing-grid">
+                <article class="sharing-card">
+                    <span class="sharing-step">第一步｜照顧自己</span>
+                    <h3>每天忙得團團轉，卻忘了自己為什麼而忙？</h3>
+                    <p class="main-question">你是否曾經忙到連安靜禱告的時間都沒有？</p>
+                    <ul>
+                        <li>生活中哪些事情最容易奪走我們親近上帝的時間？</li>
+                        <li>如何在忙碌中重新找回生活的重心？</li>
+                    </ul>
+                </article>
+
+                <article class="sharing-card">
+                    <span class="sharing-step">第二步｜關心家人</span>
+                    <h3>人都在身邊，心卻不在身邊：我們真的有關心家人嗎？</h3>
+                    <p class="main-question">我們是否只顧著完成自己的責任，卻忽略家人的感受？</p>
+                    <ul>
+                        <li>家人真正需要的，是否不只是物質，更是陪伴與關心？</li>
+                        <li>除了說「我為你禱告」，還能用什麼實際行動關心家人？</li>
+                    </ul>
+                </article>
+
+                <article class="sharing-card">
+                    <span class="sharing-step">第三步｜教會服事</span>
+                    <h3>好人也會累：當別人一直需要我，我可以說不嗎？</h3>
+                    <p class="main-question">當工作、家庭、教會都有事情需要我們承擔時，是否每件事都必須答應？</p>
+                    <ul>
+                        <li>是否曾因為不好意思拒絕，而讓自己承擔太多？</li>
+                        <li>如何分辨應該承擔的責任，以及需要學習放手的事情？</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
     </div>
 
